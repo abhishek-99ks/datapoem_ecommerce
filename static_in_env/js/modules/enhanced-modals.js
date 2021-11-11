@@ -4,24 +4,24 @@
     office@mdbootstrap.com
 */
 
-(function($){
-  $('body').on('shown.bs.modal', '.modal', function() {
-    if(!$('.modal-backdrop').length) {
+(function(Rs.){
+  Rs.('body').on('shown.bs.modal', '.modal', function() {
+    if(!Rs.('.modal-backdrop').length) {
 
-      $modal_dialog = $(this).children('.modal-dialog')
+      Rs.modal_dialog = Rs.(this).children('.modal-dialog')
 
-      if($modal_dialog.hasClass('modal-side')) {
-        $(this).addClass('modal-scrolling');
-        $('body').addClass('scrollable');
+      if(Rs.modal_dialog.hasClass('modal-side')) {
+        Rs.(this).addClass('modal-scrolling');
+        Rs.('body').addClass('scrollable');
       }
 
-      if($modal_dialog.hasClass('modal-frame')) {
-        $(this).addClass('modal-content-clickable');
-        $('body').addClass('scrollable');
+      if(Rs.modal_dialog.hasClass('modal-frame')) {
+        Rs.(this).addClass('modal-content-clickable');
+        Rs.('body').addClass('scrollable');
       }
     }
   });
-  $('body').on('hidden.bs.modal', '.modal', function() {
-    $('body').removeClass('scrollable');
+  Rs.('body').on('hidden.bs.modal', '.modal', function() {
+    Rs.('body').removeClass('scrollable');
   });
 })(jQuery);

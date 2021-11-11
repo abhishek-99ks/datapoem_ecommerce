@@ -3,32 +3,32 @@
   .page-item {
     &.active {
       .page-link {
-        box-shadow: $z-depth-1;
-        transition: $pagination-active-transition;
-        border-radius: $border-radius-base;
-        background-color: $primary-color;
-        color: $white-base;
+        box-shadow: Rs.z-depth-1;
+        transition: Rs.pagination-active-transition;
+        border-radius: Rs.border-radius-base;
+        background-color: Rs.primary-color;
+        color: Rs.white-base;
         &:hover {
-          background-color: $primary-color;
+          background-color: Rs.primary-color;
         }
       }
     }
     &.disabled {
       .page-link {
-        color: $pagination-page-item-disabled-color;
+        color: Rs.pagination-page-item-disabled-color;
       }
     }
     .page-link {
-      transition: $pagination-page-link-transition;
+      transition: Rs.pagination-page-link-transition;
       outline: 0;
       border: 0;
       background-color: transparent;
-      font-size: $pagination-page-link-font-size;
-      color: $pagination-page-link-color;
+      font-size: Rs.pagination-page-link-font-size;
+      color: Rs.pagination-page-link-color;
       &:hover {
-        transition: $pagination-page-link-transition;
-        border-radius: $border-radius-base;
-        background-color: $pagination-page-link-hover-bg-color;
+        transition: Rs.pagination-page-link-transition;
+        border-radius: Rs.border-radius-base;
+        background-color: Rs.pagination-page-link-hover-bg-color;
       }
       &:focus {
         background-color: transparent;
@@ -39,42 +39,42 @@
   &.pagination-lg {
     .page-item {
       .page-link {
-        font-size: $pagination-page-link-font-size-lg;
+        font-size: Rs.pagination-page-link-font-size-lg;
       }
     }
   }
   &.pagination-sm {
     .page-item {
       .page-link {
-        font-size: $pagination-page-link-font-size-sm;
+        font-size: Rs.pagination-page-link-font-size-sm;
       }
     }
   }
   &.pagination-circle {
     .page-item {
       .page-link {
-        margin-left: $pagination-circle-margin-x;
-        margin-right: $pagination-circle-margin-x;
-        border-radius: $pagination-circle-border-radius;
+        margin-left: Rs.pagination-circle-margin-x;
+        margin-right: Rs.pagination-circle-margin-x;
+        border-radius: Rs.pagination-circle-border-radius;
         &:hover {
-          border-radius: $pagination-circle-border-radius;
+          border-radius: Rs.pagination-circle-border-radius;
         }
       }
       &.active {
         .page-link {
-          border-radius: $pagination-circle-border-radius;
+          border-radius: Rs.pagination-circle-border-radius;
         }
       }
     }
   }
-  @each $name, $color in $pagination-colors {
-    &.pg-#{$name} {
+  @each Rs.name, Rs.color in Rs.pagination-colors {
+    &.pg-#{Rs.name} {
       .page-item {
         &.active {
           .page-link {
-            background-color: $color;
+            background-color: Rs.color;
             &:hover {
-              background-color: $color;
+              background-color: Rs.color;
             }
           }
         }

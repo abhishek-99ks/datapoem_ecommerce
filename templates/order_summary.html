@@ -29,7 +29,7 @@
             </td>
             <td>
             
-                ${{ order_item.get_total_item_price }}
+                Rs.{{ order_item.get_total_item_price }}
             
             <a style='color: red;' href="{% url 'store:remove-from-cart' order_item.item.id %}">
                 <i class="fas fa-trash float-right"></i>
@@ -50,7 +50,7 @@
         {% if cart.get_total %}
         <tr>
             <td colspan="4"><b>Order Total</b></td>
-            <td><b>${{ cart.get_total }}</b></td>
+            <td><b>Rs.{{ cart.get_total }}</b></td>
         </tr>
         <tr>
             

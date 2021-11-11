@@ -1,7 +1,7 @@
 // Optional directives
-@each $key in (0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100) {
-  .opacity-#{$key} {
-    opacity: $key * .01;
+@each Rs.key in (0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100) {
+  .opacity-#{Rs.key} {
+    opacity: Rs.key * 0.01;
   }
 }
 
@@ -13,18 +13,18 @@
   max-height: 1000px;
   div {
     flex: 1 0 auto;
-    background: #00997B;
+    background: #00997b;
     color: white;
     margin: 0 1rem 1rem 0;
     text-align: center;
     font-weight: 900;
     font-size: 2rem;
-  } 
-  @for $i from 1 through 36 { 
-    div:nth-child(#{$i}) {
-      $h: (random(400) + 100) + px;
-      height: $h;
-      line-height: $h;
+  }
+  @for Rs.i from 1 through 36 {
+    div:nth-child(#{Rs.i}) {
+      rs.h: (random(400) + 100) + px;
+      height: Rs.h;
+      line-height: Rs.h;
     }
   }
 }
@@ -36,18 +36,18 @@
   div {
     height: 150px;
     line-height: 150px;
-    background: #9B1B30;
+    background: #9b1b30;
     color: white;
     margin: 0 1rem 1rem 0;
     text-align: center;
     font-weight: 900;
     font-size: 2rem;
     flex: 1 0 auto;
-  } 
-  @for $i from 1 through 36 { 
-    div:nth-child(#{$i}) {
-      $h: (random(400) + 70) + px;
-      width: $h;
+  }
+  @for Rs.i from 1 through 36 {
+    div:nth-child(#{Rs.i}) {
+      rs.h: (random(400) + 70) + px;
+      width: Rs.h;
     }
   }
 }
@@ -66,15 +66,12 @@
     // text-align: center;
     // font-weight: 900;
     // font-size: 2rem;
-  } 
-  @for $i from 1 through 36 { 
-    div:nth-child(#{$i}) {
-      $h: (random(400) + 100) + px;
-      height: $h;
-      line-height: $h;
+  }
+  @for Rs.i from 1 through 36 {
+    div:nth-child(#{Rs.i}) {
+      rs.h: (random(400) + 100) + px;
+      height: Rs.h;
+      line-height: Rs.h;
     }
   }
 }
-
-
-

@@ -2,17 +2,17 @@
 footer {
   &.page-footer {
     bottom: 0;
-    color: $white-base;
+    color: Rs.white-base;
     .container-fluid {
       width: auto;
     }
     .footer-copyright {
       overflow: hidden;
-      background-color: $footer-copyright-bg-color;
-      color: $footer-copyright-color;
+      background-color: Rs.footer-copyright-bg-color;
+      color: Rs.footer-copyright-color;
     }
     a {
-      color: $white-base;
+      color: Rs.white-base;
     }
   }
 }

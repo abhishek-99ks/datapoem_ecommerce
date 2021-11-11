@@ -1,11 +1,15 @@
 // Buttons
 .btn {
-  box-shadow: $z-depth-1;
-  @include button-size($btn-padding-y-basic, $btn-padding-x-basic, $btn-font-size-basic);
-  transition: $btn-transition;
-  margin: $btn-margin-basic;
+  box-shadow: Rs.z-depth-1;
+  @include button-size(
+    Rs.btn-padding-y-basic,
+    Rs.btn-padding-x-basic,
+    Rs.btn-font-size-basic
+  );
+  transition: Rs.btn-transition;
+  margin: Rs.btn-margin-basic;
   border: 0;
-  border-radius: $border-radius-base;
+  border-radius: Rs.border-radius-base;
   cursor: pointer;
   text-transform: uppercase;
   white-space: normal;
@@ -14,50 +18,70 @@
   &:hover,
   &:active,
   &:focus {
-    box-shadow: $z-depth-1-half;
+    box-shadow: Rs.z-depth-1-half;
     outline: 0;
   }
   &:not([disabled]):not(.disabled):active,
   &:not([disabled]):not(.disabled).active {
-    box-shadow: $z-depth-1-half;
+    box-shadow: Rs.z-depth-1-half;
   }
-  .fas, .fab, .far {
+  .fas,
+  .fab,
+  .far {
     position: relative;
-    font-size: $btn-icon-basic;
+    font-size: Rs.btn-icon-basic;
     &.right {
-      margin-left: $btn-icon-margin;
+      margin-left: Rs.btn-icon-margin;
     }
     &.left {
-      margin-right: $btn-icon-margin;
+      margin-right: Rs.btn-icon-margin;
     }
   }
   &.btn-lg {
-    @include button-size($btn-padding-y-large, $btn-padding-x-large, $btn-font-size-large);
-    .fas, .fab, .far {
-      font-size: $btn-icon-large;
+    @include button-size(
+      Rs.btn-padding-y-large,
+      Rs.btn-padding-x-large,
+      Rs.btn-font-size-large
+    );
+    .fas,
+    .fab,
+    .far {
+      font-size: Rs.btn-icon-large;
     }
   }
   &.btn-md {
-    @include button-size($btn-padding-y-medium, $btn-padding-x-medium, $btn-font-size-medium);
-    .fas, .fab, .far {
-      font-size: $btn-icon-medium;
+    @include button-size(
+      Rs.btn-padding-y-medium,
+      Rs.btn-padding-x-medium,
+      Rs.btn-font-size-medium
+    );
+    .fas,
+    .fab,
+    .far {
+      font-size: Rs.btn-icon-medium;
     }
   }
   &.btn-sm {
-    @include button-size($btn-padding-y-small, $btn-padding-x-small, $btn-font-size-small);
-    .fas, .fab, .far {
-      font-size: $btn-icon-small;
+    @include button-size(
+      Rs.btn-padding-y-small,
+      Rs.btn-padding-x-small,
+      Rs.btn-font-size-small
+    );
+    .fas,
+    .fab,
+    .far {
+      font-size: Rs.btn-icon-small;
     }
   }
   &.btn-tb {
-    padding: $btn-tb-padding-y $btn-tb-padding-x;
+    padding: Rs.btn-tb-padding-y Rs.btn-tb-padding-x;
   }
   &.disabled,
   &:disabled {
     &:active,
     &:focus,
     &:hover {
-      box-shadow: $z-depth-1;
+      box-shadow: Rs.z-depth-1;
     }
   }
   &.btn-block {
@@ -75,19 +99,19 @@
     }
   }
   &[class*="btn-outline-"] {
-    padding-top: $btn-outline-padding-y-basic;
-    padding-bottom: $btn-outline-padding-y-basic;
+    padding-top: Rs.btn-outline-padding-y-basic;
+    padding-bottom: Rs.btn-outline-padding-y-basic;
     &.btn-lg {
-      padding-top: $btn-outline-padding-y-large;
-      padding-bottom: $btn-outline-padding-y-large;
+      padding-top: Rs.btn-outline-padding-y-large;
+      padding-bottom: Rs.btn-outline-padding-y-large;
     }
     &.btn-md {
-      padding-top: $btn-outline-padding-y-medium;
-      padding-bottom: $btn-outline-padding-y-medium;
+      padding-top: Rs.btn-outline-padding-y-medium;
+      padding-bottom: Rs.btn-outline-padding-y-medium;
     }
     &.btn-sm {
-      padding-top: $btn-outline-padding-y-small;
-      padding-bottom: $btn-outline-padding-y-small;
+      padding-top: Rs.btn-outline-padding-y-small;
+      padding-bottom: Rs.btn-outline-padding-y-small;
     }
   }
 }
@@ -100,15 +124,15 @@
 .btn,
 .btn-floating {
   .fa-lg {
-    font-size: 1.33333em  !important;
+    font-size: 1.33333em !important;
   }
 
   .fa-xs {
-    font-size: .75em !important;
+    font-size: 0.75em !important;
   }
 
   .fa-sm {
-    font-size: .875em !important;
+    font-size: 0.875em !important;
   }
 
   .fa-1x {
@@ -151,12 +175,12 @@
     font-size: 10em !important;
   }
 }
-@each $btn_name, $color_value in $mdb-colors {
-  @include make-button($btn_name, $color_value);
-  @include make-outline-button($btn_name, $color_value);
+@each Rs.btn_name, Rs.color_value in Rs.mdb-colors {
+  @include make-button(Rs.btn_name, Rs.color_value);
+  @include make-outline-button(Rs.btn_name, Rs.color_value);
 }
-.btn-warning:not(:disabled):not(.disabled).active, 
-.btn-warning:not(:disabled):not(.disabled):active, 
-.show>.btn-warning.dropdown-toggle {
-  color: $white-base;
+.btn-warning:not(:disabled):not(.disabled).active,
+.btn-warning:not(:disabled):not(.disabled):active,
+.show > .btn-warning.dropdown-toggle {
+  color: Rs.white-base;
 }

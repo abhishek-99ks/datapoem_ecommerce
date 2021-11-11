@@ -1,6 +1,6 @@
 'use strict';
 
-(function ($) {
+(function (Rs.) {
 
   var inputSelector = ['text', 'password', 'email', 'url', 'tel', 'number', 'search', 'search-md'].map(function (selector) {
     return 'input[type=' + selector + ']';
@@ -8,38 +8,38 @@
 
   var textAreaSelector = '.materialize-textarea';
 
-  var updateTextFields = function updateTextFields($input) {
+  var updateTextFields = function updateTextFields(Rs.input) {
 
-    var $labelAndIcon = $input.siblings('label, i');
-    var hasValue = $input.val().length;
-    var hasPlaceholder = $input.attr('placeholder');
+    var Rs.labelAndIcon = Rs.input.siblings('label, i');
+    var hasValue = Rs.input.val().length;
+    var hasPlaceholder = Rs.input.attr('placeholder');
     var addOrRemove = (hasValue || hasPlaceholder ? 'add' : 'remove') + 'Class';
 
-    $labelAndIcon[addOrRemove]('active');
+    Rs.labelAndIcon[addOrRemove]('active');
   };
 
-  var validateField = function validateField($input) {
+  var validateField = function validateField(Rs.input) {
 
-    if ($input.hasClass('validate')) {
+    if (Rs.input.hasClass('validate')) {
 
-      var value = $input.val();
+      var value = Rs.input.val();
       var noValue = !value.length;
-      var isValid = !$input[0].validity.badInput;
+      var isValid = !Rs.input[0].validity.badInput;
 
       if (noValue && isValid) {
 
-        $input.removeClass('valid').removeClass('invalid');
+        Rs.input.removeClass('valid').removeClass('invalid');
       } else {
 
-        var valid = $input.is(':valid');
-        var length = Number($input.attr('length')) || 0;
+        var valid = Rs.input.is(':valid');
+        var length = Number(Rs.input.attr('length')) || 0;
 
         if (valid && (!length || length > value.length)) {
 
-          $input.removeClass('invalid').addClass('valid');
+          Rs.input.removeClass('invalid').addClass('valid');
         } else {
 
-          $input.removeClass('valid').addClass('invalid');
+          Rs.input.removeClass('valid').addClass('invalid');
         }
       }
     }
@@ -47,112 +47,112 @@
 
   var textAreaAutoResize = function textAreaAutoResize() {
 
-    var $textarea = $(undefined);
-    if ($textarea.val().length) {
+    var Rs.textarea = Rs.(undefined);
+    if (Rs.textarea.val().length) {
 
-      var $hiddenDiv = $('.hiddendiv');
-      var fontFamily = $textarea.css('font-family');
-      var fontSize = $textarea.css('font-size');
+      var Rs.hiddenDiv = Rs.('.hiddendiv');
+      var fontFamily = Rs.textarea.css('font-family');
+      var fontSize = Rs.textarea.css('font-size');
 
       if (fontSize) {
 
-        $hiddenDiv.css('font-size', fontSize);
+        Rs.hiddenDiv.css('font-size', fontSize);
       }
 
       if (fontFamily) {
 
-        $hiddenDiv.css('font-family', fontFamily);
+        Rs.hiddenDiv.css('font-family', fontFamily);
       }
 
-      if ($textarea.attr('wrap') === 'off') {
+      if (Rs.textarea.attr('wrap') === 'off') {
 
-        $hiddenDiv.css('overflow-wrap', 'normal').css('white-space', 'pre');
+        Rs.hiddenDiv.css('overflow-wrap', 'normal').css('white-space', 'pre');
       }
 
-      $hiddenDiv.text($textarea.val() + '\n');
-      var content = $hiddenDiv.html().replace(/\n/g, '<br>');
-      $hiddenDiv.html(content);
+      Rs.hiddenDiv.text(Rs.textarea.val() + '\n');
+      var content = Rs.hiddenDiv.html().replace(/\n/g, '<br>');
+      Rs.hiddenDiv.html(content);
 
       // When textarea is hidden, width goes crazy.
       // Approximate with half of window size
-      $hiddenDiv.css('width', $textarea.is(':visible') ? $textarea.width() : $(window).width() / 2);
-      $textarea.css('height', $hiddenDiv.height());
+      Rs.hiddenDiv.css('width', Rs.textarea.is(':visible') ? Rs.textarea.width() : Rs.(window).width() / 2);
+      Rs.textarea.css('height', Rs.hiddenDiv.height());
     }
   };
 
-  $(inputSelector).each(function (index, input) {
+  Rs.(inputSelector).each(function (index, input) {
 
-    var $this = $(input);
-    var $labelAndIcon = $this.siblings('label, i');
-    updateTextFields($this);
+    var Rs.this = Rs.(input);
+    var Rs.labelAndIcon = Rs.this.siblings('label, i');
+    updateTextFields(Rs.this);
     var isValid = input.validity.badInput;
     if (isValid) {
 
-      $labelAndIcon.addClass('active');
+      Rs.labelAndIcon.addClass('active');
     }
   });
 
-  $(document).on('focus', inputSelector, function (e) {
+  Rs.(document).on('focus', inputSelector, function (e) {
 
-    $(e.target).siblings('label, i').addClass('active');
+    Rs.(e.target).siblings('label, i').addClass('active');
   });
 
-  $(document).on('blur', inputSelector, function (e) {
+  Rs.(document).on('blur', inputSelector, function (e) {
 
-    var $this = $(e.target);
-    var noValue = !$this.val();
+    var Rs.this = Rs.(e.target);
+    var noValue = !Rs.this.val();
     var invalid = !e.target.validity.badInput;
-    var noPlaceholder = $this.attr('placeholder') === undefined;
+    var noPlaceholder = Rs.this.attr('placeholder') === undefined;
 
     if (noValue && invalid && noPlaceholder) {
 
-      $this.siblings('label, i').removeClass('active');
+      Rs.this.siblings('label, i').removeClass('active');
     }
 
-    validateField($this);
+    validateField(Rs.this);
   });
 
-  $(document).on('change', inputSelector, function (e) {
+  Rs.(document).on('change', inputSelector, function (e) {
 
-    var $this = $(e.target);
-    updateTextFields($this);
-    validateField($this);
+    var Rs.this = Rs.(e.target);
+    updateTextFields(Rs.this);
+    validateField(Rs.this);
   });
 
-  $('input[autofocus]').siblings('label, i').addClass('active');
+  Rs.('input[autofocus]').siblings('label, i').addClass('active');
 
-  $(document).on('reset', function (e) {
+  Rs.(document).on('reset', function (e) {
 
-    var $formReset = $(e.target);
-    if ($formReset.is('form')) {
+    var Rs.formReset = Rs.(e.target);
+    if (Rs.formReset.is('form')) {
 
-      var $formInputs = $formReset.find(inputSelector);
-      $formInputs.removeClass('valid').removeClass('invalid').each(function (index, input) {
+      var Rs.formInputs = Rs.formReset.find(inputSelector);
+      Rs.formInputs.removeClass('valid').removeClass('invalid').each(function (index, input) {
 
-        var $this = $(input);
-        var noDefaultValue = !$this.val();
-        var noPlaceholder = !$this.attr('placeholder');
+        var Rs.this = Rs.(input);
+        var noDefaultValue = !Rs.this.val();
+        var noPlaceholder = !Rs.this.attr('placeholder');
         if (noDefaultValue && noPlaceholder) {
-          $this.siblings('label, i').removeClass('active');
+          Rs.this.siblings('label, i').removeClass('active');
         }
       });
 
-      $formReset.find('select.initialized').each(function (index, select) {
+      Rs.formReset.find('select.initialized').each(function (index, select) {
 
-        var $select = $(select);
-        var $visibleInput = $select.siblings('input.select-dropdown');
-        var defaultValue = $select.children('[selected]').val();
+        var Rs.select = Rs.(select);
+        var Rs.visibleInput = Rs.select.siblings('input.select-dropdown');
+        var defaultValue = Rs.select.children('[selected]').val();
 
-        $select.val(defaultValue);
-        $visibleInput.val(defaultValue);
+        Rs.select.val(defaultValue);
+        Rs.visibleInput.val(defaultValue);
       });
     }
   });
 
   function init() {
 
-    var $text = $('.md-textarea-auto');
-    if ($text.length) {
+    var Rs.text = Rs.('.md-textarea-auto');
+    if (Rs.text.length) {
 
       var observe = void 0;
       if (window.attachEvent) {
@@ -169,7 +169,7 @@
         };
       }
 
-      $text.each(function () {
+      Rs.text.each(function () {
 
         var self = this;
 
@@ -196,13 +196,13 @@
   }
   init();
 
-  var $body = $('body');
-  if (!$('.hiddendiv').first().length) {
+  var Rs.body = Rs.('body');
+  if (!Rs.('.hiddendiv').first().length) {
 
-    var $hiddenDiv = $('<div class="hiddendiv common"></div>');
-    $body.append($hiddenDiv);
+    var Rs.hiddenDiv = Rs.('<div class="hiddendiv common"></div>');
+    Rs.body.append(Rs.hiddenDiv);
   }
 
-  $(textAreaSelector).each(textAreaAutoResize);
-  $body.on('keyup keydown', textAreaSelector, textAreaAutoResize);
+  Rs.(textAreaSelector).each(textAreaAutoResize);
+  Rs.body.on('keyup keydown', textAreaSelector, textAreaAutoResize);
 })(jQuery);

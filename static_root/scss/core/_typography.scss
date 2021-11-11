@@ -2,54 +2,56 @@
 // ROBOTO FONT
 @font-face {
   font-family: "Roboto";
-  src: local(Roboto Thin),
-    url("#{$roboto-font-path}Roboto-Thin.eot");
-  src: url("#{$roboto-font-path}Roboto-Thin.eot?#iefix") format("embedded-opentype"),
-    url("#{$roboto-font-path}Roboto-Thin.woff2") format("woff2"),
-    url("#{$roboto-font-path}Roboto-Thin.woff") format("woff"),
-    url("#{$roboto-font-path}Roboto-Thin.ttf") format("truetype");
+  src: local(Roboto Thin), url("#{Rs.roboto-font-path}Roboto-Thin.eot");
+  src: url("#{Rs.roboto-font-path}Roboto-Thin.eot?#iefix")
+      format("embedded-opentype"),
+    url("#{Rs.roboto-font-path}Roboto-Thin.woff2") format("woff2"),
+    url("#{Rs.roboto-font-path}Roboto-Thin.woff") format("woff"),
+    url("#{Rs.roboto-font-path}Roboto-Thin.ttf") format("truetype");
   font-weight: 200;
 }
 
 @font-face {
   font-family: "Roboto";
-  src: local(Roboto Light),
-    url("#{$roboto-font-path}Roboto-Light.eot");
-  src: url("#{$roboto-font-path}Roboto-Light.eot?#iefix") format("embedded-opentype"),
-    url("#{$roboto-font-path}Roboto-Light.woff2") format("woff2"),
-    url("#{$roboto-font-path}Roboto-Light.woff") format("woff"),
-    url("#{$roboto-font-path}Roboto-Light.ttf") format("truetype");
+  src: local(Roboto Light), url("#{Rs.roboto-font-path}Roboto-Light.eot");
+  src: url("#{Rs.roboto-font-path}Roboto-Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("#{Rs.roboto-font-path}Roboto-Light.woff2") format("woff2"),
+    url("#{Rs.roboto-font-path}Roboto-Light.woff") format("woff"),
+    url("#{Rs.roboto-font-path}Roboto-Light.ttf") format("truetype");
   font-weight: 300;
 }
 
 @font-face {
   font-family: "Roboto";
-  src: local(Roboto Regular),
-    url("#{$roboto-font-path}Roboto-Regular.eot");
-  src: url("#{$roboto-font-path}Roboto-Regular.eot?#iefix") format("embedded-opentype"),
-    url("#{$roboto-font-path}Roboto-Regular.woff2") format("woff2"),
-    url("#{$roboto-font-path}Roboto-Regular.woff") format("woff"),
-    url("#{$roboto-font-path}Roboto-Regular.ttf") format("truetype");
+  src: local(Roboto Regular), url("#{Rs.roboto-font-path}Roboto-Regular.eot");
+  src: url("#{Rs.roboto-font-path}Roboto-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("#{Rs.roboto-font-path}Roboto-Regular.woff2") format("woff2"),
+    url("#{Rs.roboto-font-path}Roboto-Regular.woff") format("woff"),
+    url("#{Rs.roboto-font-path}Roboto-Regular.ttf") format("truetype");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Roboto";
-  src: url("#{$roboto-font-path}Roboto-Medium.eot");
-  src: url("#{$roboto-font-path}Roboto-Medium.eot?#iefix") format("embedded-opentype"),
-    url("#{$roboto-font-path}Roboto-Medium.woff2") format("woff2"),
-    url("#{$roboto-font-path}Roboto-Medium.woff") format("woff"),
-    url("#{$roboto-font-path}Roboto-Medium.ttf") format("truetype");
+  src: url("#{Rs.roboto-font-path}Roboto-Medium.eot");
+  src: url("#{Rs.roboto-font-path}Roboto-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("#{Rs.roboto-font-path}Roboto-Medium.woff2") format("woff2"),
+    url("#{Rs.roboto-font-path}Roboto-Medium.woff") format("woff"),
+    url("#{Rs.roboto-font-path}Roboto-Medium.ttf") format("truetype");
   font-weight: 500;
 }
 
 @font-face {
   font-family: "Roboto";
-  src: url("#{$roboto-font-path}Roboto-Bold.eot");
-  src: url("#{$roboto-font-path}Roboto-Bold.eot?#iefix") format("embedded-opentype"),
-    url("#{$roboto-font-path}Roboto-Bold.woff2") format("woff2"),
-    url("#{$roboto-font-path}Roboto-Bold.woff") format("woff"),
-    url("#{$roboto-font-path}Roboto-Bold.ttf") format("truetype");
+  src: url("#{Rs.roboto-font-path}Roboto-Bold.eot");
+  src: url("#{Rs.roboto-font-path}Roboto-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("#{Rs.roboto-font-path}Roboto-Bold.woff2") format("woff2"),
+    url("#{Rs.roboto-font-path}Roboto-Bold.woff") format("woff"),
+    url("#{Rs.roboto-font-path}Roboto-Bold.ttf") format("truetype");
   font-weight: 700;
 }
 
@@ -58,18 +60,22 @@ body {
   font-weight: 300;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 300;
 }
 
 // Responsive headings
-@each $key, $val in $grid-breakpoints {
-  @include media-breakpoint-up($key) {
-    $y: map-get($responsive-headings, $key);
-    @each $name,
-      $value in $y {
-      .#{$name}-responsive {
-        font-size: $value;
+@each Rs.key, Rs.val in Rs.grid-breakpoints {
+  @include media-breakpoint-up(Rs.key) {
+    rs.y: map-get(Rs.responsive-headings, Rs.key);
+    @each Rs.name, Rs.value in Rs.y {
+      .#{Rs.name}-responsive {
+        font-size: Rs.value;
       }
     }
   }
@@ -81,9 +87,14 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: center;
   display: flex;
-  margin-top: $divider-margin-y;
-  margin-bottom: $divider-margin-y;
-  > h1, h2, h3, h4, h5, h6 {
+  margin-top: Rs.divider-margin-y;
+  margin-bottom: Rs.divider-margin-y;
+  > h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-bottom: 0;
   }
   &:before,
@@ -91,49 +102,49 @@ h1, h2, h3, h4, h5, h6 {
     content: "";
     height: 1.5px;
     flex: 1;
-    height: $divider-height;
+    height: Rs.divider-height;
     background: #c6c6c6;
   }
   &:before {
-    margin: 0 $divider-margin-x 0 0;
+    margin: 0 Rs.divider-margin-x 0 0;
   }
   &:after {
-    margin: 0 0 0 $divider-margin-x;
+    margin: 0 0 0 Rs.divider-margin-x;
   }
 }
 
 // Blockquote
 .blockquote {
-  padding: $blockquote-padding-y $blockquote-padding-x;
-  border-left: .25rem solid #eceeef;
+  padding: Rs.blockquote-padding-y Rs.blockquote-padding-x;
+  border-left: 0.25rem solid #eceeef;
   &.text-right {
     border-left: none;
-    border-right: .25rem solid #eceeef;
+    border-right: 0.25rem solid #eceeef;
   }
   .bq-title {
     margin-bottom: 0;
-    font-size: $font-size-large;
+    font-size: Rs.font-size-large;
     font-weight: 400;
   }
   p {
-    padding: $blockquote-p-padding-y 0;
-    font-size: $blockquote-p-font-size;
+    padding: Rs.blockquote-p-padding-y 0;
+    font-size: Rs.blockquote-p-font-size;
   }
 }
 
-@each $name, $color in $basic {
-  .bq-#{$name} {
-    border-left: 3px solid $color !important;
+@each Rs.name, Rs.color in Rs.basic {
+  .bq-#{Rs.name} {
+    border-left: 3px solid Rs.color !important;
     .bq-title {
-      color: $color !important;
+      color: Rs.color !important;
     }
   }
 }
 
-@each $name, $color in $basic-mdb-colors {
-  @include text-emphasis-variant(".text-#{$name}", $color);
+@each Rs.name, Rs.color in Rs.basic-mdb-colors {
+  @include text-emphasis-variant(".text-#{Rs.name}", Rs.color);
 }
 
 .font-small {
-  font-size: $font-small;
+  font-size: Rs.font-small;
 }

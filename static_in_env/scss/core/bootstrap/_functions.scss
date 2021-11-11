@@ -4,83 +4,92 @@
 
 // Ascending
 // Used to evaluate Sass maps like our grid breakpoints.
-@mixin _assert-ascending($map, $map-name) {
-  $prev-key: null;
-  $prev-num: null;
-  @each $key, $num in $map {
-    @if $prev-num == null or unit($num) == "%" {
+@mixin _assert-ascending(Rs.map, Rs.map-name) {
+  rs.prev-key: null;
+  rs.prev-num: null;
+  @each Rs.key, Rs.num in Rs.map {
+    @if Rs.prev-num == null or unit(Rs.num) == "%" {
       // Do nothing
-    } @else if not comparable($prev-num, $num) {
-      @warn "Potentially invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} whose unit makes it incomparable to #{$prev-num}, the value of the previous key '#{$prev-key}' !";
-    } @else if $prev-num >= $num {
-      @warn "Invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} which isn't greater than #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+    } @else if not comparable(Rs.prev-num, Rs.num) {
+      @warn "Potentially invalid value for #{Rs.map-name}: This map must be in ascending order, but key '#{Rs.key}' has value #{Rs.num} whose unit makes it incomparable to #{Rs.prev-num}, the value of the previous key '#{Rs.prev-key}' !";
+    } @else if Rs.prev-num >= Rs.num {
+      @warn "Invalid value for #{Rs.map-name}: This map must be in ascending order, but key '#{Rs.key}' has value #{Rs.num} which isn't greater than #{Rs.prev-num}, the value of the previous key '#{Rs.prev-key}' !";
     }
-    $prev-key: $key;
-    $prev-num: $num;
+    rs.prev-key: Rs.key;
+    rs.prev-num: Rs.num;
   }
 }
 
 // Starts at zero
 // Used to ensure the min-width of the lowest breakpoint starts at 0.
-@mixin _assert-starts-at-zero($map, $map-name: "$grid-breakpoints") {
-  $values: map-values($map);
-  $first-value: nth($values, 1);
-  @if $first-value != 0 {
-    @warn "First breakpoint in #{$map-name} must start at 0, but starts at #{$first-value}.";
+@mixin _assert-starts-at-zero(Rs.map, Rs.map-name: "Rs.grid-breakpoints") {
+  rs.values: map-values(Rs.map);
+  rs.first-value: nth(Rs.values, 1);
+  @if Rs.first-value != 0 {
+    @warn "First breakpoint in #{Rs.map-name} must start at 0, but starts at #{Rs.first-value}.";
   }
 }
 
-// Replace `$search` with `$replace` in `$string`
+// Replace `Rs.search` with `Rs.replace` in `Rs.string`
 // Used on our SVG icon backgrounds for custom forms.
 //
 // @author Hugo Giraudel
-// @param {String} $string - Initial string
-// @param {String} $search - Substring to replace
-// @param {String} $replace ('') - New value
+// @param {String} Rs.string - Initial string
+// @param {String} Rs.search - Substring to replace
+// @param {String} Rs.replace ('') - New value
 // @return {String} - Updated string
-@function str-replace($string, $search, $replace: "") {
-  $index: str-index($string, $search);
+@function str-replace(Rs.string, Rs.search, Rs.replace: "") {
+  rs.index: str-index(Rs.string, Rs.search);
 
-  @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  @if Rs.index {
+    @return str-slice(Rs.string, 1, Rs.index - 1) + Rs.replace +
+      str-replace(
+        str-slice(Rs.string, Rs.index + str-length(Rs.search)),
+        Rs.search,
+        Rs.replace
+      );
   }
 
-  @return $string;
+  @return Rs.string;
 }
 
 // Color contrast
-@function color-yiq($color, $dark: $yiq-text-dark, $light: $yiq-text-light) {
-  $r: red($color);
-  $g: green($color);
-  $b: blue($color);
+@function color-yiq(
+  Rs.color,
+  Rs.dark: Rs.yiq-text-dark,
+  Rs.light: Rs.yiq-text-light
+) {
+  rs.r: red(Rs.color);
+  rs.g: green(Rs.color);
+  rs.b: blue(Rs.color);
 
-  $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+  rs.yiq: ((Rs.r * 299) + (Rs.g * 587) + (Rs.b * 114)) / 1000;
 
-  @if ($yiq >= $yiq-contrasted-threshold) {
-    @return $dark;
+  @if (Rs.yiq >= Rs.yiq-contrasted-threshold) {
+    @return Rs.dark;
   } @else {
-    @return $light;
+    @return Rs.light;
   }
 }
 
 // Retrieve color Sass maps
-@function color($key: "blue") {
-  @return map-get($colors, $key);
+@function color(Rs.key: "blue") {
+  @return map-get(Rs.colors, Rs.key);
 }
 
-@function theme-color($key: "primary") {
-  @return map-get($theme-colors, $key);
+@function theme-color(Rs.key: "primary") {
+  @return map-get(Rs.theme-colors, Rs.key);
 }
 
-@function gray($key: "100") {
-  @return map-get($grays, $key);
+@function gray(Rs.key: "100") {
+  @return map-get(Rs.grays, Rs.key);
 }
 
 // Request a theme color level
-@function theme-color-level($color-name: "primary", $level: 0) {
-  $color: theme-color($color-name);
-  $color-base: if($level > 0, $black, $white);
-  $level: abs($level);
+@function theme-color-level(Rs.color-name: "primary", Rs.level: 0) {
+  rs.color: theme-color(Rs.color-name);
+  rs.color-base: if(Rs.level > 0, Rs.black, Rs.white);
+  rs.level: abs(Rs.level);
 
-  @return mix($color-base, $color, $level * $theme-color-interval);
+  @return mix(Rs.color-base, Rs.color, Rs.level * Rs.theme-color-interval);
 }

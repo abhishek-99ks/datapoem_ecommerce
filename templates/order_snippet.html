@@ -10,13 +10,13 @@
         <h6 class="my-0">{{ order_item.quantity }} x {{ order_item.item.title}}</h6>
         <small class="text-muted">{{ order_item.item.description}}</small>
         </div>
-        <span class="text-muted">${{ order_item.get_final_price }}</span>
+        <span class="text-muted">Rs.{{ order_item.get_final_price }}</span>
     </li>
     {% endfor %}
     
     <li class="list-group-item d-flex justify-content-between">
         <span>Total (USD)</span>
-        <strong>${{ order.get_total }}</strong>
+        <strong>Rs.{{ order.get_total }}</strong>
     </li>
     </ul>
 

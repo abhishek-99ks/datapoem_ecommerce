@@ -1,18 +1,18 @@
 'use strict';
 
-(function ($) {
-  $('.input-default-wrapper').on('change', '.input-default-js', function (e) {
+(function (Rs.) {
+  Rs.('.input-default-wrapper').on('change', '.input-default-js', function (e) {
 
-    var $this = $(e.target),
-        $label = $this.next('label'),
-        $files = $this[0].files;
+    var Rs.this = Rs.(e.target),
+        Rs.label = Rs.this.next('label'),
+        Rs.files = Rs.this[0].files;
     var fileName = '';
 
-    if ($files && $files.length > 1) {
-      fileName = ($this.attr('data-multiple-target') || '').replace('{target}', $files.length);
+    if (Rs.files && Rs.files.length > 1) {
+      fileName = (Rs.this.attr('data-multiple-target') || '').replace('{target}', Rs.files.length);
     } else if (e.target.value) {
       fileName = e.target.value.split('\\').pop();
     }
-    fileName ? $label.find('.span-choose-file').html(fileName) : $label.html($label.html());
+    fileName ? Rs.label.find('.span-choose-file').html(fileName) : Rs.label.html(Rs.label.html());
   });
 })(jQuery);

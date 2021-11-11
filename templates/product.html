@@ -6,10 +6,10 @@
     <div class="container dark-grey-text mt-5">
 
       <!--Grid row-->
-      <div class="row wow fadeIn">
+      <div>
 
         <!--Grid column-->
-        <div class="col-md-6 mb-4">
+        <div class="col-6 offset-3">
 
           <img src="{{ item.image.url }}" class="img-fluid" alt="">
 
@@ -17,26 +17,15 @@
         <!--Grid column-->
 
         <!--Grid column-->
-        <div class="col-md-6 mb-4">
+        <div class="col-6 offset-3">
 
           <!--Content-->
           <div class="p-4">
 
-            <div class="mb-3">
-              <a href="">
-                <span class="badge purple mr-1">{{ item.get_category_display }}</span>
-              </a>
-            </div>
+            <h1><b>{{item.title}}<b></h1>
 
             <p class="lead">
-              {% if item.discount_price %}
-              <span class="mr-1">
-                <del>${{ item.price }}</del>
-              </span>
-              <span>${{ item.discount_price }}</span>
-              {% else %}
-              <span>${{ item.price }}</span>
-              {% endif %}
+              Rs.{{ item.price }}
             </p>
 
             <p class="lead font-weight-bold">Description</p>

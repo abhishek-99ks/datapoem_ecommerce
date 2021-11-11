@@ -1,161 +1,162 @@
 // Forms basic
 // Input + label wrapper styles
 .md-form {
-
   // Text inputs
-  input[type=text],
-  input[type=password],
-  input[type=email],
-  input[type=url],
-  input[type=time],
-  input[type=date],
-  input[type=datetime-local],
-  input[type=tel],
-  input[type=number],
-  input[type=search-md],
-  input[type=search],
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="url"],
+  input[type="time"],
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="search-md"],
+  input[type="search"],
   textarea.md-textarea {
     // General Styles
-    transition: $input-transition;
+    transition: Rs.input-transition;
     outline: none;
     box-shadow: none;
     border: none;
-    border-bottom: 1px solid $input-border-color;
+    border-bottom: 1px solid Rs.input-border-color;
     border-radius: 0;
     box-sizing: content-box;
     background-color: transparent;
 
     // Focused input style
     &:focus:not([readonly]) {
-      box-shadow: 0 1px 0 0 $input-md-focus-color;
-      border-bottom: 1px solid $input-md-focus-color;
+      box-shadow: 0 1px 0 0 Rs.input-md-focus-color;
+      border-bottom: 1px solid Rs.input-md-focus-color;
 
       // Focused label style
-      +label {
-        color: $input-md-focus-color;
+      + label {
+        color: Rs.input-md-focus-color;
       }
     }
 
     // Form message shared styles
-    +label:after {
+    + label:after {
       content: "";
       position: absolute;
-      top: $input-label-after-top;
+      top: Rs.input-label-after-top;
       display: block;
       opacity: 0;
-      transition: $input-label-after-transition;
+      transition: Rs.input-label-after-transition;
     }
 
     // Valid input style
     &.valid,
     &:focus.valid {
-      border-bottom: 1px solid $input-success-color;
-      box-shadow: 0 1px 0 0 $input-success-color;
+      border-bottom: 1px solid Rs.input-success-color;
+      box-shadow: 0 1px 0 0 Rs.input-success-color;
     }
 
-    &.valid+label:after,
-    &:focus.valid+label:after {
+    &.valid + label:after,
+    &:focus.valid + label:after {
       content: attr(data-success);
-      color: $input-success-color;
+      color: Rs.input-success-color;
       opacity: 1;
     }
 
     // Invalid input style
     &.invalid,
     &:focus.invalid {
-      border-bottom: 1px solid $input-error-color;
-      box-shadow: 0 1px 0 0 $input-error-color;
+      border-bottom: 1px solid Rs.input-error-color;
+      box-shadow: 0 1px 0 0 Rs.input-error-color;
     }
 
-    &.invalid+label:after,
-    &:focus.invalid+label:after {
+    &.invalid + label:after,
+    &:focus.invalid + label:after {
       content: attr(data-error);
-      color: $input-error-color;
+      color: Rs.input-error-color;
       opacity: 1;
     }
 
-    &.form-control.valid+label:after,
-    &.form-control:focus.valid+label:after {
-      top: $input-label-valid-top;
+    &.form-control.valid + label:after,
+    &.form-control:focus.valid + label:after {
+      top: Rs.input-label-valid-top;
     }
 
-    &.form-control.invalid+label:after,
-    &.form-control:focus.invalid+label:after {
-      top: $input-label-invalid-top;
+    &.form-control.invalid + label:after,
+    &.form-control:focus.invalid + label:after {
+      top: Rs.input-label-invalid-top;
     }
 
-    &.form-control-lg.valid+label:after,
-    &.form-control-lg:focus.valid+label:after {
-      top: $input-label-valid-top-lg;
+    &.form-control-lg.valid + label:after,
+    &.form-control-lg:focus.valid + label:after {
+      top: Rs.input-label-valid-top-lg;
     }
 
-    &.form-control-lg.invalid+label:after,
-    &.form-control-lg:focus.invalid+label:after {
-      top: $input-label-invalid-top-lg;
+    &.form-control-lg.invalid + label:after,
+    &.form-control-lg:focus.invalid + label:after {
+      top: Rs.input-label-invalid-top-lg;
     }
 
-    &.form-control-sm.valid+label:after,
-    &.form-control-sm:focus.valid+label:after {
-      top: $input-label-valid-top-sm;
+    &.form-control-sm.valid + label:after,
+    &.form-control-sm:focus.valid + label:after {
+      top: Rs.input-label-valid-top-sm;
     }
 
-    &.form-control-sm.invalid+label:after,
-    &.form-control-sm:focus.invalid+label:after {
-      top: $input-label-invalid-top-sm;
+    &.form-control-sm.invalid + label:after,
+    &.form-control-sm:focus.invalid + label:after {
+      top: Rs.input-label-invalid-top-sm;
     }
   }
 
-  >input[type=date]:not(.browser-default)+label {
+  > input[type="date"]:not(.browser-default) + label {
     transform: translateY(-27px) scale(0.8);
     transform-origin: 0 0;
   }
 
-  >input[type]:-webkit-autofill:not(.browser-default):not([type="search"])+label,
-  >input[type=time]:not(.browser-default)+label {
+  > input[type]:-webkit-autofill:not(.browser-default):not([type="search"])
+    + label,
+  > input[type="time"]:not(.browser-default) + label {
     transform: translateY(-25px);
     transform-origin: 0 0;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .was-validated {
-    input[type=text] {
+    input[type="text"] {
       &:valid {
-        +label {
-          color: $input-success-color !important;
+        + label {
+          color: Rs.input-success-color !important;
         }
       }
 
       &:invalid {
-        +label {
-          color: $input-error-color !important;
+        + label {
+          color: Rs.input-error-color !important;
         }
       }
     }
 
     .form-control {
       &:valid:focus {
-        box-shadow: 0 1px 0 0 $input-success-color !important;
+        box-shadow: 0 1px 0 0 Rs.input-success-color !important;
       }
 
       &:valid {
-        border-color: $input-success-color !important;
+        border-color: Rs.input-success-color !important;
       }
 
       &:invalid:focus {
-        box-shadow: 0 1px 0 0 $input-error-color !important;
+        box-shadow: 0 1px 0 0 Rs.input-error-color !important;
       }
 
       &:invalid {
-        border-color: $input-error-color !important;
+        border-color: Rs.input-error-color !important;
       }
     }
   }
 
   // Input with label
   .form-control {
-    margin: 0 0 $input-form-control-margin-bottom 0;
+    margin: 0 0 Rs.input-form-control-margin-bottom 0;
     border-radius: 0;
-    padding: $input-form-control-padding-top 0 $input-form-control-padding-bottom 0;
+    padding: Rs.input-form-control-padding-top 0
+      Rs.input-form-control-padding-bottom 0;
     background-image: none;
     background-color: transparent;
     height: auto;
@@ -167,63 +168,90 @@
 
     &:disabled,
     &[readonly] {
-      border-bottom: 1px solid $grey-lighten-1;
+      border-bottom: 1px solid Rs.grey-lighten-1;
       background-color: transparent;
     }
   }
 
-  @include make-input($input-validate-mb, $input-label-font-size, $input-label-active-font-size, $input-prefix-top, $input-prefix-font-size, $input-prefix-margin-left, $input-prefix-width, $input-form-text-ml);
+  @include make-input(
+    Rs.input-validate-mb,
+    Rs.input-label-font-size,
+    Rs.input-label-active-font-size,
+    Rs.input-prefix-top,
+    Rs.input-prefix-font-size,
+    Rs.input-prefix-margin-left,
+    Rs.input-prefix-width,
+    Rs.input-form-text-ml
+  );
   position: relative;
-  margin-top: $input-md-form-margin-top;
-  margin-bottom: $input-md-form-margin-bottom;
+  margin-top: Rs.input-md-form-margin-top;
+  margin-bottom: Rs.input-md-form-margin-bottom;
 
   label {
     position: absolute;
-    top: $input-label-top;
+    top: Rs.input-label-top;
     left: 0;
-    transition: $input-label-transition;
+    transition: Rs.input-label-transition;
     cursor: text;
-    color: $input-label-color;
+    color: Rs.input-label-color;
 
     &.active {
-      transform: $input-label-active-transform;
+      transform: Rs.input-label-active-transform;
     }
   }
 
   .prefix {
     position: absolute;
-    transition: $input-prefix-transition;
+    transition: Rs.input-prefix-transition;
 
     &.active {
-      color: $input-md-focus-color;
+      color: Rs.input-md-focus-color;
     }
   }
 
   &.form-lg {
-    @include make-input($input-validate-mb-lg, $input-label-font-size-lg, $input-label-active-font-size-lg, $input-prefix-top-lg, $input-prefix-font-size-lg, $input-prefix-margin-left-lg, $input-prefix-width-lg, $input-form-text-ml-lg);
+    @include make-input(
+      Rs.input-validate-mb-lg,
+      Rs.input-label-font-size-lg,
+      Rs.input-label-active-font-size-lg,
+      Rs.input-prefix-top-lg,
+      Rs.input-prefix-font-size-lg,
+      Rs.input-prefix-margin-left-lg,
+      Rs.input-prefix-width-lg,
+      Rs.input-form-text-ml-lg
+    );
   }
 
   &.form-sm {
-    @include make-input($input-validate-mb-sm, $input-label-font-size-sm, $input-label-active-font-size-sm, $input-prefix-top-sm, $input-prefix-font-size-sm, $input-prefix-margin-left-sm, $input-prefix-width-sm, $input-form-text-ml-sm);
+    @include make-input(
+      Rs.input-validate-mb-sm,
+      Rs.input-label-font-size-sm,
+      Rs.input-label-active-font-size-sm,
+      Rs.input-prefix-top-sm,
+      Rs.input-prefix-font-size-sm,
+      Rs.input-prefix-margin-left-sm,
+      Rs.input-prefix-width-sm,
+      Rs.input-form-text-ml-sm
+    );
   }
 
   // Textarea
   textarea {
     &.md-textarea {
       overflow-y: hidden;
-      padding: $textarea-padding 0;
+      padding: Rs.textarea-padding 0;
       resize: none;
     }
 
     &.md-textarea-auto {
       padding: 0;
-      padding-top: $textarea-padding;
+      padding-top: Rs.textarea-padding;
     }
 
     // Label color for textarea
-    ~label {
+    ~ label {
       &.active {
-        color: $input-md-focus-color;
+        color: Rs.input-md-focus-color;
       }
     }
   }
@@ -233,20 +261,20 @@
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
 
-    input[type=text],
-    input[type=password],
-    input[type=email],
-    input[type=url],
-    input[type=time],
-    input[type=date],
-    input[type=datetime-local],
-    input[type=tel],
-    input[type=number],
-    input[type=search-md],
-    input[type=search],
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="url"],
+    input[type="time"],
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="search-md"],
+    input[type="search"],
     textarea.md-textarea {
       // General Styles
-      transition: all .3s;
+      transition: all 0.3s;
       outline: none;
       box-shadow: none;
       border: 1px solid #dadce0;
@@ -260,7 +288,7 @@
         box-shadow: inset 0px 0px 0px 1px #4285f4;
 
         // Focused label style
-        +label {
+        + label {
           color: #4285f4;
         }
       }
@@ -268,50 +296,51 @@
       // Valid input style
       &.valid,
       &:focus.valid {
-        border-color: $input-success-color;
-        box-shadow: inset 0px 0px 0px 1px $input-success-color;
+        border-color: Rs.input-success-color;
+        box-shadow: inset 0px 0px 0px 1px Rs.input-success-color;
       }
 
-      &:focus:not([readonly]).valid+label,
-      &.valid+label:after,
-      &:focus.valid+label:after {
+      &:focus:not([readonly]).valid + label,
+      &.valid + label:after,
+      &:focus.valid + label:after {
         content: attr(data-success);
-        color: $input-success-color;
+        color: Rs.input-success-color;
         opacity: 1;
       }
 
       // Invalid input style
       &.invalid,
       &:focus.invalid {
-        border-color: $input-error-color;
-        box-shadow: inset 0px 0px 0px 1px $input-error-color;
+        border-color: Rs.input-error-color;
+        box-shadow: inset 0px 0px 0px 1px Rs.input-error-color;
       }
 
-      &:focus:not([readonly]).invalid+label,
-      &.invalid+label:after,
-      &:focus.invalid+label:after {
+      &:focus:not([readonly]).invalid + label,
+      &.invalid + label:after,
+      &:focus.invalid + label:after {
         content: attr(data-error);
-        color: $input-error-color;
+        color: Rs.input-error-color;
         opacity: 1;
       }
 
-      &.form-control.valid+label:after,
-      &.form-control:focus.valid+label:after {
+      &.form-control.valid + label:after,
+      &.form-control:focus.valid + label:after {
         top: 2.75rem;
         left: 0;
         position: absolute;
       }
 
-      &.form-control.invalid+label:after,
-      &.form-control:focus.invalid+label:after {
+      &.form-control.invalid + label:after,
+      &.form-control:focus.invalid + label:after {
         top: 2.75rem;
         left: 0;
         position: absolute;
       }
     }
 
-    >input[type]:-webkit-autofill:not(.browser-default):not([type="search"])+label,
-    >input[type=time]:not(.browser-default)+label {
+    > input[type]:-webkit-autofill:not(.browser-default):not([type="search"])
+      + label,
+    > input[type="time"]:not(.browser-default) + label {
       transform: translateY(-17px);
       transform-origin: 0 0;
       background: #fff;
@@ -322,22 +351,23 @@
       left: 8px;
     }
 
-    >input[type]:-webkit-autofill:not(.browser-default):not([type="search"])+label.active,
-    >input[type=time]:not(.browser-default)+label.active {
+    > input[type]:-webkit-autofill:not(.browser-default):not([type="search"])
+      + label.active,
+    > input[type="time"]:not(.browser-default) + label.active {
       transform: translateY(-17px);
       transform-origin: 0 0;
     }
 
     .form-control {
-      padding: .375rem .75rem;
+      padding: 0.375rem 0.75rem;
     }
 
     label {
-      font-size: .875rem;
+      font-size: 0.875rem;
       position: absolute;
       left: 0;
       padding-left: 10px;
-      transition: .2s ease-out;
+      transition: 0.2s ease-out;
       cursor: text;
       color: #757575;
 
@@ -355,7 +385,7 @@
     &.form-lg {
       .form-control {
         &.form-control-lg {
-          padding: .5rem .725rem;
+          padding: 0.5rem 0.725rem;
         }
       }
 
@@ -369,20 +399,20 @@
       }
 
       .prefix {
-        top: .65rem;
+        top: 0.65rem;
         font-size: 25px;
 
-        ~input,
-        ~textarea {
+        ~ input,
+        ~ textarea {
           margin-left: 2.2rem;
           width: calc(100% - 2.2rem);
         }
 
-        ~label {
+        ~ label {
           margin-left: 2.2rem;
         }
 
-        ~.form-text {
+        ~ .form-text {
           margin-left: 2.3rem;
         }
       }
@@ -391,13 +421,13 @@
     &.form-sm {
       .form-control {
         &.form-control-sm {
-          padding: .25rem .625rem;
+          padding: 0.25rem 0.625rem;
         }
       }
 
       label {
-        font-size: .8rem;
-        top: .4rem;
+        font-size: 0.8rem;
+        top: 0.4rem;
 
         &.active {
           transform: translateY(-85%);
@@ -406,20 +436,20 @@
       }
 
       .prefix {
-        top: .5rem;
+        top: 0.5rem;
         font-size: 15px;
 
-        ~input,
-        ~textarea {
+        ~ input,
+        ~ textarea {
           margin-left: 1.6rem;
           width: calc(100% - 1.6rem);
         }
 
-        ~label {
+        ~ label {
           margin-left: 1.6rem;
         }
 
-        ~.form-text {
+        ~ .form-text {
           margin-left: 1.7rem;
         }
       }
@@ -427,7 +457,7 @@
 
     .prefix {
       position: absolute;
-      transition: color .2s;
+      transition: color 0.2s;
 
       &:focus {
         color: #4285f4;
@@ -435,42 +465,41 @@
     }
 
     .prefix {
-      top: .6rem;
+      top: 0.6rem;
       font-size: 20px;
 
-      ~input,
-      ~textarea {
+      ~ input,
+      ~ textarea {
         margin-left: 2rem;
         width: calc(100% - 2rem);
       }
 
-      ~label {
+      ~ label {
         margin-left: 2rem;
       }
 
-      ~.form-text {
+      ~ .form-text {
         margin-left: 2.1rem;
       }
     }
 
     .character-counter {
-      margin-top: -.5rem;
+      margin-top: -0.5rem;
     }
   }
 
   &.md-bg {
-
-    input[type=text],
-    input[type=password],
-    input[type=email],
-    input[type=url],
-    input[type=time],
-    input[type=date],
-    input[type=datetime-local],
-    input[type=tel],
-    input[type=number],
-    input[type=search-md],
-    input[type=search],
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="url"],
+    input[type="time"],
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="search-md"],
+    input[type="search"],
     textarea.md-textarea {
       &:focus:not([readonly]) {
         box-shadow: none;
@@ -480,15 +509,17 @@
       box-sizing: border-box;
       padding: 10px 5px;
       border: 0;
-      border-top-left-radius: .3rem;
-      border-top-right-radius: .3rem;
+      border-top-left-radius: 0.3rem;
+      border-top-right-radius: 0.3rem;
       background: #f5f5f5 no-repeat;
-      background-image: linear-gradient(to bottom, $input-md-focus-color, $input-md-focus-color),
-      linear-gradient(to bottom, $input-border-color, $input-border-color);
-      background-size: 0 2px,
-      100% 1px;
-      background-position: 50% 100%,
-      50% 100%;
+      background-image: linear-gradient(
+          to bottom,
+          Rs.input-md-focus-color,
+          Rs.input-md-focus-color
+        ),
+        linear-gradient(to bottom, Rs.input-border-color, Rs.input-border-color);
+      background-size: 0 2px, 100% 1px;
+      background-position: 50% 100%, 50% 100%;
       transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
 
       &:focus {
@@ -498,31 +529,32 @@
       }
     }
 
-    >input[type=date]:not(.browser-default)+label {
+    > input[type="date"]:not(.browser-default) + label {
       transform: translateY(-12px) scale(0.8);
       transform-origin: 0 0;
     }
 
-    >input[type]:-webkit-autofill:not(.browser-default):not([type="search"])+label,
-    >input[type=time]:not(.browser-default)+label {
+    > input[type]:-webkit-autofill:not(.browser-default):not([type="search"])
+      + label,
+    > input[type="time"]:not(.browser-default) + label {
       transform: translateY(-12px);
       transform-origin: 0 0;
-      font-size: .8rem;
+      font-size: 0.8rem;
     }
 
     .form-control {
-      padding: 1.1rem .7rem .4rem !important;
+      padding: 1.1rem 0.7rem 0.4rem !important;
     }
 
     label {
-      top: .85rem;
-      padding-left: .7rem;
+      top: 0.85rem;
+      padding-left: 0.7rem;
 
       &.active {
         transform: translateY(-65%);
         font-weight: 500;
-        font-size: .7rem;
-        padding-left: .75rem;
+        font-size: 0.7rem;
+        padding-left: 0.75rem;
       }
     }
   }
@@ -539,5 +571,5 @@
 }
 
 .needs-validation .md-form label {
-  left: .3rem;
+  left: 0.3rem;
 }

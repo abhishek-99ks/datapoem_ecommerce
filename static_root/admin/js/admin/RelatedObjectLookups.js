@@ -3,7 +3,7 @@
 // and Add Another links.
 'use strict';
 {
-    const $ = django.jQuery;
+    const Rs. = django.jQuery;
 
     function showAdminPopup(triggeringLink, name_regexp, add_popup) {
         const name = triggeringLink.id.replace(name_regexp, '');
@@ -36,15 +36,15 @@
     }
 
     function updateRelatedObjectLinks(triggeringLink) {
-        const $this = $(triggeringLink);
-        const siblings = $this.nextAll('.view-related, .change-related, .delete-related');
+        const Rs.this = Rs.(triggeringLink);
+        const siblings = Rs.this.nextAll('.view-related, .change-related, .delete-related');
         if (!siblings.length) {
             return;
         }
-        const value = $this.val();
+        const value = Rs.this.val();
         if (value) {
             siblings.each(function() {
-                const elm = $(this);
+                const elm = Rs.(this);
                 elm.attr('href', elm.attr('data-href-template').replace('__fk__', value));
             });
         } else {
@@ -67,7 +67,7 @@
                 }
             }
             // Trigger a change event to update related links if required.
-            $(elem).trigger('change');
+            Rs.(elem).trigger('change');
         } else {
             const toId = name + "_to";
             const o = new Option(newRepr, newId);
@@ -80,7 +80,7 @@
     function dismissChangeRelatedObjectPopup(win, objId, newRepr, newId) {
         const id = win.name.replace(/^edit_/, '');
         const selectsSelector = interpolate('#%s, #%s_from, #%s_to', [id, id, id]);
-        const selects = $(selectsSelector);
+        const selects = Rs.(selectsSelector);
         selects.find('option').each(function() {
             if (this.value === objId) {
                 this.textContent = newRepr;
@@ -99,10 +99,10 @@
     function dismissDeleteRelatedObjectPopup(win, objId) {
         const id = win.name.replace(/^delete_/, '');
         const selectsSelector = interpolate('#%s, #%s_from, #%s_to', [id, id, id]);
-        const selects = $(selectsSelector);
+        const selects = Rs.(selectsSelector);
         selects.find('option').each(function() {
             if (this.value === objId) {
-                $(this).remove();
+                Rs.(this).remove();
             }
         }).trigger('change');
         win.close();
@@ -120,33 +120,33 @@
     window.showAddAnotherPopup = showRelatedObjectPopup;
     window.dismissAddAnotherPopup = dismissAddRelatedObjectPopup;
 
-    $(document).ready(function() {
-        $("a[data-popup-opener]").on('click', function(event) {
+    Rs.(document).ready(function() {
+        Rs.("a[data-popup-opener]").on('click', function(event) {
             event.preventDefault();
-            opener.dismissRelatedLookupPopup(window, $(this).data("popup-opener"));
+            opener.dismissRelatedLookupPopup(window, Rs.(this).data("popup-opener"));
         });
-        $('body').on('click', '.related-widget-wrapper-link', function(e) {
+        Rs.('body').on('click', '.related-widget-wrapper-link', function(e) {
             e.preventDefault();
             if (this.href) {
-                const event = $.Event('django:show-related', {href: this.href});
-                $(this).trigger(event);
+                const event = Rs..Event('django:show-related', {href: this.href});
+                Rs.(this).trigger(event);
                 if (!event.isDefaultPrevented()) {
                     showRelatedObjectPopup(this);
                 }
             }
         });
-        $('body').on('change', '.related-widget-wrapper select', function(e) {
-            const event = $.Event('django:update-related');
-            $(this).trigger(event);
+        Rs.('body').on('change', '.related-widget-wrapper select', function(e) {
+            const event = Rs..Event('django:update-related');
+            Rs.(this).trigger(event);
             if (!event.isDefaultPrevented()) {
                 updateRelatedObjectLinks(this);
             }
         });
-        $('.related-widget-wrapper select').trigger('change');
-        $('body').on('click', '.related-lookup', function(e) {
+        Rs.('.related-widget-wrapper select').trigger('change');
+        Rs.('body').on('click', '.related-lookup', function(e) {
             e.preventDefault();
-            const event = $.Event('django:lookup-related');
-            $(this).trigger(event);
+            const event = Rs..Event('django:lookup-related');
+            Rs.(this).trigger(event);
             if (!event.isDefaultPrevented()) {
                 showRelatedObjectLookupPopup(this);
             }

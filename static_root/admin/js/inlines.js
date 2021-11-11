@@ -17,16 +17,16 @@
  */
 'use strict';
 {
-    const $ = django.jQuery;
-    $.fn.formset = function(opts) {
-        const options = $.extend({}, $.fn.formset.defaults, opts);
-        const $this = $(this);
-        const $parent = $this.parent();
+    const Rs. = django.jQuery;
+    Rs..fn.formset = function(opts) {
+        const options = Rs..extend({}, Rs..fn.formset.defaults, opts);
+        const Rs.this = Rs.(this);
+        const Rs.parent = Rs.this.parent();
         const updateElementIndex = function(el, prefix, ndx) {
             const id_regex = new RegExp("(" + prefix + "-(\\d+|__prefix__))");
             const replacement = prefix + "-" + ndx;
-            if ($(el).prop("for")) {
-                $(el).prop("for", $(el).prop("for").replace(id_regex, replacement));
+            if (Rs.(el).prop("for")) {
+                Rs.(el).prop("for", Rs.(el).prop("for").replace(id_regex, replacement));
             }
             if (el.id) {
                 el.id = el.id.replace(id_regex, replacement);
@@ -35,10 +35,10 @@
                 el.name = el.name.replace(id_regex, replacement);
             }
         };
-        const totalForms = $("#id_" + options.prefix + "-TOTAL_FORMS").prop("autocomplete", "off");
+        const totalForms = Rs.("#id_" + options.prefix + "-TOTAL_FORMS").prop("autocomplete", "off");
         let nextIndex = parseInt(totalForms.val(), 10);
-        const maxForms = $("#id_" + options.prefix + "-MAX_NUM_FORMS").prop("autocomplete", "off");
-        const minForms = $("#id_" + options.prefix + "-MIN_NUM_FORMS").prop("autocomplete", "off");
+        const maxForms = Rs.("#id_" + options.prefix + "-MAX_NUM_FORMS").prop("autocomplete", "off");
+        const minForms = Rs.("#id_" + options.prefix + "-MIN_NUM_FORMS").prop("autocomplete", "off");
         let addButton;
 
         /**
@@ -46,16 +46,16 @@
          */
         const addInlineAddButton = function() {
             if (addButton === null) {
-                if ($this.prop("tagName") === "TR") {
+                if (Rs.this.prop("tagName") === "TR") {
                     // If forms are laid out as table rows, insert the
                     // "add" button in a new table row:
-                    const numCols = $this.eq(-1).children().length;
-                    $parent.append('<tr class="' + options.addCssClass + '"><td colspan="' + numCols + '"><a href="#">' + options.addText + "</a></tr>");
-                    addButton = $parent.find("tr:last a");
+                    const numCols = Rs.this.eq(-1).children().length;
+                    Rs.parent.append('<tr class="' + options.addCssClass + '"><td colspan="' + numCols + '"><a href="#">' + options.addText + "</a></tr>");
+                    addButton = Rs.parent.find("tr:last a");
                 } else {
                     // Otherwise, insert it immediately after the last form:
-                    $this.filter(":last").after('<div class="' + options.addCssClass + '"><a href="#">' + options.addText + "</a></div>");
-                    addButton = $this.filter(":last").next().find("a");
+                    Rs.this.filter(":last").after('<div class="' + options.addCssClass + '"><a href="#">' + options.addText + "</a></div>");
+                    addButton = Rs.this.filter(":last").next().find("a");
                 }
             }
             addButton.on('click', addInlineClickHandler);
@@ -63,7 +63,7 @@
 
         const addInlineClickHandler = function(e) {
             e.preventDefault();
-            const template = $("#" + options.prefix + "-empty");
+            const template = Rs.("#" + options.prefix + "-empty");
             const row = template.clone(true);
             row.removeClass(options.emptyCssClass)
                 .addClass(options.formCssClass)
@@ -73,9 +73,9 @@
                 updateElementIndex(this, options.prefix, totalForms.val());
             });
             // Insert the new form when it has been fully edited.
-            row.insertBefore($(template));
+            row.insertBefore(Rs.(template));
             // Update number of total forms.
-            $(totalForms).val(parseInt(totalForms.val(), 10) + 1);
+            Rs.(totalForms).val(parseInt(totalForms.val(), 10) + 1);
             nextIndex += 1;
             // Hide the add button if there's a limit and it's been reached.
             if ((maxForms.val() !== '') && (maxForms.val() - totalForms.val()) <= 0) {
@@ -88,7 +88,7 @@
             if (options.added) {
                 options.added(row);
             }
-            $(document).trigger('formset:added', [row, options.prefix]);
+            Rs.(document).trigger('formset:added', [row, options.prefix]);
         };
 
         /**
@@ -115,7 +115,7 @@
 
         const inlineDeleteHandler = function(e1) {
             e1.preventDefault();
-            const deleteButton = $(e1.target);
+            const deleteButton = Rs.(e1.target);
             const row = deleteButton.closest('.' + options.formCssClass);
             const inlineGroup = row.closest('.inline-group');
             // Remove the parent form containing this button,
@@ -130,10 +130,10 @@
             if (options.removed) {
                 options.removed(row);
             }
-            $(document).trigger('formset:removed', [row, options.prefix]);
+            Rs.(document).trigger('formset:removed', [row, options.prefix]);
             // Update the TOTAL_FORMS form count.
-            const forms = $("." + options.formCssClass);
-            $("#id_" + options.prefix + "-TOTAL_FORMS").val(forms.length);
+            const forms = Rs.("." + options.formCssClass);
+            Rs.("#id_" + options.prefix + "-TOTAL_FORMS").val(forms.length);
             // Show add button again once below maximum number.
             if ((maxForms.val() === '') || (maxForms.val() - forms.length) > 0) {
                 addButton.parent().show();
@@ -147,8 +147,8 @@
                 updateElementIndex(this, options.prefix, i);
             };
             for (i = 0, formCount = forms.length; i < formCount; i++) {
-                updateElementIndex($(forms).get(i), options.prefix, i);
-                $(forms.get(i)).find("*").each(updateElementCallback);
+                updateElementIndex(Rs.(forms).get(i), options.prefix, i);
+                Rs.(forms.get(i)).find("*").each(updateElementCallback);
             }
         };
 
@@ -160,15 +160,15 @@
             }
         };
 
-        $this.each(function(i) {
-            $(this).not("." + options.emptyCssClass).addClass(options.formCssClass);
+        Rs.this.each(function(i) {
+            Rs.(this).not("." + options.emptyCssClass).addClass(options.formCssClass);
         });
 
         // Create the delete buttons for all unsaved inlines:
-        $this.filter('.' + options.formCssClass + ':not(.has_original):not(.' + options.emptyCssClass + ')').each(function() {
-            addInlineDeleteButton($(this));
+        Rs.this.filter('.' + options.formCssClass + ':not(.has_original):not(.' + options.emptyCssClass + ')').each(function() {
+            addInlineDeleteButton(Rs.(this));
         });
-        toggleDeleteButtonVisibility($this);
+        toggleDeleteButtonVisibility(Rs.this);
 
         // Create the add button, initially hidden.
         addButton = options.addButton;
@@ -177,7 +177,7 @@
         // Show the add button if allowed to add more items.
         // Note that max_num = None translates to a blank string.
         const showAddButton = maxForms.val() === '' || (maxForms.val() - totalForms.val()) > 0;
-        if ($this.length && showAddButton) {
+        if (Rs.this.length && showAddButton) {
             addButton.parent().show();
         } else {
             addButton.parent().hide();
@@ -187,7 +187,7 @@
     };
 
     /* Setup plugin defaults */
-    $.fn.formset.defaults = {
+    Rs..fn.formset.defaults = {
         prefix: "form", // The form prefix for your django formset
         addText: "add another", // Text for the add link
         deleteText: "remove", // Text for the delete link
@@ -202,13 +202,13 @@
 
 
     // Tabular inlines ---------------------------------------------------------
-    $.fn.tabularFormset = function(selector, options) {
-        const $rows = $(this);
+    Rs..fn.tabularFormset = function(selector, options) {
+        const Rs.rows = Rs.(this);
 
         const reinitDateTimeShortCuts = function() {
             // Reinitialize the calendar and clock widgets by force
             if (typeof DateTimeShortcuts !== "undefined") {
-                $(".datetimeshortcuts").remove();
+                Rs.(".datetimeshortcuts").remove();
                 DateTimeShortcuts.init();
             }
         };
@@ -217,11 +217,11 @@
             // If any SelectFilter widgets are a part of the new form,
             // instantiate a new SelectFilter instance for it.
             if (typeof SelectFilter !== 'undefined') {
-                $('.selectfilter').each(function(index, value) {
+                Rs.('.selectfilter').each(function(index, value) {
                     const namearr = value.name.split('-');
                     SelectFilter.init(value.id, namearr[namearr.length - 1], false);
                 });
-                $('.selectfilterstacked').each(function(index, value) {
+                Rs.('.selectfilterstacked').each(function(index, value) {
                     const namearr = value.name.split('-');
                     SelectFilter.init(value.id, namearr[namearr.length - 1], true);
                 });
@@ -230,11 +230,11 @@
 
         const initPrepopulatedFields = function(row) {
             row.find('.prepopulated_field').each(function() {
-                const field = $(this),
+                const field = Rs.(this),
                     input = field.find('input, select, textarea'),
                     dependency_list = input.data('dependency_list') || [],
                     dependencies = [];
-                $.each(dependency_list, function(i, field_name) {
+                Rs..each(dependency_list, function(i, field_name) {
                     dependencies.push('#' + row.find('.field-' + field_name).find('input, select, textarea').attr('id'));
                 });
                 if (dependencies.length) {
@@ -243,7 +243,7 @@
             });
         };
 
-        $rows.formset({
+        Rs.rows.formset({
             prefix: options.prefix,
             addText: options.addText,
             formCssClass: "dynamic-" + options.prefix,
@@ -258,23 +258,23 @@
             addButton: options.addButton
         });
 
-        return $rows;
+        return Rs.rows;
     };
 
     // Stacked inlines ---------------------------------------------------------
-    $.fn.stackedFormset = function(selector, options) {
-        const $rows = $(this);
+    Rs..fn.stackedFormset = function(selector, options) {
+        const Rs.rows = Rs.(this);
         const updateInlineLabel = function(row) {
-            $(selector).find(".inline_label").each(function(i) {
+            Rs.(selector).find(".inline_label").each(function(i) {
                 const count = i + 1;
-                $(this).html($(this).html().replace(/(#\d+)/g, "#" + count));
+                Rs.(this).html(Rs.(this).html().replace(/(#\d+)/g, "#" + count));
             });
         };
 
         const reinitDateTimeShortCuts = function() {
             // Reinitialize the calendar and clock widgets by force, yuck.
             if (typeof DateTimeShortcuts !== "undefined") {
-                $(".datetimeshortcuts").remove();
+                Rs.(".datetimeshortcuts").remove();
                 DateTimeShortcuts.init();
             }
         };
@@ -282,11 +282,11 @@
         const updateSelectFilter = function() {
             // If any SelectFilter widgets were added, instantiate a new instance.
             if (typeof SelectFilter !== "undefined") {
-                $(".selectfilter").each(function(index, value) {
+                Rs.(".selectfilter").each(function(index, value) {
                     const namearr = value.name.split('-');
                     SelectFilter.init(value.id, namearr[namearr.length - 1], false);
                 });
-                $(".selectfilterstacked").each(function(index, value) {
+                Rs.(".selectfilterstacked").each(function(index, value) {
                     const namearr = value.name.split('-');
                     SelectFilter.init(value.id, namearr[namearr.length - 1], true);
                 });
@@ -295,11 +295,11 @@
 
         const initPrepopulatedFields = function(row) {
             row.find('.prepopulated_field').each(function() {
-                const field = $(this),
+                const field = Rs.(this),
                     input = field.find('input, select, textarea'),
                     dependency_list = input.data('dependency_list') || [],
                     dependencies = [];
-                $.each(dependency_list, function(i, field_name) {
+                Rs..each(dependency_list, function(i, field_name) {
                     dependencies.push('#' + row.find('.form-row .field-' + field_name).find('input, select, textarea').attr('id'));
                 });
                 if (dependencies.length) {
@@ -308,7 +308,7 @@
             });
         };
 
-        $rows.formset({
+        Rs.rows.formset({
             prefix: options.prefix,
             addText: options.addText,
             formCssClass: "dynamic-" + options.prefix,
@@ -325,22 +325,22 @@
             addButton: options.addButton
         });
 
-        return $rows;
+        return Rs.rows;
     };
 
-    $(document).ready(function() {
-        $(".js-inline-admin-formset").each(function() {
-            const data = $(this).data(),
+    Rs.(document).ready(function() {
+        Rs.(".js-inline-admin-formset").each(function() {
+            const data = Rs.(this).data(),
                 inlineOptions = data.inlineFormset;
             let selector;
             switch(data.inlineType) {
             case "stacked":
                 selector = inlineOptions.name + "-group .inline-related";
-                $(selector).stackedFormset(selector, inlineOptions.options);
+                Rs.(selector).stackedFormset(selector, inlineOptions.options);
                 break;
             case "tabular":
                 selector = inlineOptions.name + "-group .tabular.inline-related tbody:first > tr.form-row";
-                $(selector).tabularFormset(selector, inlineOptions.options);
+                Rs.(selector).tabularFormset(selector, inlineOptions.options);
                 break;
             }
         });

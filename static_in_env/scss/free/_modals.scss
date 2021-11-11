@@ -14,12 +14,12 @@ body {
 // General styles
 .modal-dialog {
   .modal-content {
-    box-shadow: $z-depth-1-half;
+    box-shadow: Rs.z-depth-1-half;
     border: 0;
-    border-radius: $border-radius-base;
+    border-radius: Rs.border-radius-base;
     .modal-header {
-      border-top-left-radius: $border-radius-base;
-      border-top-right-radius: $border-radius-base;
+      border-top-left-radius: Rs.border-radius-base;
+      border-top-right-radius: Rs.border-radius-base;
     }
   }
   // Cascading modals
@@ -28,58 +28,62 @@ body {
     .close {
       opacity: 1;
       text-shadow: none;
-      color: $white-base;
+      color: Rs.white-base;
       outline: 0;
     }
     // Cascading header
     .modal-header {
-      box-shadow: $z-depth-1-half;
-      margin: $cascading-modal-margin-top $cascading-modal-margin-right $cascading-modal-margin-bottom $cascading-modal-margin-left;
+      box-shadow: Rs.z-depth-1-half;
+      margin: Rs.cascading-modal-margin-top Rs.cascading-modal-margin-right
+        Rs.cascading-modal-margin-bottom Rs.cascading-modal-margin-left;
       border: none;
-      border-radius: $border-radius-base;
-      padding: $cascading-modal-padding;
+      border-radius: Rs.border-radius-base;
+      padding: Rs.cascading-modal-padding;
       text-align: center;
       .close {
-        margin-right: $cascading-modal-close-margin-right;
+        margin-right: Rs.cascading-modal-close-margin-right;
       }
       .title {
         margin-bottom: 0;
         width: 100%;
-        font-size: $cascading-modal-font-size;
-        .fas, .fab, .far {
-          margin-right: $cascading-modal-fa-margin-right;
+        font-size: Rs.cascading-modal-font-size;
+        .fas,
+        .fab,
+        .far {
+          margin-right: Rs.cascading-modal-fa-margin-right;
         }
       }
       .social-buttons {
-        margin-top: $cascading-modal-social-margin-top;
+        margin-top: Rs.cascading-modal-social-margin-top;
         a {
-          font-size: $cascading-modal-a-font-size;
+          font-size: Rs.cascading-modal-a-font-size;
         }
       }
     }
     // Cascading tabs nav
     .modal-c-tabs {
       .md-tabs {
-        box-shadow: $z-depth-1;
-        margin: $cascading-modal-tabs-margin-top $cascading-modal-tabs-margin-x 0 $cascading-modal-tabs-margin-x;
-      	display: flex;
-      	li {
-      	  flex: 1;
-      	  a {
-      	    text-align: center;
-      	  }
-      	}
+        box-shadow: Rs.z-depth-1;
+        margin: Rs.cascading-modal-tabs-margin-top
+          Rs.cascading-modal-tabs-margin-x 0 Rs.cascading-modal-tabs-margin-x;
+        display: flex;
+        li {
+          flex: 1;
+          a {
+            text-align: center;
+          }
+        }
       }
       .tab-content {
-        padding: $cascading-modal-tabs-padding-top 0 0 0;
+        padding: Rs.cascading-modal-tabs-padding-top 0 0 0;
       }
       //.md-tabs {
-      //  border-radius: $md-card-border-radius;
+      //  border-radius: Rs.md-card-border-radius;
       //  .nav-item {
       //    .nav-link {
-      //      border-radius: $md-card-border-radius;
+      //      border-radius: Rs.md-card-border-radius;
       //      background-color: inherit;
-      //      color: $white-base;
+      //      color: Rs.white-base;
       //    }
       //  }
       //}
@@ -87,24 +91,25 @@ body {
     // Footer customization
     .modal-body,
     .modal-footer {
-      padding-left: $modal-body-padding-left;
-      padding-right: $modal-body-padding-right;
-      color: $grey-darken-2;
+      padding-left: Rs.modal-body-padding-left;
+      padding-right: Rs.modal-body-padding-right;
+      color: Rs.grey-darken-2;
       .additional-option {
-        margin-top: $modal-body-margin-top;
+        margin-top: Rs.modal-body-margin-top;
         text-align: center;
       }
     }
     // Cascading avatar
     &.modal-avatar {
-      margin-top: $modal-avatar-margin-top;
+      margin-top: Rs.modal-avatar-margin-top;
       .modal-header {
         box-shadow: none;
         @extend .img-fluid;
-        margin: $modal-avatar-header-margin-top 0 $modal-avatar-header-margin-bottom;
+        margin: Rs.modal-avatar-header-margin-top 0
+          Rs.modal-avatar-header-margin-bottom;
         img {
-          width: $modal-avatar-img-width;
-          box-shadow: $z-depth-2;
+          width: Rs.modal-avatar-img-width;
+          box-shadow: Rs.z-depth-2;
           margin-left: auto;
           margin-right: auto;
         }
@@ -115,39 +120,45 @@ body {
   &.modal-notify {
     .heading {
       margin: 0;
-      padding: $modal-notify-heading-padding;
-      font-size: $modal-notify-font-size;
-      color: $white-base;
+      padding: Rs.modal-notify-heading-padding;
+      font-size: Rs.modal-notify-font-size;
+      color: Rs.white-base;
     }
     .modal-header {
-      box-shadow: $z-depth-1;
+      box-shadow: Rs.z-depth-1;
       border: 0;
     }
     .close {
       opacity: 1;
     }
     .modal-body {
-      padding: $modal-notify-body-padding;
-      color: $grey-darken-2;
+      padding: Rs.modal-notify-body-padding;
+      color: Rs.grey-darken-2;
     }
-    @each $name, $color in $basic {
-      &.modal-#{$name}  {
+    @each Rs.name, Rs.color in Rs.basic {
+      &.modal-#{Rs.name} {
         .modal-header {
-          background-color: $color;
+          background-color: Rs.color;
         }
-        .fas, .fab, .far {
-          color: $color;
+        .fas,
+        .fab,
+        .far {
+          color: Rs.color;
         }
         .badge {
-          background-color: $color;
+          background-color: Rs.color;
         }
         .btn {
-          .fas, .fab, .far {
+          .fas,
+          .fab,
+          .far {
             color: #fff;
           }
-          &.btn-outline-#{$name} {
-            .fas, .fab, .far {
-              color: $color;
+          &.btn-outline-#{Rs.name} {
+            .fas,
+            .fab,
+            .far {
+              color: Rs.color;
             }
           }
         }
@@ -174,38 +185,38 @@ body {
         bottom: 0;
       }
       &.modal-top-left {
-        top: $modal-distance;
-        left: $modal-distance;
+        top: Rs.modal-distance;
+        left: Rs.modal-distance;
       }
       &.modal-top-right {
-        top: $modal-distance;
-        right: $modal-distance;
+        top: Rs.modal-distance;
+        right: Rs.modal-distance;
       }
       &.modal-bottom-left {
-        bottom: $modal-distance;
-        left: $modal-distance;
+        bottom: Rs.modal-distance;
+        left: Rs.modal-distance;
       }
       &.modal-bottom-right {
-        bottom: $modal-distance;
-        right: $modal-distance;
+        bottom: Rs.modal-distance;
+        right: Rs.modal-distance;
       }
     }
   }
   &.fade {
     &.top:not(.show) .modal-dialog {
-      transform: $modal-fade-top-transform;
+      transform: Rs.modal-fade-top-transform;
     }
     &.left:not(.show) .modal-dialog {
-      transform: $modal-fade-left-transform;
+      transform: Rs.modal-fade-left-transform;
     }
     &.right:not(.show) .modal-dialog {
-      transform: $modal-fade-right-transform;
+      transform: Rs.modal-fade-right-transform;
     }
     &.bottom:not(.show) .modal-dialog {
-      transform: $modal-fade-bottom-transform;
+      transform: Rs.modal-fade-bottom-transform;
     }
   }
-  @media (min-width: $medium-screen) {
+  @media (min-width: Rs.medium-screen) {
     &.modal-scrolling {
       position: relative;
       .modal-dialog {
@@ -240,7 +251,7 @@ body {
       position: absolute;
       display: flex;
       margin: 0;
-      width: $modal-width;
+      width: Rs.modal-width;
       min-height: 100%;
       height: auto;
       min-height: 100%;
@@ -266,22 +277,22 @@ body {
       &.modal-lg {
         width: 90%;
         max-width: 90%;
-        @media (min-width: $medium-screen) {
-          width: $modal-full-height-medium-screen;
-          max-width: $modal-full-height-medium-screen;
+        @media (min-width: Rs.medium-screen) {
+          width: Rs.modal-full-height-medium-screen;
+          max-width: Rs.modal-full-height-medium-screen;
         }
-        @media (min-width: $large-screen) {
-          width: $modal-full-height-large-screen;
-          max-width: $modal-full-height-large-screen;
+        @media (min-width: Rs.large-screen) {
+          width: Rs.modal-full-height-large-screen;
+          max-width: Rs.modal-full-height-large-screen;
         }
       }
     }
     .modal-side {
       position: absolute;
-      bottom: $modal-distance;
-      right: $modal-distance;
+      bottom: Rs.modal-distance;
+      right: Rs.modal-distance;
       margin: 0;
-      width: $modal-width;
+      width: Rs.modal-width;
     }
   }
 }

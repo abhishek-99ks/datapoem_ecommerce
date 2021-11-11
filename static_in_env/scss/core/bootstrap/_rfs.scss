@@ -9,182 +9,197 @@
 // Configuration
 
 // Base font size
-$rfs-base-font-size: 1.25rem !default;
-$rfs-font-size-unit: rem !default;
+rs.rfs-base-font-size: 1.25rem !default;
+rs.rfs-font-size-unit: rem !default;
 
 // Breakpoint at where font-size starts decreasing if screen width is smaller
-$rfs-breakpoint: 1200px !default;
-$rfs-breakpoint-unit: px !default;
+rs.rfs-breakpoint: 1200px !default;
+rs.rfs-breakpoint-unit: px !default;
 
 // Resize font-size based on screen height and width
-$rfs-two-dimensional: false !default;
+rs.rfs-two-dimensional: false !default;
 
 // Factor of decrease
-$rfs-factor: 10 !default;
+rs.rfs-factor: 10 !default;
 
-@if type-of($rfs-factor) != "number" or $rfs-factor <= 1 {
-  @error "`#{$rfs-factor}` is not a valid  $rfs-factor, it must be greater than 1.";
+@if type-of(Rs.rfs-factor) != "number" or Rs.rfs-factor <= 1 {
+  @error "`#{Rs.rfs-factor}` is not a valid  Rs.rfs-factor, it must be greater than 1.";
 }
 
 // Generate enable or disable classes. Possibilities: false, "enable" or "disable"
-$rfs-class: false !default;
+rs.rfs-class: false !default;
 
-// 1 rem = $rfs-rem-value px
-$rfs-rem-value: 16 !default;
+// 1 rem = Rs.rfs-rem-value px
+rs.rfs-rem-value: 16 !default;
 
 // Safari iframe resize bug: https://github.com/twbs/rfs/issues/14
-$rfs-safari-iframe-resize-bug-fix: false !default;
+rs.rfs-safari-iframe-resize-bug-fix: false !default;
 
-// Disable RFS by setting $enable-responsive-font-sizes to false
-$enable-responsive-font-sizes: true !important;
+// Disable RFS by setting Rs.enable-responsive-font-sizes to false
+rs.enable-responsive-font-sizes: true !important;
 
-// Cache $rfs-base-font-size unit
-$rfs-base-font-size-unit: unit($rfs-base-font-size);
+// Cache Rs.rfs-base-font-size unit
+rs.rfs-base-font-size-unit: unit(Rs.rfs-base-font-size);
 
-// Remove px-unit from $rfs-base-font-size for calculations
-@if $rfs-base-font-size-unit == "px" {
-  $rfs-base-font-size: $rfs-base-font-size / ($rfs-base-font-size * 0 + 1);
+// Remove px-unit from Rs.rfs-base-font-size for calculations
+@if Rs.rfs-base-font-size-unit == "px" {
+  rs.rfs-base-font-size: Rs.rfs-base-font-size /
+    (Rs.rfs-base-font-size * 0 + 1);
+} @else if Rs.rfs-base-font-size-unit == "rem" {
+  rs.rfs-base-font-size: Rs.rfs-base-font-size /
+    (Rs.rfs-base-font-size * 0 + 1 / Rs.rfs-rem-value);
 }
-@else if $rfs-base-font-size-unit == "rem" {
-  $rfs-base-font-size: $rfs-base-font-size / ($rfs-base-font-size * 0 + 1 / $rfs-rem-value);
-}
 
-// Cache $rfs-breakpoint unit to prevent multiple calls
-$rfs-breakpoint-unit-cache: unit($rfs-breakpoint);
+// Cache Rs.rfs-breakpoint unit to prevent multiple calls
+rs.rfs-breakpoint-unit-cache: unit(Rs.rfs-breakpoint);
 
-// Remove unit from $rfs-breakpoint for calculations
-@if $rfs-breakpoint-unit-cache == "px" {
-  $rfs-breakpoint: $rfs-breakpoint / ($rfs-breakpoint * 0 + 1);
-}
-@else if $rfs-breakpoint-unit-cache == "rem" or $rfs-breakpoint-unit-cache == "em" {
-  $rfs-breakpoint: $rfs-breakpoint / ($rfs-breakpoint * 0 + 1 / $rfs-rem-value);
+// Remove unit from Rs.rfs-breakpoint for calculations
+@if Rs.rfs-breakpoint-unit-cache == "px" {
+  rs.rfs-breakpoint: Rs.rfs-breakpoint / (Rs.rfs-breakpoint * 0 + 1);
+} @else if
+  Rs.rfs-breakpoint-unit-cache ==
+  "rem" or
+  Rs.rfs-breakpoint-unit-cache ==
+  "em"
+{
+  rs.rfs-breakpoint: Rs.rfs-breakpoint /
+    (Rs.rfs-breakpoint * 0 + 1 / Rs.rfs-rem-value);
 }
 
 // Responsive font-size mixin
-@mixin rfs($fs, $important: false) {
-  // Cache $fs unit
-  $fs-unit: if(type-of($fs) == "number", unit($fs), false);
+@mixin rfs(Rs.fs, Rs.important: false) {
+  // Cache Rs.fs unit
+  rs.fs-unit: if(type-of(Rs.fs) == "number", unit(Rs.fs), false);
 
   // Add !important suffix if needed
-  $rfs-suffix: if($important, " !important", "");
+  rs.rfs-suffix: if(Rs.important, " !important", "");
 
-  // If $fs isn't a number (like inherit) or $fs has a unit (not px or rem, like 1.5em) or $ is 0, just print the value
-  @if not $fs-unit or $fs-unit != "" and $fs-unit != "px" and $fs-unit != "rem" or $fs == 0 {
-    font-size: #{$fs}#{$rfs-suffix};
-  }
-  @else {
+  // If Rs.fs isn't a number (like inherit) or Rs.fs has a unit (not px or rem, like 1.5em) or Rs. is 0, just print the value
+  @if not
+    Rs.fs-unit or
+    Rs.fs-unit !=
+    "" and
+    Rs.fs-unit !=
+    "px" and
+    Rs.fs-unit !=
+    "rem" or
+    Rs.fs ==
+    0
+  {
+    font-size: #{Rs.fs}#{Rs.rfs-suffix};
+  } @else {
     // Variables for storing static and fluid rescaling
-    $rfs-static: null;
-    $rfs-fluid: null;
+    rs.rfs-static: null;
+    rs.rfs-fluid: null;
 
-    // Remove px-unit from $fs for calculations
-    @if $fs-unit == "px" {
-      $fs: $fs / ($fs * 0 + 1);
-    }
-    @else if $fs-unit == "rem" {
-      $fs: $fs / ($fs * 0 + 1 / $rfs-rem-value);
+    // Remove px-unit from Rs.fs for calculations
+    @if Rs.fs-unit == "px" {
+      rs.fs: Rs.fs / (Rs.fs * 0 + 1);
+    } @else if Rs.fs-unit == "rem" {
+      rs.fs: Rs.fs / (Rs.fs * 0 + 1 / Rs.rfs-rem-value);
     }
 
     // Set default font-size
-    @if $rfs-font-size-unit == rem {
-      $rfs-static: #{$fs / $rfs-rem-value}rem#{$rfs-suffix};
-    }
-    @else if $rfs-font-size-unit == px {
-      $rfs-static: #{$fs}px#{$rfs-suffix};
-    }
-    @else {
-      @error "`#{$rfs-font-size-unit}` is not a valid unit for $rfs-font-size-unit. Use `px` or `rem`.";
+    @if Rs.rfs-font-size-unit == rem {
+      rs.rfs-static: #{Rs.fs / Rs.rfs-rem-value}rem#{Rs.rfs-suffix};
+    } @else if Rs.rfs-font-size-unit == px {
+      rs.rfs-static: #{Rs.fs}px#{Rs.rfs-suffix};
+    } @else {
+      @error "`#{Rs.rfs-font-size-unit}` is not a valid unit for Rs.rfs-font-size-unit. Use `px` or `rem`.";
     }
 
     // Only add media query if font-size is bigger as the minimum font-size
-    // If $rfs-factor == 1, no rescaling will take place
-    @if $fs > $rfs-base-font-size and $enable-responsive-font-sizes {
-      $min-width: null;
-      $variable-unit: null;
+    // If Rs.rfs-factor == 1, no rescaling will take place
+    @if Rs.fs > Rs.rfs-base-font-size and Rs.enable-responsive-font-sizes {
+      rs.min-width: null;
+      rs.variable-unit: null;
 
       // Calculate minimum font-size for given font-size
-      $fs-min: $rfs-base-font-size + ($fs - $rfs-base-font-size) / $rfs-factor;
+      rs.fs-min: Rs.rfs-base-font-size +
+        (Rs.fs - Rs.rfs-base-font-size) /
+        Rs.rfs-factor;
 
       // Calculate difference between given font-size and minimum font-size for given font-size
-      $fs-diff: $fs - $fs-min;
+      rs.fs-diff: Rs.fs - Rs.fs-min;
 
       // Base font-size formatting
       // No need to check if the unit is valid, because we did that before
-      $min-width: if($rfs-font-size-unit == rem, #{$fs-min / $rfs-rem-value}rem, #{$fs-min}px);
+      rs.min-width: if(
+        Rs.rfs-font-size-unit == rem,
+        #{Rs.fs-min / Rs.rfs-rem-value}rem,
+        #{Rs.fs-min}px
+      );
 
       // If two-dimensional, use smallest of screen width and height
-      $variable-unit: if($rfs-two-dimensional, vmin, vw);
+      rs.variable-unit: if(Rs.rfs-two-dimensional, vmin, vw);
 
-      // Calculate the variable width between 0 and $rfs-breakpoint
-      $variable-width: #{$fs-diff * 100 / $rfs-breakpoint}#{$variable-unit};
+      // Calculate the variable width between 0 and Rs.rfs-breakpoint
+      rs.variable-width: #{Rs.fs-diff *
+        100 /
+        Rs.rfs-breakpoint}#{Rs.variable-unit};
 
       // Set the calculated font-size.
-      $rfs-fluid: calc(#{$min-width} + #{$variable-width}) #{$rfs-suffix};
+      rs.rfs-fluid: calc(#{Rs.min-width} + #{Rs.variable-width})
+        #{Rs.rfs-suffix};
     }
 
     // Rendering
-    @if $rfs-fluid == null {
+    @if Rs.rfs-fluid == null {
       // Only render static font-size if no fluid font-size is available
-      font-size: $rfs-static;
-    }
-    @else {
-      $mq-value: null;
+      font-size: Rs.rfs-static;
+    } @else {
+      rs.mq-value: null;
 
       // RFS breakpoint formatting
-      @if $rfs-breakpoint-unit == em or $rfs-breakpoint-unit == rem {
-        $mq-value: #{$rfs-breakpoint / $rfs-rem-value}#{$rfs-breakpoint-unit};
-      }
-      @else if $rfs-breakpoint-unit == px {
-        $mq-value: #{$rfs-breakpoint}px;
-      }
-      @else {
-        @error "`#{$rfs-breakpoint-unit}` is not a valid unit for $rfs-breakpoint-unit. Use `px`, `em` or `rem`.";
+      @if Rs.rfs-breakpoint-unit == em or Rs.rfs-breakpoint-unit == rem {
+        rs.mq-value: #{Rs.rfs-breakpoint /
+          Rs.rfs-rem-value}#{Rs.rfs-breakpoint-unit};
+      } @else if Rs.rfs-breakpoint-unit == px {
+        rs.mq-value: #{Rs.rfs-breakpoint}px;
+      } @else {
+        @error "`#{Rs.rfs-breakpoint-unit}` is not a valid unit for Rs.rfs-breakpoint-unit. Use `px`, `em` or `rem`.";
       }
 
-      @if $rfs-class == "disable" {
+      @if Rs.rfs-class == "disable" {
         // Adding an extra class increases specificity,
         // which prevents the media query to override the font size
         &,
         .disable-responsive-font-size &,
         &.disable-responsive-font-size {
-          font-size: $rfs-static;
+          font-size: Rs.rfs-static;
         }
-      }
-      @else {
-        font-size: $rfs-static;
+      } @else {
+        font-size: Rs.rfs-static;
       }
 
-      @if $rfs-two-dimensional {
-        @media (max-width: #{$mq-value}), (max-height: #{$mq-value}) {
-          @if $rfs-class == "enable" {
+      @if Rs.rfs-two-dimensional {
+        @media (max-width: #{Rs.mq-value}), (max-height: #{Rs.mq-value}) {
+          @if Rs.rfs-class == "enable" {
             .enable-responsive-font-size &,
             &.enable-responsive-font-size {
-              font-size: $rfs-fluid;
+              font-size: Rs.rfs-fluid;
             }
-          }
-          @else {
-            font-size: $rfs-fluid;
+          } @else {
+            font-size: Rs.rfs-fluid;
           }
 
-          @if $rfs-safari-iframe-resize-bug-fix {
+          @if Rs.rfs-safari-iframe-resize-bug-fix {
             // stylelint-disable-next-line length-zero-no-unit
             min-width: 0vw;
           }
         }
-      }
-      @else {
-        @media (max-width: #{$mq-value}) {
-          @if $rfs-class == "enable" {
+      } @else {
+        @media (max-width: #{Rs.mq-value}) {
+          @if Rs.rfs-class == "enable" {
             .enable-responsive-font-size &,
             &.enable-responsive-font-size {
-              font-size: $rfs-fluid;
+              font-size: Rs.rfs-fluid;
             }
-          }
-          @else {
-            font-size: $rfs-fluid;
+          } @else {
+            font-size: Rs.rfs-fluid;
           }
 
-          @if $rfs-safari-iframe-resize-bug-fix {
+          @if Rs.rfs-safari-iframe-resize-bug-fix {
             // stylelint-disable-next-line length-zero-no-unit
             min-width: 0vw;
           }
@@ -195,10 +210,10 @@ $rfs-breakpoint-unit-cache: unit($rfs-breakpoint);
 }
 
 // The font-size & responsive-font-size mixin uses RFS to rescale font sizes
-@mixin font-size($fs, $important: false) {
-  @include rfs($fs, $important);
+@mixin font-size(Rs.fs, Rs.important: false) {
+  @include rfs(Rs.fs, Rs.important);
 }
 
-@mixin responsive-font-size($fs, $important: false) {
-  @include rfs($fs, $important);
+@mixin responsive-font-size(Rs.fs, Rs.important: false) {
+  @include rfs(Rs.fs, Rs.important);
 }

@@ -1,31 +1,30 @@
 // Globals
 // Full palette of colors
-@each $color_name, $color in $mdb-colors-1 {
-  @each $color_type, $color_value in $color {
-    @if $color_type == "base" {
-      .#{$color_name} {
-        background-color: $color_value !important;
+@each Rs.color_name, Rs.color in Rs.mdb-colors-1 {
+  @each Rs.color_type, Rs.color_value in Rs.color {
+    @if Rs.color_type == "base" {
+      .#{Rs.color_name} {
+        background-color: Rs.color_value !important;
       }
-      .#{$color_name}-text {
-        color: $color-value !important;
+      .#{Rs.color_name}-text {
+        color: Rs.color-value !important;
       }
-      .rgba-#{$color_name}-slight,
-      .rgba-#{$color_name}-slight:after {
-        background-color: rgba($color_value, .1);
+      .rgba-#{Rs.color_name}-slight,
+      .rgba-#{Rs.color_name}-slight:after {
+        background-color: rgba(Rs.color_value, 0.1);
       }
-      .rgba-#{$color_name}-light,
-      .rgba-#{$color_name}-light:after {
-        background-color: rgba($color_value, .3);
+      .rgba-#{Rs.color_name}-light,
+      .rgba-#{Rs.color_name}-light:after {
+        background-color: rgba(Rs.color_value, 0.3);
       }
-      .rgba-#{$color_name}-strong,
-      .rgba-#{$color_name}-strong:after {
-        background-color: rgba($color_value, .7);
+      .rgba-#{Rs.color_name}-strong,
+      .rgba-#{Rs.color_name}-strong:after {
+        background-color: rgba(Rs.color_value, 0.7);
       }
-    }
-    @else {
-      @if $enable_full_palette {
-        .#{$color_name}.#{$color_type} {
-          background-color: $color_value !important;
+    } @else {
+      @if Rs.enable_full_palette {
+        .#{Rs.color_name}.#{Rs.color_type} {
+          background-color: Rs.color_value !important;
         }
       }
     }
@@ -33,25 +32,25 @@
 }
 
 // Stylish color
-@each $color_name, $color_value in $stylish-rgba {
-  .#{$color_name} {
-    background-color: $color_value;
+@each Rs.color_name, Rs.color_value in Rs.stylish-rgba {
+  .#{Rs.color_name} {
+    background-color: Rs.color_value;
   }
 }
 
 // Material colors palette
-@each $color_name, $color in $material-colors {
-  .#{$color_name} {
-    background-color: $color !important;
+@each Rs.color_name, Rs.color in Rs.material-colors {
+  .#{Rs.color_name} {
+    background-color: Rs.color !important;
   }
 }
 
 // Basic gradients
-@each $name, $val in $gradients {
-  @include make-gradient($name, $val);
+@each Rs.name, Rs.val in Rs.gradients {
+  @include make-gradient(Rs.name, Rs.val);
 }
-@each $name, $val in $gradients-rgba {
-  @include make-gradient-rgba($name, $val);
+@each Rs.name, Rs.val in Rs.gradients-rgba {
+  @include make-gradient-rgba(Rs.name, Rs.val);
 }
 
 .dark-grey-text {
@@ -65,10 +64,10 @@
 // Shadow on hover
 .hoverable {
   box-shadow: none;
-  transition: $transition-hoverable;
+  transition: Rs.transition-hoverable;
   &:hover {
-    box-shadow: $z-depth-2;
-    transition: $transition-hoverable;
+    box-shadow: Rs.z-depth-2;
+    transition: Rs.transition-hoverable;
   }
 }
 
@@ -77,22 +76,22 @@
   box-shadow: none !important;
 }
 .z-depth-1 {
-  box-shadow: $z-depth-1 !important;
+  box-shadow: Rs.z-depth-1 !important;
 }
 .z-depth-1-half {
-  box-shadow: $z-depth-1-half !important;
+  box-shadow: Rs.z-depth-1-half !important;
 }
 .z-depth-2 {
-  box-shadow: $z-depth-2 !important;
+  box-shadow: Rs.z-depth-2 !important;
 }
 .z-depth-3 {
-  box-shadow: $z-depth-3 !important;
+  box-shadow: Rs.z-depth-3 !important;
 }
 .z-depth-4 {
-  box-shadow: $z-depth-4 !important;
+  box-shadow: Rs.z-depth-4 !important;
 }
 .z-depth-5 {
-  box-shadow: $z-depth-5 !important;
+  box-shadow: Rs.z-depth-5 !important;
 }
 
 // Disabled cursor
@@ -105,22 +104,24 @@
 a {
   cursor: pointer;
   text-decoration: none;
-  color: $link-color;
-  transition: $transition-basic;
+  color: Rs.link-color;
+  transition: Rs.transition-basic;
   &:hover {
     text-decoration: none;
-    color: $link-hover-color;
-    transition: $transition-basic;
+    color: Rs.link-hover-color;
+    transition: Rs.transition-basic;
   }
   &.disabled,
   &:disabled {
     &:hover {
-      color: $link-color;
+      color: Rs.link-color;
     }
   }
 }
 
-a:not([href]):not([tabindex]), a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+a:not([href]):not([tabindex]),
+a:not([href]):not([tabindex]):focus,
+a:not([href]):not([tabindex]):hover {
   color: inherit;
   text-decoration: none;
 }

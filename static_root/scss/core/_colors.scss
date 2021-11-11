@@ -1,870 +1,910 @@
 // Colors
-$mdb-color-lighten-5:  #d0d6e2 !default;
-$mdb-color-lighten-4:  #b1bace !default;
-$mdb-color-lighten-3:  #929fba !default;
-$mdb-color-lighten-2:  #7283a7 !default;
-$mdb-color-lighten-1:  #59698d !default;
-$mdb-color-base:       #45526e !default;
-$mdb-color-darken-1:   #3b465e !default;
-$mdb-color-darken-2:   #2e3951 !default;
-$mdb-color-darken-3:   #1c2a48 !default;
-$mdb-color-darken-4:   #1c2331 !default;
+rs.mdb-color-lighten-5: #d0d6e2 !default;
+rs.mdb-color-lighten-4: #b1bace !default;
+rs.mdb-color-lighten-3: #929fba !default;
+rs.mdb-color-lighten-2: #7283a7 !default;
+rs.mdb-color-lighten-1: #59698d !default;
+rs.mdb-color-base: #45526e !default;
+rs.mdb-color-darken-1: #3b465e !default;
+rs.mdb-color-darken-2: #2e3951 !default;
+rs.mdb-color-darken-3: #1c2a48 !default;
+rs.mdb-color-darken-4: #1c2331 !default;
 
-$red-lighten-5:  #ffebee !default;
-$red-lighten-4:  #ffcdd2 !default;
-$red-lighten-3:  #ef9a9a !default;
-$red-lighten-2:  #e57373 !default;
-$red-lighten-1:  #ef5350 !default;
-$red-base:       #f44336 !default;
-$red-darken-1:   #e53935 !default;
-$red-darken-2:   #d32f2f !default;
-$red-darken-3:   #c62828 !default;
-$red-darken-4:   #b71c1c !default;
-$red-accent-1:   #ff8a80 !default;
-$red-accent-2:   #ff5252 !default;
-$red-accent-3:   #ff1744 !default;
-$red-accent-4:   #d50000 !default;
+rs.red-lighten-5: #ffebee !default;
+rs.red-lighten-4: #ffcdd2 !default;
+rs.red-lighten-3: #ef9a9a !default;
+rs.red-lighten-2: #e57373 !default;
+rs.red-lighten-1: #ef5350 !default;
+rs.red-base: #f44336 !default;
+rs.red-darken-1: #e53935 !default;
+rs.red-darken-2: #d32f2f !default;
+rs.red-darken-3: #c62828 !default;
+rs.red-darken-4: #b71c1c !default;
+rs.red-accent-1: #ff8a80 !default;
+rs.red-accent-2: #ff5252 !default;
+rs.red-accent-3: #ff1744 !default;
+rs.red-accent-4: #d50000 !default;
 
-$pink-lighten-5:  #fce4ec !default;
-$pink-lighten-4:  #f8bbd0 !default;
-$pink-lighten-3:  #f48fb1 !default;
-$pink-lighten-2:  #f06292 !default;
-$pink-lighten-1:  #ec407a !default;
-$pink-base:       #e91e63 !default;
-$pink-darken-1:   #d81b60 !default;
-$pink-darken-2:   #c2185b !default;
-$pink-darken-3:   #ad1457 !default;
-$pink-darken-4:   #880e4f !default;
-$pink-accent-1:   #ff80ab !default;
-$pink-accent-2:   #ff4081 !default;
-$pink-accent-3:   #f50057 !default;
-$pink-accent-4:   #c51162 !default;
+rs.pink-lighten-5: #fce4ec !default;
+rs.pink-lighten-4: #f8bbd0 !default;
+rs.pink-lighten-3: #f48fb1 !default;
+rs.pink-lighten-2: #f06292 !default;
+rs.pink-lighten-1: #ec407a !default;
+rs.pink-base: #e91e63 !default;
+rs.pink-darken-1: #d81b60 !default;
+rs.pink-darken-2: #c2185b !default;
+rs.pink-darken-3: #ad1457 !default;
+rs.pink-darken-4: #880e4f !default;
+rs.pink-accent-1: #ff80ab !default;
+rs.pink-accent-2: #ff4081 !default;
+rs.pink-accent-3: #f50057 !default;
+rs.pink-accent-4: #c51162 !default;
 
-$purple-lighten-5:  #f3e5f5 !default;
-$purple-lighten-4:  #e1bee7 !default;
-$purple-lighten-3:  #ce93d8 !default;
-$purple-lighten-2:  #ba68c8 !default;
-$purple-lighten-1:  #ab47bc !default;
-$purple-base:       #9c27b0 !default;
-$purple-darken-1:   #8e24aa !default;
-$purple-darken-2:   #7b1fa2 !default;
-$purple-darken-3:   #6a1b9a !default;
-$purple-darken-4:   #4a148c !default;
-$purple-accent-1:   #ea80fc !default;
-$purple-accent-2:   #e040fb !default;
-$purple-accent-3:   #d500f9 !default;
-$purple-accent-4:   #aa00ff !default;
+rs.purple-lighten-5: #f3e5f5 !default;
+rs.purple-lighten-4: #e1bee7 !default;
+rs.purple-lighten-3: #ce93d8 !default;
+rs.purple-lighten-2: #ba68c8 !default;
+rs.purple-lighten-1: #ab47bc !default;
+rs.purple-base: #9c27b0 !default;
+rs.purple-darken-1: #8e24aa !default;
+rs.purple-darken-2: #7b1fa2 !default;
+rs.purple-darken-3: #6a1b9a !default;
+rs.purple-darken-4: #4a148c !default;
+rs.purple-accent-1: #ea80fc !default;
+rs.purple-accent-2: #e040fb !default;
+rs.purple-accent-3: #d500f9 !default;
+rs.purple-accent-4: #aa00ff !default;
 
-$deep-purple-lighten-5:  #ede7f6 !default;
-$deep-purple-lighten-4:  #d1c4e9 !default;
-$deep-purple-lighten-3:  #b39ddb !default;
-$deep-purple-lighten-2:  #9575cd !default;
-$deep-purple-lighten-1:  #7e57c2 !default;
-$deep-purple-base:       #673ab7 !default;
-$deep-purple-darken-1:   #5e35b1 !default;
-$deep-purple-darken-2:   #512da8 !default;
-$deep-purple-darken-3:   #4527a0 !default;
-$deep-purple-darken-4:   #311b92 !default;
-$deep-purple-accent-1:   #b388ff !default;
-$deep-purple-accent-2:   #7c4dff !default;
-$deep-purple-accent-3:   #651fff !default;
-$deep-purple-accent-4:   #6200ea !default;
+rs.deep-purple-lighten-5: #ede7f6 !default;
+rs.deep-purple-lighten-4: #d1c4e9 !default;
+rs.deep-purple-lighten-3: #b39ddb !default;
+rs.deep-purple-lighten-2: #9575cd !default;
+rs.deep-purple-lighten-1: #7e57c2 !default;
+rs.deep-purple-base: #673ab7 !default;
+rs.deep-purple-darken-1: #5e35b1 !default;
+rs.deep-purple-darken-2: #512da8 !default;
+rs.deep-purple-darken-3: #4527a0 !default;
+rs.deep-purple-darken-4: #311b92 !default;
+rs.deep-purple-accent-1: #b388ff !default;
+rs.deep-purple-accent-2: #7c4dff !default;
+rs.deep-purple-accent-3: #651fff !default;
+rs.deep-purple-accent-4: #6200ea !default;
 
-$indigo-lighten-5:  #e8eaf6 !default;
-$indigo-lighten-4:  #c5cae9 !default;
-$indigo-lighten-3:  #9fa8da !default;
-$indigo-lighten-2:  #7986cb !default;
-$indigo-lighten-1:  #5c6bc0 !default;
-$indigo-base:       #3f51b5 !default;
-$indigo-darken-1:   #3949ab !default;
-$indigo-darken-2:   #303f9f !default;
-$indigo-darken-3:   #283593 !default;
-$indigo-darken-4:   #1a237e !default;
-$indigo-accent-1:   #8c9eff !default;
-$indigo-accent-2:   #536dfe !default;
-$indigo-accent-3:   #3d5afe !default;
-$indigo-accent-4:   #304ffe !default;
+rs.indigo-lighten-5: #e8eaf6 !default;
+rs.indigo-lighten-4: #c5cae9 !default;
+rs.indigo-lighten-3: #9fa8da !default;
+rs.indigo-lighten-2: #7986cb !default;
+rs.indigo-lighten-1: #5c6bc0 !default;
+rs.indigo-base: #3f51b5 !default;
+rs.indigo-darken-1: #3949ab !default;
+rs.indigo-darken-2: #303f9f !default;
+rs.indigo-darken-3: #283593 !default;
+rs.indigo-darken-4: #1a237e !default;
+rs.indigo-accent-1: #8c9eff !default;
+rs.indigo-accent-2: #536dfe !default;
+rs.indigo-accent-3: #3d5afe !default;
+rs.indigo-accent-4: #304ffe !default;
 
-$blue-lighten-5:  #e3f2fd !default;
-$blue-lighten-4:  #bbdefb !default;
-$blue-lighten-3:  #90caf9 !default;
-$blue-lighten-2:  #64b5f6 !default;
-$blue-lighten-1:  #42a5f5 !default;
-$blue-base:       #2196f3 !default;
-$blue-darken-1:   #1e88e5 !default;
-$blue-darken-2:   #1976d2 !default;
-$blue-darken-3:   #1565c0 !default;
-$blue-darken-4:   #0d47a1 !default;
-$blue-accent-1:   #82b1ff !default;
-$blue-accent-2:   #448aff !default;
-$blue-accent-3:   #2979ff !default;
-$blue-accent-4:   #2962ff !default;
+rs.blue-lighten-5: #e3f2fd !default;
+rs.blue-lighten-4: #bbdefb !default;
+rs.blue-lighten-3: #90caf9 !default;
+rs.blue-lighten-2: #64b5f6 !default;
+rs.blue-lighten-1: #42a5f5 !default;
+rs.blue-base: #2196f3 !default;
+rs.blue-darken-1: #1e88e5 !default;
+rs.blue-darken-2: #1976d2 !default;
+rs.blue-darken-3: #1565c0 !default;
+rs.blue-darken-4: #0d47a1 !default;
+rs.blue-accent-1: #82b1ff !default;
+rs.blue-accent-2: #448aff !default;
+rs.blue-accent-3: #2979ff !default;
+rs.blue-accent-4: #2962ff !default;
 
-$light-blue-lighten-5:  #e1f5fe !default;
-$light-blue-lighten-4:  #b3e5fc !default;
-$light-blue-lighten-3:  #81d4fa !default;
-$light-blue-lighten-2:  #4fc3f7 !default;
-$light-blue-lighten-1:  #29b6f6 !default;
-$light-blue-base:       #03a9f4 !default;
-$light-blue-darken-1:   #039be5 !default;
-$light-blue-darken-2:   #0288d1 !default;
-$light-blue-darken-3:   #0277bd !default;
-$light-blue-darken-4:   #01579b !default;
-$light-blue-accent-1:   #80d8ff !default;
-$light-blue-accent-2:   #40c4ff !default;
-$light-blue-accent-3:   #00b0ff !default;
-$light-blue-accent-4:   #0091ea !default;
+rs.light-blue-lighten-5: #e1f5fe !default;
+rs.light-blue-lighten-4: #b3e5fc !default;
+rs.light-blue-lighten-3: #81d4fa !default;
+rs.light-blue-lighten-2: #4fc3f7 !default;
+rs.light-blue-lighten-1: #29b6f6 !default;
+rs.light-blue-base: #03a9f4 !default;
+rs.light-blue-darken-1: #039be5 !default;
+rs.light-blue-darken-2: #0288d1 !default;
+rs.light-blue-darken-3: #0277bd !default;
+rs.light-blue-darken-4: #01579b !default;
+rs.light-blue-accent-1: #80d8ff !default;
+rs.light-blue-accent-2: #40c4ff !default;
+rs.light-blue-accent-3: #00b0ff !default;
+rs.light-blue-accent-4: #0091ea !default;
 
-$cyan-lighten-5:  #e0f7fa !default;
-$cyan-lighten-4:  #b2ebf2 !default;
-$cyan-lighten-3:  #80deea !default;
-$cyan-lighten-2:  #4dd0e1 !default;
-$cyan-lighten-1:  #26c6da !default;
-$cyan-base:       #00bcd4 !default;
-$cyan-darken-1:   #00acc1 !default;
-$cyan-darken-2:   #0097a7 !default;
-$cyan-darken-3:   #00838f !default;
-$cyan-darken-4:   #006064 !default;
-$cyan-accent-1:   #84ffff !default;
-$cyan-accent-2:   #18ffff !default;
-$cyan-accent-3:   #00e5ff !default;
-$cyan-accent-4:   #00b8d4 !default;
+rs.cyan-lighten-5: #e0f7fa !default;
+rs.cyan-lighten-4: #b2ebf2 !default;
+rs.cyan-lighten-3: #80deea !default;
+rs.cyan-lighten-2: #4dd0e1 !default;
+rs.cyan-lighten-1: #26c6da !default;
+rs.cyan-base: #00bcd4 !default;
+rs.cyan-darken-1: #00acc1 !default;
+rs.cyan-darken-2: #0097a7 !default;
+rs.cyan-darken-3: #00838f !default;
+rs.cyan-darken-4: #006064 !default;
+rs.cyan-accent-1: #84ffff !default;
+rs.cyan-accent-2: #18ffff !default;
+rs.cyan-accent-3: #00e5ff !default;
+rs.cyan-accent-4: #00b8d4 !default;
 
-$teal-lighten-5:  #e0f2f1 !default;
-$teal-lighten-4:  #b2dfdb !default;
-$teal-lighten-3:  #80cbc4 !default;
-$teal-lighten-2:  #4db6ac !default;
-$teal-lighten-1:  #26a69a !default;
-$teal-base:       #009688 !default;
-$teal-darken-1:   #00897b !default;
-$teal-darken-2:   #00796b !default;
-$teal-darken-3:   #00695c !default;
-$teal-darken-4:   #004d40 !default;
-$teal-accent-1:   #a7ffeb !default;
-$teal-accent-2:   #64ffda !default;
-$teal-accent-3:   #1de9b6 !default;
-$teal-accent-4:   #00bfa5 !default;
+rs.teal-lighten-5: #e0f2f1 !default;
+rs.teal-lighten-4: #b2dfdb !default;
+rs.teal-lighten-3: #80cbc4 !default;
+rs.teal-lighten-2: #4db6ac !default;
+rs.teal-lighten-1: #26a69a !default;
+rs.teal-base: #009688 !default;
+rs.teal-darken-1: #00897b !default;
+rs.teal-darken-2: #00796b !default;
+rs.teal-darken-3: #00695c !default;
+rs.teal-darken-4: #004d40 !default;
+rs.teal-accent-1: #a7ffeb !default;
+rs.teal-accent-2: #64ffda !default;
+rs.teal-accent-3: #1de9b6 !default;
+rs.teal-accent-4: #00bfa5 !default;
 
-$green-lighten-5:  #e8f5e9 !default;
-$green-lighten-4:  #c8e6c9 !default;
-$green-lighten-3:  #a5d6a7 !default;
-$green-lighten-2:  #81c784 !default;
-$green-lighten-1:  #66bb6a !default;
-$green-base:       #4caf50 !default;
-$green-darken-1:   #43a047 !default;
-$green-darken-2:   #388e3c !default;
-$green-darken-3:   #2e7d32 !default;
-$green-darken-4:   #1b5e20 !default;
-$green-accent-1:   #b9f6ca !default;
-$green-accent-2:   #69f0ae !default;
-$green-accent-3:   #00e676 !default;
-$green-accent-4:   #00c853 !default;
+rs.green-lighten-5: #e8f5e9 !default;
+rs.green-lighten-4: #c8e6c9 !default;
+rs.green-lighten-3: #a5d6a7 !default;
+rs.green-lighten-2: #81c784 !default;
+rs.green-lighten-1: #66bb6a !default;
+rs.green-base: #4caf50 !default;
+rs.green-darken-1: #43a047 !default;
+rs.green-darken-2: #388e3c !default;
+rs.green-darken-3: #2e7d32 !default;
+rs.green-darken-4: #1b5e20 !default;
+rs.green-accent-1: #b9f6ca !default;
+rs.green-accent-2: #69f0ae !default;
+rs.green-accent-3: #00e676 !default;
+rs.green-accent-4: #00c853 !default;
 
+rs.light-green-lighten-5: #f1f8e9 !default;
+rs.light-green-lighten-4: #dcedc8 !default;
+rs.light-green-lighten-3: #c5e1a5 !default;
+rs.light-green-lighten-2: #aed581 !default;
+rs.light-green-lighten-1: #9ccc65 !default;
+rs.light-green-base: #8bc34a !default;
+rs.light-green-darken-1: #7cb342 !default;
+rs.light-green-darken-2: #689f38 !default;
+rs.light-green-darken-3: #558b2f !default;
+rs.light-green-darken-4: #33691e !default;
+rs.light-green-accent-1: #ccff90 !default;
+rs.light-green-accent-2: #b2ff59 !default;
+rs.light-green-accent-3: #76ff03 !default;
+rs.light-green-accent-4: #64dd17 !default;
 
-$light-green-lighten-5:  #f1f8e9 !default;
-$light-green-lighten-4:  #dcedc8 !default;
-$light-green-lighten-3:  #c5e1a5 !default;
-$light-green-lighten-2:  #aed581 !default;
-$light-green-lighten-1:  #9ccc65 !default;
-$light-green-base:       #8bc34a !default;
-$light-green-darken-1:   #7cb342 !default;
-$light-green-darken-2:   #689f38 !default;
-$light-green-darken-3:   #558b2f !default;
-$light-green-darken-4:   #33691e !default;
-$light-green-accent-1:   #ccff90 !default;
-$light-green-accent-2:   #b2ff59 !default;
-$light-green-accent-3:   #76ff03 !default;
-$light-green-accent-4:   #64dd17 !default;
+rs.lime-lighten-5: #f9fbe7 !default;
+rs.lime-lighten-4: #f0f4c3 !default;
+rs.lime-lighten-3: #e6ee9c !default;
+rs.lime-lighten-2: #dce775 !default;
+rs.lime-lighten-1: #d4e157 !default;
+rs.lime-base: #cddc39 !default;
+rs.lime-darken-1: #c0ca33 !default;
+rs.lime-darken-2: #afb42b !default;
+rs.lime-darken-3: #9e9d24 !default;
+rs.lime-darken-4: #827717 !default;
+rs.lime-accent-1: #f4ff81 !default;
+rs.lime-accent-2: #eeff41 !default;
+rs.lime-accent-3: #c6ff00 !default;
+rs.lime-accent-4: #aeea00 !default;
 
-$lime-lighten-5:  #f9fbe7 !default;
-$lime-lighten-4:  #f0f4c3 !default;
-$lime-lighten-3:  #e6ee9c !default;
-$lime-lighten-2:  #dce775 !default;
-$lime-lighten-1:  #d4e157 !default;
-$lime-base:       #cddc39 !default;
-$lime-darken-1:   #c0ca33 !default;
-$lime-darken-2:   #afb42b !default;
-$lime-darken-3:   #9e9d24 !default;
-$lime-darken-4:   #827717 !default;
-$lime-accent-1:   #f4ff81 !default;
-$lime-accent-2:   #eeff41 !default;
-$lime-accent-3:   #c6ff00 !default;
-$lime-accent-4:   #aeea00 !default;
+rs.yellow-lighten-5: #fffde7 !default;
+rs.yellow-lighten-4: #fff9c4 !default;
+rs.yellow-lighten-3: #fff59d !default;
+rs.yellow-lighten-2: #fff176 !default;
+rs.yellow-lighten-1: #ffee58 !default;
+rs.yellow-base: #ffeb3b !default;
+rs.yellow-darken-1: #fdd835 !default;
+rs.yellow-darken-2: #fbc02d !default;
+rs.yellow-darken-3: #f9a825 !default;
+rs.yellow-darken-4: #f57f17 !default;
+rs.yellow-accent-1: #ffff8d !default;
+rs.yellow-accent-2: #ffff00 !default;
+rs.yellow-accent-3: #ffea00 !default;
+rs.yellow-accent-4: #ffd600 !default;
 
-$yellow-lighten-5:  #fffde7 !default;
-$yellow-lighten-4:  #fff9c4 !default;
-$yellow-lighten-3:  #fff59d !default;
-$yellow-lighten-2:  #fff176 !default;
-$yellow-lighten-1:  #ffee58 !default;
-$yellow-base:       #ffeb3b !default;
-$yellow-darken-1:   #fdd835 !default;
-$yellow-darken-2:   #fbc02d !default;
-$yellow-darken-3:   #f9a825 !default;
-$yellow-darken-4:   #f57f17 !default;
-$yellow-accent-1:   #ffff8d !default;
-$yellow-accent-2:   #ffff00 !default;
-$yellow-accent-3:   #ffea00 !default;
-$yellow-accent-4:   #ffd600 !default;
+rs.amber-lighten-5: #fff8e1 !default;
+rs.amber-lighten-4: #ffecb3 !default;
+rs.amber-lighten-3: #ffe082 !default;
+rs.amber-lighten-2: #ffd54f !default;
+rs.amber-lighten-1: #ffca28 !default;
+rs.amber-base: #ffc107 !default;
+rs.amber-darken-1: #ffb300 !default;
+rs.amber-darken-2: #ffa000 !default;
+rs.amber-darken-3: #ff8f00 !default;
+rs.amber-darken-4: #ff6f00 !default;
+rs.amber-accent-1: #ffe57f !default;
+rs.amber-accent-2: #ffd740 !default;
+rs.amber-accent-3: #ffc400 !default;
+rs.amber-accent-4: #ffab00 !default;
 
-$amber-lighten-5:  #fff8e1 !default;
-$amber-lighten-4:  #ffecb3 !default;
-$amber-lighten-3:  #ffe082 !default;
-$amber-lighten-2:  #ffd54f !default;
-$amber-lighten-1:  #ffca28 !default;
-$amber-base:       #ffc107 !default;
-$amber-darken-1:   #ffb300 !default;
-$amber-darken-2:   #ffa000 !default;
-$amber-darken-3:   #ff8f00 !default;
-$amber-darken-4:   #ff6f00 !default;
-$amber-accent-1:   #ffe57f !default;
-$amber-accent-2:   #ffd740 !default;
-$amber-accent-3:   #ffc400 !default;
-$amber-accent-4:   #ffab00 !default;
+rs.orange-lighten-5: #fff3e0 !default;
+rs.orange-lighten-4: #ffe0b2 !default;
+rs.orange-lighten-3: #ffcc80 !default;
+rs.orange-lighten-2: #ffb74d !default;
+rs.orange-lighten-1: #ffa726 !default;
+rs.orange-base: #ff9800 !default;
+rs.orange-darken-1: #fb8c00 !default;
+rs.orange-darken-2: #f57c00 !default;
+rs.orange-darken-3: #ef6c00 !default;
+rs.orange-darken-4: #e65100 !default;
+rs.orange-accent-1: #ffd180 !default;
+rs.orange-accent-2: #ffab40 !default;
+rs.orange-accent-3: #ff9100 !default;
+rs.orange-accent-4: #ff6d00 !default;
 
-$orange-lighten-5:  #fff3e0 !default;
-$orange-lighten-4:  #ffe0b2 !default;
-$orange-lighten-3:  #ffcc80 !default;
-$orange-lighten-2:  #ffb74d !default;
-$orange-lighten-1:  #ffa726 !default;
-$orange-base:       #ff9800 !default;
-$orange-darken-1:   #fb8c00 !default;
-$orange-darken-2:   #f57c00 !default;
-$orange-darken-3:   #ef6c00 !default;
-$orange-darken-4:   #e65100 !default;
-$orange-accent-1:   #ffd180 !default;
-$orange-accent-2:   #ffab40 !default;
-$orange-accent-3:   #ff9100 !default;
-$orange-accent-4:   #ff6d00 !default;
+rs.deep-orange-lighten-5: #fbe9e7 !default;
+rs.deep-orange-lighten-4: #ffccbc !default;
+rs.deep-orange-lighten-3: #ffab91 !default;
+rs.deep-orange-lighten-2: #ff8a65 !default;
+rs.deep-orange-lighten-1: #ff7043 !default;
+rs.deep-orange-base: #ff5722 !default;
+rs.deep-orange-darken-1: #f4511e !default;
+rs.deep-orange-darken-2: #e64a19 !default;
+rs.deep-orange-darken-3: #d84315 !default;
+rs.deep-orange-darken-4: #bf360c !default;
+rs.deep-orange-accent-1: #ff9e80 !default;
+rs.deep-orange-accent-2: #ff6e40 !default;
+rs.deep-orange-accent-3: #ff3d00 !default;
+rs.deep-orange-accent-4: #dd2c00 !default;
 
-$deep-orange-lighten-5:  #fbe9e7 !default;
-$deep-orange-lighten-4:  #ffccbc !default;
-$deep-orange-lighten-3:  #ffab91 !default;
-$deep-orange-lighten-2:  #ff8a65 !default;
-$deep-orange-lighten-1:  #ff7043 !default;
-$deep-orange-base:       #ff5722 !default;
-$deep-orange-darken-1:   #f4511e !default;
-$deep-orange-darken-2:   #e64a19 !default;
-$deep-orange-darken-3:   #d84315 !default;
-$deep-orange-darken-4:   #bf360c !default;
-$deep-orange-accent-1:   #ff9e80 !default;
-$deep-orange-accent-2:   #ff6e40 !default;
-$deep-orange-accent-3:   #ff3d00 !default;
-$deep-orange-accent-4:   #dd2c00 !default;
+rs.brown-lighten-5: #efebe9 !default;
+rs.brown-lighten-4: #d7ccc8 !default;
+rs.brown-lighten-3: #bcaaa4 !default;
+rs.brown-lighten-2: #a1887f !default;
+rs.brown-lighten-1: #8d6e63 !default;
+rs.brown-base: #795548 !default;
+rs.brown-darken-1: #6d4c41 !default;
+rs.brown-darken-2: #5d4037 !default;
+rs.brown-darken-3: #4e342e !default;
+rs.brown-darken-4: #3e2723 !default;
 
-$brown-lighten-5:  #efebe9 !default;
-$brown-lighten-4:  #d7ccc8 !default;
-$brown-lighten-3:  #bcaaa4 !default;
-$brown-lighten-2:  #a1887f !default;
-$brown-lighten-1:  #8d6e63 !default;
-$brown-base:       #795548 !default;
-$brown-darken-1:   #6d4c41 !default;
-$brown-darken-2:   #5d4037 !default;
-$brown-darken-3:   #4e342e !default;
-$brown-darken-4:   #3e2723 !default;
+rs.blue-grey-lighten-5: #eceff1 !default;
+rs.blue-grey-lighten-4: #cfd8dc !default;
+rs.blue-grey-lighten-3: #b0bec5 !default;
+rs.blue-grey-lighten-2: #90a4ae !default;
+rs.blue-grey-lighten-1: #78909c !default;
+rs.blue-grey-base: #607d8b !default;
+rs.blue-grey-darken-1: #546e7a !default;
+rs.blue-grey-darken-2: #455a64 !default;
+rs.blue-grey-darken-3: #37474f !default;
+rs.blue-grey-darken-4: #263238 !default;
 
-$blue-grey-lighten-5:  #eceff1 !default;
-$blue-grey-lighten-4:  #cfd8dc !default;
-$blue-grey-lighten-3:  #b0bec5 !default;
-$blue-grey-lighten-2:  #90a4ae !default;
-$blue-grey-lighten-1:  #78909c !default;
-$blue-grey-base:       #607d8b !default;
-$blue-grey-darken-1:   #546e7a !default;
-$blue-grey-darken-2:   #455a64 !default;
-$blue-grey-darken-3:   #37474f !default;
-$blue-grey-darken-4:   #263238 !default;
+rs.grey-lighten-5: #fafafa !default;
+rs.grey-lighten-4: #f5f5f5 !default;
+rs.grey-lighten-3: #eeeeee !default;
+rs.grey-lighten-2: #e0e0e0 !default;
+rs.grey-lighten-1: #bdbdbd !default;
+rs.grey-base: #9e9e9e !default;
+rs.grey-darken-1: #757575 !default;
+rs.grey-darken-2: #616161 !default;
+rs.grey-darken-3: #424242 !default;
+rs.grey-darken-4: #212121 !default;
 
-$grey-lighten-5:  #fafafa !default;
-$grey-lighten-4:  #f5f5f5 !default;
-$grey-lighten-3:  #eeeeee !default;
-$grey-lighten-2:  #e0e0e0 !default;
-$grey-lighten-1:  #bdbdbd !default;
-$grey-base:       #9e9e9e !default;
-$grey-darken-1:   #757575 !default;
-$grey-darken-2:   #616161 !default;
-$grey-darken-3:   #424242 !default;
-$grey-darken-4:   #212121 !default;
+rs.black-base: #000 !default;
+rs.white-base: #fff !default;
+rs.foggy-grey: #4f4f4f !default;
 
-$black-base: #000 !default;
-$white-base: #fff !default;
-$foggy-grey: #4f4f4f !default;
-
-$mdb-colors-1: () !default;
-$mdb-colors-1: map-merge((
-  "mdb-color": (
-    "lighten-5":  $mdb-color-lighten-5,
-    "lighten-4":  $mdb-color-lighten-4,
-    "lighten-3":  $mdb-color-lighten-3,
-    "lighten-2":  $mdb-color-lighten-2,
-    "lighten-1":  $mdb-color-lighten-1,
-    "base":       $mdb-color-base,
-    "darken-1":   $mdb-color-darken-1,
-    "darken-2":   $mdb-color-darken-2,
-    "darken-3":   $mdb-color-darken-3,
-    "darken-4":   $mdb-color-darken-4
+rs.mdb-colors-1: () !default;
+rs.mdb-colors-1: map-merge(
+  (
+    "mdb-color": (
+      "lighten-5": Rs.mdb-color-lighten-5,
+      "lighten-4": Rs.mdb-color-lighten-4,
+      "lighten-3": Rs.mdb-color-lighten-3,
+      "lighten-2": Rs.mdb-color-lighten-2,
+      "lighten-1": Rs.mdb-color-lighten-1,
+      "base": Rs.mdb-color-base,
+      "darken-1": Rs.mdb-color-darken-1,
+      "darken-2": Rs.mdb-color-darken-2,
+      "darken-3": Rs.mdb-color-darken-3,
+      "darken-4": Rs.mdb-color-darken-4,
+    ),
+    "red": (
+      "lighten-5": Rs.red-lighten-5,
+      "lighten-4": Rs.red-lighten-4,
+      "lighten-3": Rs.red-lighten-3,
+      "lighten-2": Rs.red-lighten-2,
+      "lighten-1": Rs.red-lighten-1,
+      "base": Rs.red-base,
+      "darken-1": Rs.red-darken-1,
+      "darken-2": Rs.red-darken-2,
+      "darken-3": Rs.red-darken-3,
+      "darken-4": Rs.red-darken-4,
+      "accent-1": Rs.red-accent-1,
+      "accent-2": Rs.red-accent-2,
+      "accent-3": Rs.red-accent-3,
+      "accent-4": Rs.red-accent-4,
+    ),
+    "pink": (
+      "lighten-5": Rs.pink-lighten-5,
+      "lighten-4": Rs.pink-lighten-4,
+      "lighten-3": Rs.pink-lighten-3,
+      "lighten-2": Rs.pink-lighten-2,
+      "lighten-1": Rs.pink-lighten-1,
+      "base": Rs.pink-base,
+      "darken-1": Rs.pink-darken-1,
+      "darken-2": Rs.pink-darken-2,
+      "darken-3": Rs.pink-darken-3,
+      "darken-4": Rs.pink-darken-4,
+      "accent-1": Rs.pink-accent-1,
+      "accent-2": Rs.pink-accent-2,
+      "accent-3": Rs.pink-accent-3,
+      "accent-4": Rs.pink-accent-4,
+    ),
+    "purple": (
+      "lighten-5": Rs.purple-lighten-5,
+      "lighten-4": Rs.purple-lighten-4,
+      "lighten-3": Rs.purple-lighten-3,
+      "lighten-2": Rs.purple-lighten-2,
+      "lighten-1": Rs.purple-lighten-1,
+      "base": Rs.purple-base,
+      "darken-1": Rs.purple-darken-1,
+      "darken-2": Rs.purple-darken-2,
+      "darken-3": Rs.purple-darken-3,
+      "darken-4": Rs.purple-darken-4,
+      "accent-1": Rs.purple-accent-1,
+      "accent-2": Rs.purple-accent-2,
+      "accent-3": Rs.purple-accent-3,
+      "accent-4": Rs.purple-accent-4,
+    ),
+    "deep-purple": (
+      "lighten-5": Rs.deep-purple-lighten-5,
+      "lighten-4": Rs.deep-purple-lighten-4,
+      "lighten-3": Rs.deep-purple-lighten-3,
+      "lighten-2": Rs.deep-purple-lighten-2,
+      "lighten-1": Rs.deep-purple-lighten-1,
+      "base": Rs.deep-purple-base,
+      "darken-1": Rs.deep-purple-darken-1,
+      "darken-2": Rs.deep-purple-darken-2,
+      "darken-3": Rs.deep-purple-darken-3,
+      "darken-4": Rs.deep-purple-darken-4,
+      "accent-1": Rs.deep-purple-accent-1,
+      "accent-2": Rs.deep-purple-accent-2,
+      "accent-3": Rs.deep-purple-accent-3,
+      "accent-4": Rs.deep-purple-accent-4,
+    ),
+    "indigo": (
+      "lighten-5": Rs.indigo-lighten-5,
+      "lighten-4": Rs.indigo-lighten-4,
+      "lighten-3": Rs.indigo-lighten-3,
+      "lighten-2": Rs.indigo-lighten-2,
+      "lighten-1": Rs.indigo-lighten-1,
+      "base": Rs.indigo-base,
+      "darken-1": Rs.indigo-darken-1,
+      "darken-2": Rs.indigo-darken-2,
+      "darken-3": Rs.indigo-darken-3,
+      "darken-4": Rs.indigo-darken-4,
+      "accent-1": Rs.indigo-accent-1,
+      "accent-2": Rs.indigo-accent-2,
+      "accent-3": Rs.indigo-accent-3,
+      "accent-4": Rs.indigo-accent-4,
+    ),
+    "blue": (
+      "lighten-5": Rs.blue-lighten-5,
+      "lighten-4": Rs.blue-lighten-4,
+      "lighten-3": Rs.blue-lighten-3,
+      "lighten-2": Rs.blue-lighten-2,
+      "lighten-1": Rs.blue-lighten-1,
+      "base": Rs.blue-base,
+      "darken-1": Rs.blue-darken-1,
+      "darken-2": Rs.blue-darken-2,
+      "darken-3": Rs.blue-darken-3,
+      "darken-4": Rs.blue-darken-4,
+      "accent-1": Rs.blue-accent-1,
+      "accent-2": Rs.blue-accent-2,
+      "accent-3": Rs.blue-accent-3,
+      "accent-4": Rs.blue-accent-4,
+    ),
+    "light-blue": (
+      "lighten-5": Rs.light-blue-lighten-5,
+      "lighten-4": Rs.light-blue-lighten-4,
+      "lighten-3": Rs.light-blue-lighten-3,
+      "lighten-2": Rs.light-blue-lighten-2,
+      "lighten-1": Rs.light-blue-lighten-1,
+      "base": Rs.light-blue-base,
+      "darken-1": Rs.light-blue-darken-1,
+      "darken-2": Rs.light-blue-darken-2,
+      "darken-3": Rs.light-blue-darken-3,
+      "darken-4": Rs.light-blue-darken-4,
+      "accent-1": Rs.light-blue-accent-1,
+      "accent-2": Rs.light-blue-accent-2,
+      "accent-3": Rs.light-blue-accent-3,
+      "accent-4": Rs.light-blue-accent-4,
+    ),
+    "cyan": (
+      "lighten-5": Rs.cyan-lighten-5,
+      "lighten-4": Rs.cyan-lighten-4,
+      "lighten-3": Rs.cyan-lighten-3,
+      "lighten-2": Rs.cyan-lighten-2,
+      "lighten-1": Rs.cyan-lighten-1,
+      "base": Rs.cyan-base,
+      "darken-1": Rs.cyan-darken-1,
+      "darken-2": Rs.cyan-darken-2,
+      "darken-3": Rs.cyan-darken-3,
+      "darken-4": Rs.cyan-darken-4,
+      "accent-1": Rs.cyan-accent-1,
+      "accent-2": Rs.cyan-accent-2,
+      "accent-3": Rs.cyan-accent-3,
+      "accent-4": Rs.cyan-accent-4,
+    ),
+    "teal": (
+      "lighten-5": Rs.teal-lighten-5,
+      "lighten-4": Rs.teal-lighten-4,
+      "lighten-3": Rs.teal-lighten-3,
+      "lighten-2": Rs.teal-lighten-2,
+      "lighten-1": Rs.teal-lighten-1,
+      "base": Rs.teal-base,
+      "darken-1": Rs.teal-darken-1,
+      "darken-2": Rs.teal-darken-2,
+      "darken-3": Rs.teal-darken-3,
+      "darken-4": Rs.teal-darken-4,
+      "accent-1": Rs.teal-accent-1,
+      "accent-2": Rs.teal-accent-2,
+      "accent-3": Rs.teal-accent-3,
+      "accent-4": Rs.teal-accent-4,
+    ),
+    "green": (
+      "lighten-5": Rs.green-lighten-5,
+      "lighten-4": Rs.green-lighten-4,
+      "lighten-3": Rs.green-lighten-3,
+      "lighten-2": Rs.green-lighten-2,
+      "lighten-1": Rs.green-lighten-1,
+      "base": Rs.green-base,
+      "darken-1": Rs.green-darken-1,
+      "darken-2": Rs.green-darken-2,
+      "darken-3": Rs.green-darken-3,
+      "darken-4": Rs.green-darken-4,
+      "accent-1": Rs.green-accent-1,
+      "accent-2": Rs.green-accent-2,
+      "accent-3": Rs.green-accent-3,
+      "accent-4": Rs.green-accent-4,
+    ),
+    "light-green": (
+      "lighten-5": Rs.light-green-lighten-5,
+      "lighten-4": Rs.light-green-lighten-4,
+      "lighten-3": Rs.light-green-lighten-3,
+      "lighten-2": Rs.light-green-lighten-2,
+      "lighten-1": Rs.light-green-lighten-1,
+      "base": Rs.light-green-base,
+      "darken-1": Rs.light-green-darken-1,
+      "darken-2": Rs.light-green-darken-2,
+      "darken-3": Rs.light-green-darken-3,
+      "darken-4": Rs.light-green-darken-4,
+      "accent-1": Rs.light-green-accent-1,
+      "accent-2": Rs.light-green-accent-2,
+      "accent-3": Rs.light-green-accent-3,
+      "accent-4": Rs.light-green-accent-4,
+    ),
+    "lime": (
+      "lighten-5": Rs.lime-lighten-5,
+      "lighten-4": Rs.lime-lighten-4,
+      "lighten-3": Rs.lime-lighten-3,
+      "lighten-2": Rs.lime-lighten-2,
+      "lighten-1": Rs.lime-lighten-1,
+      "base": Rs.lime-base,
+      "darken-1": Rs.lime-darken-1,
+      "darken-2": Rs.lime-darken-2,
+      "darken-3": Rs.lime-darken-3,
+      "darken-4": Rs.lime-darken-4,
+      "accent-1": Rs.lime-accent-1,
+      "accent-2": Rs.lime-accent-2,
+      "accent-3": Rs.lime-accent-3,
+      "accent-4": Rs.lime-accent-4,
+    ),
+    "yellow": (
+      "lighten-5": Rs.yellow-lighten-5,
+      "lighten-4": Rs.yellow-lighten-4,
+      "lighten-3": Rs.yellow-lighten-3,
+      "lighten-2": Rs.yellow-lighten-2,
+      "lighten-1": Rs.yellow-lighten-1,
+      "base": Rs.yellow-base,
+      "darken-1": Rs.yellow-darken-1,
+      "darken-2": Rs.yellow-darken-2,
+      "darken-3": Rs.yellow-darken-3,
+      "darken-4": Rs.yellow-darken-4,
+      "accent-1": Rs.yellow-accent-1,
+      "accent-2": Rs.yellow-accent-2,
+      "accent-3": Rs.yellow-accent-3,
+      "accent-4": Rs.yellow-accent-4,
+    ),
+    "amber": (
+      "lighten-5": Rs.amber-lighten-5,
+      "lighten-4": Rs.amber-lighten-4,
+      "lighten-3": Rs.amber-lighten-3,
+      "lighten-2": Rs.amber-lighten-2,
+      "lighten-1": Rs.amber-lighten-1,
+      "base": Rs.amber-base,
+      "darken-1": Rs.amber-darken-1,
+      "darken-2": Rs.amber-darken-2,
+      "darken-3": Rs.amber-darken-3,
+      "darken-4": Rs.amber-darken-4,
+      "accent-1": Rs.amber-accent-1,
+      "accent-2": Rs.amber-accent-2,
+      "accent-3": Rs.amber-accent-3,
+      "accent-4": Rs.amber-accent-4,
+    ),
+    "orange": (
+      "lighten-5": Rs.orange-lighten-5,
+      "lighten-4": Rs.orange-lighten-4,
+      "lighten-3": Rs.orange-lighten-3,
+      "lighten-2": Rs.orange-lighten-2,
+      "lighten-1": Rs.orange-lighten-1,
+      "base": Rs.orange-base,
+      "darken-1": Rs.orange-darken-1,
+      "darken-2": Rs.orange-darken-2,
+      "darken-3": Rs.orange-darken-3,
+      "darken-4": Rs.orange-darken-4,
+      "accent-1": Rs.orange-accent-1,
+      "accent-2": Rs.orange-accent-2,
+      "accent-3": Rs.orange-accent-3,
+      "accent-4": Rs.orange-accent-4,
+    ),
+    "deep-orange": (
+      "lighten-5": Rs.deep-orange-lighten-5,
+      "lighten-4": Rs.deep-orange-lighten-4,
+      "lighten-3": Rs.deep-orange-lighten-3,
+      "lighten-2": Rs.deep-orange-lighten-2,
+      "lighten-1": Rs.deep-orange-lighten-1,
+      "base": Rs.deep-orange-base,
+      "darken-1": Rs.deep-orange-darken-1,
+      "darken-2": Rs.deep-orange-darken-2,
+      "darken-3": Rs.deep-orange-darken-3,
+      "darken-4": Rs.deep-orange-darken-4,
+      "accent-1": Rs.deep-orange-accent-1,
+      "accent-2": Rs.deep-orange-accent-2,
+      "accent-3": Rs.deep-orange-accent-3,
+      "accent-4": Rs.deep-orange-accent-4,
+    ),
+    "brown": (
+      "lighten-5": Rs.brown-lighten-5,
+      "lighten-4": Rs.brown-lighten-4,
+      "lighten-3": Rs.brown-lighten-3,
+      "lighten-2": Rs.brown-lighten-2,
+      "lighten-1": Rs.brown-lighten-1,
+      "base": Rs.brown-base,
+      "darken-1": Rs.brown-darken-1,
+      "darken-2": Rs.brown-darken-2,
+      "darken-3": Rs.brown-darken-3,
+      "darken-4": Rs.brown-darken-4,
+    ),
+    "blue-grey": (
+      "lighten-5": Rs.blue-grey-lighten-5,
+      "lighten-4": Rs.blue-grey-lighten-4,
+      "lighten-3": Rs.blue-grey-lighten-3,
+      "lighten-2": Rs.blue-grey-lighten-2,
+      "lighten-1": Rs.blue-grey-lighten-1,
+      "base": Rs.blue-grey-base,
+      "darken-1": Rs.blue-grey-darken-1,
+      "darken-2": Rs.blue-grey-darken-2,
+      "darken-3": Rs.blue-grey-darken-3,
+      "darken-4": Rs.blue-grey-darken-4,
+    ),
+    "grey": (
+      "lighten-5": Rs.grey-lighten-5,
+      "lighten-4": Rs.grey-lighten-4,
+      "lighten-3": Rs.grey-lighten-3,
+      "lighten-2": Rs.grey-lighten-2,
+      "lighten-1": Rs.grey-lighten-1,
+      "base": Rs.grey-base,
+      "darken-1": Rs.grey-darken-1,
+      "darken-2": Rs.grey-darken-2,
+      "darken-3": Rs.grey-darken-3,
+      "darken-4": Rs.grey-darken-4,
+    ),
+    "black": (
+      "base": Rs.black-base,
+    ),
+    "white": (
+      "base": Rs.white-base,
+    ),
   ),
-  "red": (
-    "lighten-5":  $red-lighten-5,
-    "lighten-4":  $red-lighten-4,
-    "lighten-3":  $red-lighten-3,
-    "lighten-2":  $red-lighten-2,
-    "lighten-1":  $red-lighten-1,
-    "base":       $red-base,
-    "darken-1":   $red-darken-1,
-    "darken-2":   $red-darken-2,
-    "darken-3":   $red-darken-3,
-    "darken-4":   $red-darken-4,
-    "accent-1":   $red-accent-1,
-    "accent-2":   $red-accent-2,
-    "accent-3":   $red-accent-3,
-    "accent-4":   $red-accent-4
-  ),
-  "pink": (
-    "lighten-5":  $pink-lighten-5,
-    "lighten-4":  $pink-lighten-4,
-    "lighten-3":  $pink-lighten-3,
-    "lighten-2":  $pink-lighten-2,
-    "lighten-1":  $pink-lighten-1,
-    "base":       $pink-base,
-    "darken-1":   $pink-darken-1,
-    "darken-2":   $pink-darken-2,
-    "darken-3":   $pink-darken-3,
-    "darken-4":   $pink-darken-4,
-    "accent-1":   $pink-accent-1,
-    "accent-2":   $pink-accent-2,
-    "accent-3":   $pink-accent-3,
-    "accent-4":   $pink-accent-4
-  ),
-  "purple": (
-    "lighten-5":  $purple-lighten-5,
-    "lighten-4":  $purple-lighten-4,
-    "lighten-3":  $purple-lighten-3,
-    "lighten-2":  $purple-lighten-2,
-    "lighten-1":  $purple-lighten-1,
-    "base":       $purple-base,
-    "darken-1":   $purple-darken-1,
-    "darken-2":   $purple-darken-2,
-    "darken-3":   $purple-darken-3,
-    "darken-4":   $purple-darken-4,
-    "accent-1":   $purple-accent-1,
-    "accent-2":   $purple-accent-2,
-    "accent-3":   $purple-accent-3,
-    "accent-4":   $purple-accent-4
-  ),
-  "deep-purple": (
-    "lighten-5":  $deep-purple-lighten-5,
-    "lighten-4":  $deep-purple-lighten-4,
-    "lighten-3":  $deep-purple-lighten-3,
-    "lighten-2":  $deep-purple-lighten-2,
-    "lighten-1":  $deep-purple-lighten-1,
-    "base":       $deep-purple-base,
-    "darken-1":   $deep-purple-darken-1,
-    "darken-2":   $deep-purple-darken-2,
-    "darken-3":   $deep-purple-darken-3,
-    "darken-4":   $deep-purple-darken-4,
-    "accent-1":   $deep-purple-accent-1,
-    "accent-2":   $deep-purple-accent-2,
-    "accent-3":   $deep-purple-accent-3,
-    "accent-4":   $deep-purple-accent-4
-  ),
-  "indigo": (
-    "lighten-5":  $indigo-lighten-5,
-    "lighten-4":  $indigo-lighten-4,
-    "lighten-3":  $indigo-lighten-3,
-    "lighten-2":  $indigo-lighten-2,
-    "lighten-1":  $indigo-lighten-1,
-    "base":       $indigo-base,
-    "darken-1":   $indigo-darken-1,
-    "darken-2":   $indigo-darken-2,
-    "darken-3":   $indigo-darken-3,
-    "darken-4":   $indigo-darken-4,
-    "accent-1":   $indigo-accent-1,
-    "accent-2":   $indigo-accent-2,
-    "accent-3":   $indigo-accent-3,
-    "accent-4":   $indigo-accent-4
-  ),
-  "blue": (
-    "lighten-5":  $blue-lighten-5,
-    "lighten-4":  $blue-lighten-4,
-    "lighten-3":  $blue-lighten-3,
-    "lighten-2":  $blue-lighten-2,
-    "lighten-1":  $blue-lighten-1,
-    "base":       $blue-base,
-    "darken-1":   $blue-darken-1,
-    "darken-2":   $blue-darken-2,
-    "darken-3":   $blue-darken-3,
-    "darken-4":   $blue-darken-4,
-    "accent-1":   $blue-accent-1,
-    "accent-2":   $blue-accent-2,
-    "accent-3":   $blue-accent-3,
-    "accent-4":   $blue-accent-4
-  ),
-  "light-blue": (
-    "lighten-5":  $light-blue-lighten-5,
-    "lighten-4":  $light-blue-lighten-4,
-    "lighten-3":  $light-blue-lighten-3,
-    "lighten-2":  $light-blue-lighten-2,
-    "lighten-1":  $light-blue-lighten-1,
-    "base":       $light-blue-base,
-    "darken-1":   $light-blue-darken-1,
-    "darken-2":   $light-blue-darken-2,
-    "darken-3":   $light-blue-darken-3,
-    "darken-4":   $light-blue-darken-4,
-    "accent-1":   $light-blue-accent-1,
-    "accent-2":   $light-blue-accent-2,
-    "accent-3":   $light-blue-accent-3,
-    "accent-4":   $light-blue-accent-4
-  ),
-  "cyan": (
-    "lighten-5":  $cyan-lighten-5,
-    "lighten-4":  $cyan-lighten-4,
-    "lighten-3":  $cyan-lighten-3,
-    "lighten-2":  $cyan-lighten-2,
-    "lighten-1":  $cyan-lighten-1,
-    "base":       $cyan-base,
-    "darken-1":   $cyan-darken-1,
-    "darken-2":   $cyan-darken-2,
-    "darken-3":   $cyan-darken-3,
-    "darken-4":   $cyan-darken-4,
-    "accent-1":   $cyan-accent-1,
-    "accent-2":   $cyan-accent-2,
-    "accent-3":   $cyan-accent-3,
-    "accent-4":   $cyan-accent-4
-  ),
-  "teal": (
-    "lighten-5":  $teal-lighten-5,
-    "lighten-4":  $teal-lighten-4,
-    "lighten-3":  $teal-lighten-3,
-    "lighten-2":  $teal-lighten-2,
-    "lighten-1":  $teal-lighten-1,
-    "base":       $teal-base,
-    "darken-1":   $teal-darken-1,
-    "darken-2":   $teal-darken-2,
-    "darken-3":   $teal-darken-3,
-    "darken-4":   $teal-darken-4,
-    "accent-1":   $teal-accent-1,
-    "accent-2":   $teal-accent-2,
-    "accent-3":   $teal-accent-3,
-    "accent-4":   $teal-accent-4
-  ),
-  "green": (
-    "lighten-5":  $green-lighten-5,
-    "lighten-4":  $green-lighten-4,
-    "lighten-3":  $green-lighten-3,
-    "lighten-2":  $green-lighten-2,
-    "lighten-1":  $green-lighten-1,
-    "base":       $green-base,
-    "darken-1":   $green-darken-1,
-    "darken-2":   $green-darken-2,
-    "darken-3":   $green-darken-3,
-    "darken-4":   $green-darken-4,
-    "accent-1":   $green-accent-1,
-    "accent-2":   $green-accent-2,
-    "accent-3":   $green-accent-3,
-    "accent-4":   $green-accent-4
-  ),
-  "light-green": (
-    "lighten-5":  $light-green-lighten-5,
-    "lighten-4":  $light-green-lighten-4,
-    "lighten-3":  $light-green-lighten-3,
-    "lighten-2":  $light-green-lighten-2,
-    "lighten-1":  $light-green-lighten-1,
-    "base":       $light-green-base,
-    "darken-1":   $light-green-darken-1,
-    "darken-2":   $light-green-darken-2,
-    "darken-3":   $light-green-darken-3,
-    "darken-4":   $light-green-darken-4,
-    "accent-1":   $light-green-accent-1,
-    "accent-2":   $light-green-accent-2,
-    "accent-3":   $light-green-accent-3,
-    "accent-4":   $light-green-accent-4
-  ),
-  "lime": (
-    "lighten-5":  $lime-lighten-5,
-    "lighten-4":  $lime-lighten-4,
-    "lighten-3":  $lime-lighten-3,
-    "lighten-2":  $lime-lighten-2,
-    "lighten-1":  $lime-lighten-1,
-    "base":       $lime-base,
-    "darken-1":   $lime-darken-1,
-    "darken-2":   $lime-darken-2,
-    "darken-3":   $lime-darken-3,
-    "darken-4":   $lime-darken-4,
-    "accent-1":   $lime-accent-1,
-    "accent-2":   $lime-accent-2,
-    "accent-3":   $lime-accent-3,
-    "accent-4":   $lime-accent-4
-  ),
-  "yellow": (
-    "lighten-5":  $yellow-lighten-5,
-    "lighten-4":  $yellow-lighten-4,
-    "lighten-3":  $yellow-lighten-3,
-    "lighten-2":  $yellow-lighten-2,
-    "lighten-1":  $yellow-lighten-1,
-    "base":       $yellow-base,
-    "darken-1":   $yellow-darken-1,
-    "darken-2":   $yellow-darken-2,
-    "darken-3":   $yellow-darken-3,
-    "darken-4":   $yellow-darken-4,
-    "accent-1":   $yellow-accent-1,
-    "accent-2":   $yellow-accent-2,
-    "accent-3":   $yellow-accent-3,
-    "accent-4":   $yellow-accent-4
-  ),
-  "amber": (
-    "lighten-5":  $amber-lighten-5,
-    "lighten-4":  $amber-lighten-4,
-    "lighten-3":  $amber-lighten-3,
-    "lighten-2":  $amber-lighten-2,
-    "lighten-1":  $amber-lighten-1,
-    "base":       $amber-base,
-    "darken-1":   $amber-darken-1,
-    "darken-2":   $amber-darken-2,
-    "darken-3":   $amber-darken-3,
-    "darken-4":   $amber-darken-4,
-    "accent-1":   $amber-accent-1,
-    "accent-2":   $amber-accent-2,
-    "accent-3":   $amber-accent-3,
-    "accent-4":   $amber-accent-4
-  ),
-  "orange": (
-    "lighten-5":  $orange-lighten-5,
-    "lighten-4":  $orange-lighten-4,
-    "lighten-3":  $orange-lighten-3,
-    "lighten-2":  $orange-lighten-2,
-    "lighten-1":  $orange-lighten-1,
-    "base":       $orange-base,
-    "darken-1":   $orange-darken-1,
-    "darken-2":   $orange-darken-2,
-    "darken-3":   $orange-darken-3,
-    "darken-4":   $orange-darken-4,
-    "accent-1":   $orange-accent-1,
-    "accent-2":   $orange-accent-2,
-    "accent-3":   $orange-accent-3,
-    "accent-4":   $orange-accent-4
-  ),
-  "deep-orange": (
-    "lighten-5":  $deep-orange-lighten-5,
-    "lighten-4":  $deep-orange-lighten-4,
-    "lighten-3":  $deep-orange-lighten-3,
-    "lighten-2":  $deep-orange-lighten-2,
-    "lighten-1":  $deep-orange-lighten-1,
-    "base":       $deep-orange-base,
-    "darken-1":   $deep-orange-darken-1,
-    "darken-2":   $deep-orange-darken-2,
-    "darken-3":   $deep-orange-darken-3,
-    "darken-4":   $deep-orange-darken-4,
-    "accent-1":   $deep-orange-accent-1,
-    "accent-2":   $deep-orange-accent-2,
-    "accent-3":   $deep-orange-accent-3,
-    "accent-4":   $deep-orange-accent-4
-  ),
-  "brown": (
-    "lighten-5":  $brown-lighten-5,
-    "lighten-4":  $brown-lighten-4,
-    "lighten-3":  $brown-lighten-3,
-    "lighten-2":  $brown-lighten-2,
-    "lighten-1":  $brown-lighten-1,
-    "base":       $brown-base,
-    "darken-1":   $brown-darken-1,
-    "darken-2":   $brown-darken-2,
-    "darken-3":   $brown-darken-3,
-    "darken-4":   $brown-darken-4
-  ),
-  "blue-grey": (
-    "lighten-5":  $blue-grey-lighten-5,
-    "lighten-4":  $blue-grey-lighten-4,
-    "lighten-3":  $blue-grey-lighten-3,
-    "lighten-2":  $blue-grey-lighten-2,
-    "lighten-1":  $blue-grey-lighten-1,
-    "base":       $blue-grey-base,
-    "darken-1":   $blue-grey-darken-1,
-    "darken-2":   $blue-grey-darken-2,
-    "darken-3":   $blue-grey-darken-3,
-    "darken-4":   $blue-grey-darken-4
-  ),
-  "grey": (
-    "lighten-5":  $grey-lighten-5,
-    "lighten-4":  $grey-lighten-4,
-    "lighten-3":  $grey-lighten-3,
-    "lighten-2":  $grey-lighten-2,
-    "lighten-1":  $grey-lighten-1,
-    "base":       $grey-base,
-    "darken-1":   $grey-darken-1,
-    "darken-2":   $grey-darken-2,
-    "darken-3":   $grey-darken-3,
-    "darken-4":   $grey-darken-4
-  ),
-  "black": (
-    "base":  $black-base
-  ),
-  "white": (
-    "base":  $white-base
-  )
-), $mdb-colors-1);
+  Rs.mdb-colors-1
+);
 
 // Full palette of colors
-$enable_full_palette: true !default;
+rs.enable_full_palette: true !default;
 
 // Stylish rgba colors
-$stylish-rgba: (
-  "rgba-stylish-slight": rgba(62, 69, 81, .1),
-  "rgba-stylish-light": rgba(62, 69, 81, .3),
-  "rgba-stylish-strong": rgba(62, 69, 81, .7),
+rs.stylish-rgba: (
+  "rgba-stylish-slight": rgba(62, 69, 81, 0.1),
+  "rgba-stylish-light": rgba(62, 69, 81, 0.3),
+  "rgba-stylish-strong": rgba(62, 69, 81, 0.7)
 );
 
 // Material colors
-$primary-color:        #4285f4 !default;
-$primary-color-dark:   #0d47a1 !default;
-$secondary-color:      #aa66cc !default;
-$secondary-color-dark: #9933cc !default;
-$default-color:        #2bbbad !default;
-$default-color-dark:   #00695c !default;
-$info-color:           #33b5e5 !default;
-$info-color-dark:      #0099cc !default;
-$success-color:        #00c851 !default;
-$success-color-dark:   #007e33 !default;
-$warning-color:        #ffbb33 !default;
-$warning-color-dark:   #ff8800 !default;
-$danger-color:         #ff3547 !default;
-$danger-color-dark:    #cc0000 !default;
-$elegant-color:        #2e2e2e !default;
-$elegant-color-dark:   #212121 !default;
-$stylish-color:        #4b515d !default;
-$stylish-color-dark:   #3e4551 !default;
-$unique-color:         #3f729b !default;
-$unique-color-dark:    #1c2331 !default;
-$special-color:        #37474f !default;
-$special-color-dark:   #263238 !default;
-$white:                #fff;
-$black:                #000;
-$error-color:          $red-base !default;
+rs.primary-color: #4285f4 !default;
+rs.primary-color-dark: #0d47a1 !default;
+rs.secondary-color: #aa66cc !default;
+rs.secondary-color-dark: #9933cc !default;
+rs.default-color: #2bbbad !default;
+rs.default-color-dark: #00695c !default;
+rs.info-color: #33b5e5 !default;
+rs.info-color-dark: #0099cc !default;
+rs.success-color: #00c851 !default;
+rs.success-color-dark: #007e33 !default;
+rs.warning-color: #ffbb33 !default;
+rs.warning-color-dark: #ff8800 !default;
+rs.danger-color: #ff3547 !default;
+rs.danger-color-dark: #cc0000 !default;
+rs.elegant-color: #2e2e2e !default;
+rs.elegant-color-dark: #212121 !default;
+rs.stylish-color: #4b515d !default;
+rs.stylish-color-dark: #3e4551 !default;
+rs.unique-color: #3f729b !default;
+rs.unique-color-dark: #1c2331 !default;
+rs.special-color: #37474f !default;
+rs.special-color-dark: #263238 !default;
+rs.white: #fff;
+rs.black: #000;
+rs.error-color: Rs.red-base !default;
 
-$material-colors: () !default;
-$material-colors: map-merge((
-  "primary-color":        $primary-color,
-  "primary-color-dark":   $primary-color-dark,
-  "secondary-color":      $secondary-color,
-  "secondary-color-dark": $secondary-color-dark,
-  "default-color":        $default-color,
-  "default-color-dark":   $default-color-dark,
-  "info-color":           $info-color,
-  "info-color-dark":      $info-color-dark,
-  "success-color":        $success-color,
-  "success-color-dark":   $success-color-dark,
-  "warning-color":        $warning-color,
-  "warning-color-dark":   $warning-color-dark,
-  "danger-color":         $danger-color,
-  "danger-color-dark":    $danger-color-dark,
-  "elegant-color":        $elegant-color,
-  "elegant-color-dark":   $elegant-color-dark,
-  "stylish-color":        $stylish-color,
-  "stylish-color-dark":   $stylish-color-dark,
-  "unique-color":         $unique-color,
-  "unique-color-dark":    $unique-color-dark,
-  "special-color":        $special-color,
-  "special-color-dark":   $special-color-dark
-), $material-colors);
+rs.material-colors: () !default;
+rs.material-colors: map-merge(
+  (
+    "primary-color": Rs.primary-color,
+    "primary-color-dark": Rs.primary-color-dark,
+    "secondary-color": Rs.secondary-color,
+    "secondary-color-dark": Rs.secondary-color-dark,
+    "default-color": Rs.default-color,
+    "default-color-dark": Rs.default-color-dark,
+    "info-color": Rs.info-color,
+    "info-color-dark": Rs.info-color-dark,
+    "success-color": Rs.success-color,
+    "success-color-dark": Rs.success-color-dark,
+    "warning-color": Rs.warning-color,
+    "warning-color-dark": Rs.warning-color-dark,
+    "danger-color": Rs.danger-color,
+    "danger-color-dark": Rs.danger-color-dark,
+    "elegant-color": Rs.elegant-color,
+    "elegant-color-dark": Rs.elegant-color-dark,
+    "stylish-color": Rs.stylish-color,
+    "stylish-color-dark": Rs.stylish-color-dark,
+    "unique-color": Rs.unique-color,
+    "unique-color-dark": Rs.unique-color-dark,
+    "special-color": Rs.special-color,
+    "special-color-dark": Rs.special-color-dark,
+  ),
+  Rs.material-colors
+);
 
 // Social colors
-$fb-color:      #3b5998 !default;
-$tw-color:      #55acee !default;
-$gplus-color:   #dd4b39 !default;
-$yt-color:      #ed302f !default;
-$li-color:      #0082ca !default;
-$pin-color:     #c61118 !default;
-$ins-color:     #2e5e86 !default;
-$git-color:     #333333 !default;
-$comm-color:    #30cfc0 !default;
-$vk-color:      #4c75a3 !default;
-$drib-color:    #ec4a89 !default;
-$so-color:      #ffac44 !default;
-$slack-color:   #56b68b !default;
-$email-color:   #4b515d !default;
-$redd-color:    #ff4500 !default;
-$twitch-color:  #6441a4 !default;
-$discord-color: #7289da !default;
+rs.fb-color: #3b5998 !default;
+rs.tw-color: #55acee !default;
+rs.gplus-color: #dd4b39 !default;
+rs.yt-color: #ed302f !default;
+rs.li-color: #0082ca !default;
+rs.pin-color: #c61118 !default;
+rs.ins-color: #2e5e86 !default;
+rs.git-color: #333333 !default;
+rs.comm-color: #30cfc0 !default;
+rs.vk-color: #4c75a3 !default;
+rs.drib-color: #ec4a89 !default;
+rs.so-color: #ffac44 !default;
+rs.slack-color: #56b68b !default;
+rs.email-color: #4b515d !default;
+rs.redd-color: #ff4500 !default;
+rs.twitch-color: #6441a4 !default;
+rs.discord-color: #7289da !default;
 
-$social-colors: () !default;
-$social-colors: map-merge((
-  "fb":       $fb-color,
-  "tw":       $tw-color,
-  "gplus":    $gplus-color,
-  "yt":       $yt-color,
-  "li":       $li-color,
-  "pin":      $pin-color,
-  "ins":      $ins-color,
-  "git":      $git-color,
-  "comm":     $comm-color,
-  "vk":       $vk-color,
-  "dribbble": $drib-color,
-  "so":       $so-color,
-  "slack":    $slack-color,
-  "email":    $email-color,
-  "reddit":   $redd-color,
-  "twitch":   $twitch-color,
-  "discord":   $discord-color,
-), $social-colors);
+rs.social-colors: () !default;
+rs.social-colors: map-merge(
+  (
+    "fb": Rs.fb-color,
+    "tw": Rs.tw-color,
+    "gplus": Rs.gplus-color,
+    "yt": Rs.yt-color,
+    "li": Rs.li-color,
+    "pin": Rs.pin-color,
+    "ins": Rs.ins-color,
+    "git": Rs.git-color,
+    "comm": Rs.comm-color,
+    "vk": Rs.vk-color,
+    "dribbble": Rs.drib-color,
+    "so": Rs.so-color,
+    "slack": Rs.slack-color,
+    "email": Rs.email-color,
+    "reddit": Rs.redd-color,
+    "twitch": Rs.twitch-color,
+    "discord": Rs.discord-color,
+  ),
+  Rs.social-colors
+);
 
 // MDB buttons colors
-$mdb-colors: () !default;
-$mdb-colors: map-merge((
-  "primary":     $primary-color,
-  "danger":      $danger-color,
-  "warning":     $warning-color,
-  "success":     $success-color,
-  "info":        $info-color,
-  "default":     $default-color,
-  "secondary":   $secondary-color,
-  "elegant":     $elegant-color,
-  "unique":      $pink-darken-4,
-  "dark-green":  $green-darken-2,
-  "mdb-color":   $mdb-color-lighten-1,
-  "red":         $red-darken-2,
-  "pink":        $pink-lighten-1,
-  "purple":      $purple-darken-1,
-  "deep-purple": $deep-purple-darken-2,
-  "indigo":      $indigo-base,
-  "blue":        $blue-darken-2,
-  "light-blue":  $blue-accent-1,
-  "cyan":        $cyan-base,
-  "teal":        $teal-darken-2,
-  "green":       $green-darken-2,
-  "light-green": $light-green-base,
-  "lime":        $lime-darken-2,
-  "yellow":      $yellow-darken-2,
-  "amber":       $amber-darken-2,
-  "orange":      $orange-darken-2,
-  "deep-orange": $deep-orange-lighten-1,
-  "brown":       $brown-base,
-  "grey":        $grey-darken-2,
-  "blue-grey":   $blue-grey-lighten-1,
-  "dark":        $grey-darken-4,
-  "light":       $grey-lighten-2,
-  "white":       $white-base,
-  "black":       $black-base
-), $mdb-colors);
+rs.mdb-colors: () !default;
+rs.mdb-colors: map-merge(
+  (
+    "primary": Rs.primary-color,
+    "danger": Rs.danger-color,
+    "warning": Rs.warning-color,
+    "success": Rs.success-color,
+    "info": Rs.info-color,
+    "default": Rs.default-color,
+    "secondary": Rs.secondary-color,
+    "elegant": Rs.elegant-color,
+    "unique": Rs.pink-darken-4,
+    "dark-green": Rs.green-darken-2,
+    "mdb-color": Rs.mdb-color-lighten-1,
+    "red": Rs.red-darken-2,
+    "pink": Rs.pink-lighten-1,
+    "purple": Rs.purple-darken-1,
+    "deep-purple": Rs.deep-purple-darken-2,
+    "indigo": Rs.indigo-base,
+    "blue": Rs.blue-darken-2,
+    "light-blue": Rs.blue-accent-1,
+    "cyan": Rs.cyan-base,
+    "teal": Rs.teal-darken-2,
+    "green": Rs.green-darken-2,
+    "light-green": Rs.light-green-base,
+    "lime": Rs.lime-darken-2,
+    "yellow": Rs.yellow-darken-2,
+    "amber": Rs.amber-darken-2,
+    "orange": Rs.orange-darken-2,
+    "deep-orange": Rs.deep-orange-lighten-1,
+    "brown": Rs.brown-base,
+    "grey": Rs.grey-darken-2,
+    "blue-grey": Rs.blue-grey-lighten-1,
+    "dark": Rs.grey-darken-4,
+    "light": Rs.grey-lighten-2,
+    "white": Rs.white-base,
+    "black": Rs.black-base,
+  ),
+  Rs.mdb-colors
+);
 
 // Basic colors
-$basic: () !default;
-$basic: map-merge((
-  "primary":  $primary-color,
-  "danger":   $danger-color,
-  "warning":  $warning-color,
-  "success":  $success-color,
-  "info":     $info-color
-), $basic);
+rs.basic: () !default;
+rs.basic: map-merge(
+  (
+    "primary": Rs.primary-color,
+    "danger": Rs.danger-color,
+    "warning": Rs.warning-color,
+    "success": Rs.success-color,
+    "info": Rs.info-color,
+  ),
+  Rs.basic
+);
 
-$basic-mdb-colors: () !default;
-$basic-mdb-colors: map-merge((
-  "primary":     $primary-color,
-  "danger":      $danger-color,
-  "warning":     $warning-color,
-  "success":     $success-color,
-  "info":        $info-color,
-  "default":     $default-color,
-  "secondary":   $secondary-color,
-  "dark":        $grey-darken-4,
-  "light":       $grey-lighten-2
-), $basic-mdb-colors);
+rs.basic-mdb-colors: () !default;
+rs.basic-mdb-colors: map-merge(
+  (
+    "primary": Rs.primary-color,
+    "danger": Rs.danger-color,
+    "warning": Rs.warning-color,
+    "success": Rs.success-color,
+    "info": Rs.info-color,
+    "default": Rs.default-color,
+    "secondary": Rs.secondary-color,
+    "dark": Rs.grey-darken-4,
+    "light": Rs.grey-lighten-2,
+  ),
+  Rs.basic-mdb-colors
+);
 
-$pagination-colors: () !default;
-$pagination-colors: map-merge((
-  "blue": $primary-color,
-  "red": $danger-color,
-  "teal": $default-color,
-  "dark-grey": $special-color,
-  "dark": $elegant-color,
-  "blue-grey": $unique-color,
-  "amber": $amber-darken-4,
-  "purple": $deep-purple-darken-1
-), $pagination-colors);
+rs.pagination-colors: () !default;
+rs.pagination-colors: map-merge(
+  (
+    "blue": Rs.primary-color,
+    "red": Rs.danger-color,
+    "teal": Rs.default-color,
+    "dark-grey": Rs.special-color,
+    "dark": Rs.elegant-color,
+    "blue-grey": Rs.unique-color,
+    "amber": Rs.amber-darken-4,
+    "purple": Rs.deep-purple-darken-1,
+  ),
+  Rs.pagination-colors
+);
 
-$ctbc: () !default;
-$ctbc: map-merge((
-  "tabs-cyan": $yellow-base,
-  "tabs-orange": $red-darken-1,
-  "tabs-grey": $white-base,
-  "tabs-pink": $deep-purple-base,
-  "tabs-green": $blue-darken-3,
-  "tabs-primary": $white-base
-), $ctbc);
+rs.ctbc: () !default;
+rs.ctbc: map-merge(
+  (
+    "tabs-cyan": Rs.yellow-base,
+    "tabs-orange": Rs.red-darken-1,
+    "tabs-grey": Rs.white-base,
+    "tabs-pink": Rs.deep-purple-base,
+    "tabs-green": Rs.blue-darken-3,
+    "tabs-primary": Rs.white-base,
+  ),
+  Rs.ctbc
+);
 
-$switch-color-bg:                 $secondary-color !default;
-$switch-color-checked-lever-bg:   desaturate(lighten($secondary-color, 25%), 25%) !default;
-$switch-color-unchecked-bg:       #F1F1F1 !default;
-$switch-color-unchecked-lever-bg: #818181 !default;
+rs.switch-color-bg: Rs.secondary-color !default;
+rs.switch-color-checked-lever-bg: desaturate(
+  lighten(Rs.secondary-color, 25%),
+  25%
+) !default;
+rs.switch-color-unchecked-bg: #f1f1f1 !default;
+rs.switch-color-unchecked-lever-bg: #818181 !default;
 
-$switch-colors: () !default;
-$switch-colors: map-merge((
-  "bg":                 $switch-color-bg,
-  "checked-lever-bg":   $switch-color-checked-lever-bg,
-  "unchecked-bg":       $switch-color-unchecked-bg,
-  "unchecked-lever-bg": $switch-color-unchecked-lever-bg,
-), $switch-colors);
+rs.switch-colors: () !default;
+rs.switch-colors: map-merge(
+  (
+    "bg": Rs.switch-color-bg,
+    "checked-lever-bg": Rs.switch-color-checked-lever-bg,
+    "unchecked-bg": Rs.switch-color-unchecked-bg,
+    "unchecked-lever-bg": Rs.switch-color-unchecked-lever-bg,
+  ),
+  Rs.switch-colors
+);
 
-$dropdown-colors: () !default;
-$dropdown-colors: map-merge((
-  "primary"  : $primary-color,
-  "danger"   : $danger-color-dark,
-  "default"  : $default-color,
-  "secondary": $secondary-color,
-  "success"  : $success-color,
-  "info"     : $info-color,
-  "warning"  : $warning-color,
-  "dark"     : map-get($mdb-colors, "elegant"),
-  "ins"      : map-get($social-colors, "ins")
-), $dropdown-colors);
+rs.dropdown-colors: () !default;
+rs.dropdown-colors: map-merge(
+  (
+    "primary": Rs.primary-color,
+    "danger": Rs.danger-color-dark,
+    "default": Rs.default-color,
+    "secondary": Rs.secondary-color,
+    "success": Rs.success-color,
+    "info": Rs.info-color,
+    "warning": Rs.warning-color,
+    "dark": map-get(Rs.mdb-colors, "elegant"),
+    "ins": map-get(Rs.social-colors, "ins"),
+  ),
+  Rs.dropdown-colors
+);
 
 // Gradients
-$gradients: () !default;
-$gradients: map-merge((
-  "purple": (
-    "start": #ff6ec4,
-    "end": #7873f5
+rs.gradients: () !default;
+rs.gradients: map-merge(
+  (
+    "purple": (
+      "start": #ff6ec4,
+      "end": #7873f5,
+    ),
+    "peach": (
+      "start": #ffd86f,
+      "end": #fc6262,
+    ),
+    "aqua": (
+      "start": #2096ff,
+      "end": #05ffa3,
+    ),
+    "blue": (
+      "start": #45cafc,
+      "end": Rs.indigo-darken-2,
+    ),
   ),
-  "peach": (
-    "start": #FFD86F,
-    "end": #FC6262
-  ),
-  "aqua": (
-    "start": #2096ff,
-    "end": #05ffa3
-  ),
-  "blue": (
-    "start": #45cafc,
-    "end": $indigo-darken-2
-  ),
-), $gradients);
+  Rs.gradients
+);
 
 // Gradients RGBA Version
-$gradients-rgba: () !default;
-$gradients-rgba: map-merge((
-  "purple": (
-    "start": rgba(255,110,196,.9),
-    "end": rgba(120,115,245,.9)
+rs.gradients-rgba: () !default;
+rs.gradients-rgba: map-merge(
+  (
+    "purple": (
+      "start": rgba(255, 110, 196, 0.9),
+      "end": rgba(120, 115, 245, 0.9),
+    ),
+    "peach": (
+      "start": rgba(255, 216, 111, 0.9),
+      "end": rgba(252, 98, 98, 0.9),
+    ),
+    "aqua": (
+      "start": rgba(32, 150, 255, 0.9),
+      "end": rgba(5, 255, 163, 0.9),
+    ),
+    "blue": (
+      "start": rgba(69, 202, 252, 0.9),
+      "end": rgba(48, 63, 159, 0.9),
+    ),
   ),
-  "peach": (
-    "start": rgba(255,216,111,.9),
-    "end": rgba(252,98,98,.9)
-  ),
-  "aqua": (
-    "start": rgba(32,150,255,.9),
-    "end": rgba(5,255,163,.9)
-  ),
-  "blue": (
-    "start": rgba(69,202,252,.9),
-    "end": rgba(48,63,159,.9)
-  ),
-), $gradients-rgba);
+  Rs.gradients-rgba
+);
 
-
-$note: () !default;
-$note: map-merge((
-  "note-primary": #176ac4,
-  "note-secondary": #58595a,
-  "note-success": #49a75f,
-  "note-danger": #e45460,
-  "note-warning": #c2a442,
-  "note-info": #2492a5,
-  "note-light": #0f0f0f
-), $note);
+rs.note: () !default;
+rs.note: map-merge(
+  (
+    "note-primary": #176ac4,
+    "note-secondary": #58595a,
+    "note-success": #49a75f,
+    "note-danger": #e45460,
+    "note-warning": #c2a442,
+    "note-info": #2492a5,
+    "note-light": #0f0f0f,
+  ),
+  Rs.note
+);

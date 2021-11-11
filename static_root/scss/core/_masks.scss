@@ -15,7 +15,8 @@
     height: 100%;
     background-attachment: fixed;
   }
-  img, video {
+  img,
+  video {
     position: relative;
     display: block;
   }
@@ -24,8 +25,8 @@
       z-index: -100;
       top: 50%;
       left: 50%;
-      transform: $intro-video-transform;
-      transition: $intro-video-transition opacity;
+      transform: Rs.intro-video-transform;
+      transition: Rs.intro-video-transition opacity;
       min-width: 100%;
       min-height: 100%;
       width: auto;
@@ -38,7 +39,7 @@
 .overlay {
   .mask {
     opacity: 0;
-    transition: $mask-overlay-transition;
+    transition: Rs.mask-overlay-transition;
     &:hover {
       opacity: 1;
     }
@@ -47,18 +48,20 @@
 
 // Zoom
 .zoom {
-  img, video {
-    transition: $mask-zoom-transition;
+  img,
+  video {
+    transition: Rs.mask-zoom-transition;
   }
   &:hover {
-    img, video {
-      transform: $mask-zoom-transform;
+    img,
+    video {
+      transform: Rs.mask-zoom-transform;
     }
   }
 }
 
 // Patterns
-$patterns: (
+rs.patterns: (
   1: "01",
   2: "02",
   3: "03",
@@ -70,9 +73,9 @@ $patterns: (
   9: "09"
 );
 
-@each $no, $filename in $patterns {
-  .pattern-#{$no} {
-    background: url("#{$image-path}/overlays/#{$filename}.png");
+@each Rs.no, Rs.filename in Rs.patterns {
+  .pattern-#{Rs.no} {
+    background: url("#{Rs.image-path}/overlays/#{Rs.filename}.png");
     background-attachment: fixed;
   }
 }

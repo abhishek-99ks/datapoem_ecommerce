@@ -1,11 +1,11 @@
 // Tables
 table {
   th {
-    font-size: $table-th-font-size;
+    font-size: Rs.table-th-font-size;
     font-weight: 400;
   }
   td {
-    font-size: $table-td-font-size;
+    font-size: Rs.table-td-font-size;
     font-weight: 300;
   }
   &.table {
@@ -14,18 +14,18 @@ table {
     }
     th,
     td {
-      padding-top: $table-th-padding-top;
-      padding-bottom: $table-td-padding-bottom;
+      padding-top: Rs.table-th-padding-top;
+      padding-bottom: Rs.table-td-padding-bottom;
     }
     a {
       margin: 0;
-      color: $table-a-color;
+      color: Rs.table-a-color;
     }
     .label-table {
       margin: 0;
       padding: 0;
-      line-height: $table-label-height;
-      height: $table-label-line-height;
+      line-height: Rs.table-label-height;
+      height: Rs.table-label-line-height;
     }
     &.btn-table {
       td {
@@ -37,28 +37,28 @@ table {
     tbody {
       tr {
         &:hover {
-          transition: $table-hover-transition;
-          background-color: $table-hover-background-color;
+          transition: Rs.table-hover-transition;
+          background-color: Rs.table-hover-background-color;
         }
       }
     }
   }
   .th-lg {
-    min-width: $table-th-lg-min-width;
+    min-width: Rs.table-th-lg-min-width;
   }
   .th-sm {
-    min-width: $table-th-sm-min-width;
+    min-width: Rs.table-th-sm-min-width;
   }
   &.table-sm {
     th,
     td {
-      padding-top: $table-sm-padding-y;
-      padding-bottom: $table-sm-padding-y;
+      padding-top: Rs.table-sm-padding-y;
+      padding-bottom: Rs.table-sm-padding-y;
     }
   }
 }
 .table-scroll-vertical {
-  max-height: $table-scroll-vertical-max-height;
+  max-height: Rs.table-scroll-vertical-max-height;
   overflow-y: auto;
 }
 .table-fixed {

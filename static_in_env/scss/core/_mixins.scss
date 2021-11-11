@@ -1,65 +1,73 @@
 // Mixins
 // Bootstrap Mixins
-@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
-  $n: index($breakpoint-names, $name);
-  @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+@function breakpoint-next(
+  Rs.name,
+  Rs.breakpoints: Rs.grid-breakpoints,
+  Rs.breakpoint-names: map-keys(Rs.breakpoints)
+) {
+  rs.n: index(Rs.breakpoint-names, Rs.name);
+  @return if(
+    Rs.n < length(Rs.breakpoint-names),
+    nth(Rs.breakpoint-names, Rs.n + 1),
+    null
+  );
 }
 
-@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
-  $min: map-get($breakpoints, $name);
-  @return if($min !=0, $min, null);
+@function breakpoint-min(Rs.name, Rs.breakpoints: Rs.grid-breakpoints) {
+  rs.min: map-get(Rs.breakpoints, Rs.name);
+  @return if(Rs.min !=0, Rs.min, null);
 }
 
-@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
-  $next: breakpoint-next($name, $breakpoints);
-  @return if($next, breakpoint-min($next, $breakpoints) - .02px, null);
+@function breakpoint-max(Rs.name, Rs.breakpoints: Rs.grid-breakpoints) {
+  rs.next: breakpoint-next(Rs.name, Rs.breakpoints);
+  @return if(Rs.next, breakpoint-min(Rs.next, Rs.breakpoints) - 0.02px, null);
 }
 
 // Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
 // Makes the @content apply to the given breakpoint and wider.
-@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
-  $min: breakpoint-min($name, $breakpoints);
-  @if $min {
-    @media (min-width: $min) {
+@mixin media-breakpoint-up(Rs.name, Rs.breakpoints: Rs.grid-breakpoints) {
+  rs.min: breakpoint-min(Rs.name, Rs.breakpoints);
+  @if Rs.min {
+    @media (min-width: Rs.min) {
       @content;
     }
-  }
-  @else {
+  } @else {
     @content;
   }
 }
 
 // Media of at most the maximum breakpoint width. No query for the largest breakpoint.
 // Makes the @content apply to the given breakpoint and narrower.
-@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
-  $max: breakpoint-max($name, $breakpoints);
-  @if $max {
-    @media (max-width: $max) {
+@mixin media-breakpoint-down(Rs.name, Rs.breakpoints: Rs.grid-breakpoints) {
+  rs.max: breakpoint-max(Rs.name, Rs.breakpoints);
+  @if Rs.max {
+    @media (max-width: Rs.max) {
       @content;
     }
-  }
-  @else {
+  } @else {
     @content;
   }
 }
 
 // Media that spans multiple breakpoint widths.
 // Makes the @content apply between the min and max breakpoints
-@mixin media-breakpoint-between($lower, $upper, $breakpoints: $grid-breakpoints) {
-  $min: breakpoint-min($lower, $breakpoints);
-  $max: breakpoint-max($upper, $breakpoints);
-  @if $min !=null and $max !=null {
-    @media (min-width: $min) and (max-width: $max) {
+@mixin media-breakpoint-between(
+  Rs.lower,
+  Rs.upper,
+  Rs.breakpoints: Rs.grid-breakpoints
+) {
+  rs.min: breakpoint-min(Rs.lower, Rs.breakpoints);
+  rs.max: breakpoint-max(Rs.upper, Rs.breakpoints);
+  @if Rs.min !=null and Rs.max !=null {
+    @media (min-width: Rs.min) and (max-width: Rs.max) {
       @content;
     }
-  }
-  @else if $max==null {
-    @include media-breakpoint-up($lower, $breakpoints) {
+  } @else if Rs.max==null {
+    @include media-breakpoint-up(Rs.lower, Rs.breakpoints) {
       @content;
     }
-  }
-  @else if $min==null {
-    @include media-breakpoint-down($upper, $breakpoints) {
+  } @else if Rs.min==null {
+    @include media-breakpoint-down(Rs.upper, Rs.breakpoints) {
       @content;
     }
   }
@@ -68,28 +76,26 @@
 // Media between the breakpoint's minimum and maximum widths.
 // No minimum for the smallest breakpoint, and no maximum for the largest one.
 // Makes the @content apply only to the given breakpoint, not viewports any wider or narrower.
-@mixin media-breakpoint-only($name, $breakpoints: $grid-breakpoints) {
-  $min: breakpoint-min($name, $breakpoints);
-  $max: breakpoint-max($name, $breakpoints);
-  @if $min !=null and $max !=null {
-    @media (min-width: $min) and (max-width: $max) {
+@mixin media-breakpoint-only(Rs.name, Rs.breakpoints: Rs.grid-breakpoints) {
+  rs.min: breakpoint-min(Rs.name, Rs.breakpoints);
+  rs.max: breakpoint-max(Rs.name, Rs.breakpoints);
+  @if Rs.min !=null and Rs.max !=null {
+    @media (min-width: Rs.min) and (max-width: Rs.max) {
       @content;
     }
-  }
-  @else if $max==null {
-    @include media-breakpoint-up($name, $breakpoints) {
+  } @else if Rs.max==null {
+    @include media-breakpoint-up(Rs.name, Rs.breakpoints) {
       @content;
     }
-  }
-  @else if $min==null {
-    @include media-breakpoint-down($name, $breakpoints) {
+  } @else if Rs.min==null {
+    @include media-breakpoint-down(Rs.name, Rs.breakpoints) {
       @content;
     }
   }
 }
 
-@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
-  @return if(breakpoint-min($name, $breakpoints)==null, "", "-#{$name}");
+@function breakpoint-infix(Rs.name, Rs.breakpoints: Rs.grid-breakpoints) {
+  @return if(breakpoint-min(Rs.name, Rs.breakpoints) ==null, "", "-#{Rs.name}");
 }
 
 @mixin hover-focus {
@@ -100,26 +106,26 @@
 }
 
 // Background color
-@mixin bg-variant($parent, $color) {
-  #{$parent} {
-    background-color: $color !important;
+@mixin bg-variant(Rs.parent, Rs.color) {
+  #{Rs.parent} {
+    background-color: Rs.color !important;
   }
-  a#{$parent},
-  button#{$parent} {
+  a#{Rs.parent},
+  button#{Rs.parent} {
     @include hover-focus {
-      background-color: darken($color, 10%) !important;
+      background-color: darken(Rs.color, 10%) !important;
     }
   }
 }
 
 // Typography
-@mixin text-emphasis-variant($parent, $color) {
-  #{$parent} {
-    color: $color !important;
+@mixin text-emphasis-variant(Rs.parent, Rs.color) {
+  #{Rs.parent} {
+    color: Rs.color !important;
   }
-  a#{$parent} {
+  a#{Rs.parent} {
     @include hover-focus {
-      color: darken($color, 10%) !important;
+      color: darken(Rs.color, 10%) !important;
     }
   }
 }
@@ -135,19 +141,22 @@
 //
 // Generate semantic grid columns with these mixins.
 
-@mixin make-container($gutter: $grid-gutter-width) {
+@mixin make-container(Rs.gutter: Rs.grid-gutter-width) {
   width: 100%;
-  padding-right: $gutter / 2;
-  padding-left: $gutter / 2;
+  padding-right: Rs.gutter / 2;
+  padding-left: Rs.gutter / 2;
   margin-right: auto;
   margin-left: auto;
 }
 
 // For each breakpoint, define the maximum width of the container in a media query
-@mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
-  @each $breakpoint, $container-max-width in $max-widths {
-    @include media-breakpoint-up($breakpoint, $breakpoints) {
-      max-width: $container-max-width;
+@mixin make-container-max-widths(
+  Rs.max-widths: Rs.container-max-widths,
+  Rs.breakpoints: Rs.grid-breakpoints
+) {
+  @each Rs.breakpoint, Rs.container-max-width in Rs.max-widths {
+    @include media-breakpoint-up(Rs.breakpoint, Rs.breakpoints) {
+      max-width: Rs.container-max-width;
     }
   }
 }
@@ -155,8 +164,8 @@
 @mixin make-row() {
   display: flex;
   flex-wrap: wrap;
-  margin-right: ($grid-gutter-width / -2);
-  margin-left: ($grid-gutter-width / -2);
+  margin-right: (Rs.grid-gutter-width / -2);
+  margin-left: (Rs.grid-gutter-width / -2);
 }
 
 @mixin make-col-ready() {
@@ -166,21 +175,21 @@
   // later on to override this initial width.
   width: 100%;
   min-height: 1px; // Prevent collapsing
-  padding-right: ($grid-gutter-width / 2);
-  padding-left: ($grid-gutter-width / 2);
+  padding-right: (Rs.grid-gutter-width / 2);
+  padding-left: (Rs.grid-gutter-width / 2);
 }
 
-@mixin make-col($size, $columns: $grid-columns) {
-  flex: 0 0 percentage($size / $columns);
+@mixin make-col(Rs.size, Rs.columns: Rs.grid-columns) {
+  flex: 0 0 percentage(Rs.size / Rs.columns);
   // Add a `max-width` to ensure content within each column does not blow out
   // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
   // do not appear to require this.
-  max-width: percentage($size / $columns);
+  max-width: percentage(Rs.size / Rs.columns);
 }
 
-@mixin make-col-offset($size, $columns: $grid-columns) {
-  $num: $size / $columns;
-  margin-left: if($num == 0, 0, percentage($num));
+@mixin make-col-offset(Rs.size, Rs.columns: Rs.grid-columns) {
+  rs.num: Rs.size / Rs.columns;
+  margin-left: if(Rs.num == 0, 0, percentage(Rs.num));
 }
 
 @mixin clearfix() {
@@ -202,7 +211,7 @@
 }
 
 // CSS image replacement
-@mixin text-hide($ignore-warning: false) {
+@mixin text-hide(Rs.ignore-warning: false) {
   // stylelint-disable-next-line font-family-no-missing-generic-family-keyword
   font: 0/0 a;
   color: transparent;
@@ -210,7 +219,7 @@
   background-color: transparent;
   border: 0;
 
-  @if ($ignore-warning != true) {
+  @if (Rs.ignore-warning != true) {
     @warn "The `text-hide()` mixin has been deprecated as of v4.1.0. It will be removed entirely in v5.";
   }
 }
@@ -249,225 +258,250 @@
   }
 }
 
-@mixin invisible($visibility) {
-  visibility: $visibility !important;
+@mixin invisible(Rs.visibility) {
+  visibility: Rs.visibility !important;
 }
 
 // MDB Mixins
 // Set the color of the button and badge
-@function set-notification-text-color($color) {
-  @if (lightness($color) > 80) {
-    @return $black-base; // Lighter backgorund, return dark color
-  }
-  @else {
-    @return $white-base; // Darker background, return light color
+@function set-notification-text-color(Rs.color) {
+  @if (lightness(Rs.color) > 80) {
+    @return Rs.black-base; // Lighter backgorund, return dark color
+  } @else {
+    @return Rs.white-base; // Darker background, return light color
   }
 }
 
 // Make button
-@mixin make-button ($name, $color) {
-  .btn-#{$name} {
-    background-color: $color !important;
-    color: set-notification-text-color($color);
+@mixin make-button(Rs.name, Rs.color) {
+  .btn-#{Rs.name} {
+    background-color: Rs.color !important;
+    color: set-notification-text-color(Rs.color);
     &:hover {
-      background-color: lighten($color, 5%);
-      color: set-notification-text-color($color);
+      background-color: lighten(Rs.color, 5%);
+      color: set-notification-text-color(Rs.color);
     }
     &:focus,
     &.focus {
-      box-shadow: $z-depth-1-half;
+      box-shadow: Rs.z-depth-1-half;
     }
     &:focus,
     &:active,
     &.active {
-      background-color: darken($color, 20%);
+      background-color: darken(Rs.color, 20%);
     }
     &.dropdown-toggle {
-      background-color: $color !important;
+      background-color: Rs.color !important;
       &:hover,
       &:focus {
-        background-color: lighten($color, 5%) !important;
+        background-color: lighten(Rs.color, 5%) !important;
       }
     }
     &:not([disabled]):not(.disabled):active,
     &:not([disabled]):not(.disabled).active,
-    .show>&.dropdown-toggle {
-      box-shadow: $z-depth-1-half;
-      background-color: darken($color, 20%) !important;
+    .show > &.dropdown-toggle {
+      box-shadow: Rs.z-depth-1-half;
+      background-color: darken(Rs.color, 20%) !important;
     }
     &:not([disabled]):not(.disabled):active:focus,
     &:not([disabled]):not(.disabled).active:focus,
-    .show>&.dropdown-toggle:focus {
-      box-shadow: $z-depth-1-half;
+    .show > &.dropdown-toggle:focus {
+      box-shadow: Rs.z-depth-1-half;
     }
   }
-  .#{$name}-ic {
-    color: $color !important;
+  .#{Rs.name}-ic {
+    color: Rs.color !important;
     &:hover,
     &:focus {
-      color: $color;
+      color: Rs.color;
     }
   }
-  a.btn:not([href]):not([tabindex]), 
-  a.btn:not([href]):not([tabindex]):focus, 
+  a.btn:not([href]):not([tabindex]),
+  a.btn:not([href]):not([tabindex]):focus,
   a.btn:not([href]):not([tabindex]):hover {
-    color: set-notification-text-color($color);
+    color: set-notification-text-color(Rs.color);
   }
 }
 
 // Make outline button
-@mixin make-outline-button ($name, $color) {
-  .btn-outline-#{$name} {
-    border: 2px solid $color !important;
+@mixin make-outline-button(Rs.name, Rs.color) {
+  .btn-outline-#{Rs.name} {
+    border: 2px solid Rs.color !important;
     background-color: transparent !important;
-    color: $color !important;
+    color: Rs.color !important;
     &:hover,
     &:focus,
     &:active,
     &:active:focus,
     &.active {
-      border-color: $color !important;
+      border-color: Rs.color !important;
       background-color: transparent !important;
-      color: $color !important;
+      color: Rs.color !important;
     }
     &:not([disabled]):not(.disabled):active,
     &:not([disabled]):not(.disabled).active,
-    .show>&.dropdown-toggle {
-      box-shadow: $z-depth-1-half;
+    .show > &.dropdown-toggle {
+      box-shadow: Rs.z-depth-1-half;
       background-color: transparent !important;
-      border-color: $color !important;
+      border-color: Rs.color !important;
     }
     &:not([disabled]):not(.disabled):active:focus,
     &:not([disabled]):not(.disabled).active:focus,
-    .show>&.dropdown-toggle:focus {
-      box-shadow: $z-depth-1-half;
+    .show > &.dropdown-toggle:focus {
+      box-shadow: Rs.z-depth-1-half;
     }
   }
 }
 // Make gradient
-@mixin make-gradient($name, $value) {
-  .#{$name}-gradient {
-    background: linear-gradient(40deg, map-get($value, start), map-get($value, end)) !important;
+@mixin make-gradient(Rs.name, Rs.value) {
+  .#{Rs.name}-gradient {
+    background: linear-gradient(
+      40deg,
+      map-get(Rs.value, start),
+      map-get(Rs.value, end)
+    ) !important;
   }
 }
 
-$opacity: .9;
+rs.opacity: 0.9;
 // Make gradient
-@mixin make-gradient-rgba($name, $value) {
-  .#{$name}-gradient-rgba {
-    background: linear-gradient(40deg, map-get($value, start), map-get($value, end)) !important;
+@mixin make-gradient-rgba(Rs.name, Rs.value) {
+  .#{Rs.name}-gradient-rgba {
+    background: linear-gradient(
+      40deg,
+      map-get(Rs.value, start),
+      map-get(Rs.value, end)
+    ) !important;
   }
 }
 
 // Make gradient button
-@mixin make-gradient-button($name, $value) {
+@mixin make-gradient-button(Rs.name, Rs.value) {
   .btn {
-    &.#{$name}-gradient {
-      transition: .5s ease;
-      color: $white-base;
+    &.#{Rs.name}-gradient {
+      transition: 0.5s ease;
+      color: Rs.white-base;
       &:hover,
       &:focus,
       &:active,
       &:active:focus &.active {
-        background: linear-gradient(lighten(map-get($value, start), 5%), lighten(map-get($value, end), 5%));
+        background: linear-gradient(
+          lighten(map-get(Rs.value, start), 5%),
+          lighten(map-get(Rs.value, end), 5%)
+        );
       }
     }
   }
 }
 
 // Button size
-@mixin button-size($padding-y, $padding-x, $font-size) {
-  padding: $padding-y $padding-x;
-  font-size: $font-size;
+@mixin button-size(Rs.padding-y, Rs.padding-x, Rs.font-size) {
+  padding: Rs.padding-y Rs.padding-x;
+  font-size: Rs.font-size;
 }
 
-@mixin make-badge($name, $color) {
-  .badge-#{$name} {
-    background-color: $color !important;
-    color: set-notification-text-color($color) !important;
+@mixin make-badge(Rs.name, Rs.color) {
+  .badge-#{Rs.name} {
+    background-color: Rs.color !important;
+    color: set-notification-text-color(Rs.color) !important;
   }
 }
 
 // Make input
-@mixin make-input($margin-bottom, $label-font-size, $label-active-font-size, $top, $prefix-font-size, $margin-left, $width, $margin-left-2) {
+@mixin make-input(
+  Rs.margin-bottom,
+  Rs.label-font-size,
+  Rs.label-active-font-size,
+  Rs.top,
+  Rs.prefix-font-size,
+  Rs.margin-left,
+  Rs.width,
+  Rs.margin-left-2
+) {
   .validate {
-    margin-bottom: $margin-bottom;
+    margin-bottom: Rs.margin-bottom;
   }
   label {
-    font-size: $label-font-size;
+    font-size: Rs.label-font-size;
     &.active {
-      font-size: $label-active-font-size;
+      font-size: Rs.label-active-font-size;
     }
   }
   .prefix {
-    top: $top;
-    font-size: $prefix-font-size;
-    ~input,
-    ~textarea {
-      margin-left: $margin-left;
-      width: $width;
+    top: Rs.top;
+    font-size: Rs.prefix-font-size;
+    ~ input,
+    ~ textarea {
+      margin-left: Rs.margin-left;
+      width: Rs.width;
     }
-    ~label {
-      margin-left: $margin-left;
+    ~ label {
+      margin-left: Rs.margin-left;
     }
-    ~.form-text {
-      margin-left: $margin-left-2;
+    ~ .form-text {
+      margin-left: Rs.margin-left-2;
     }
   }
 }
 
 // Make navbar
-@mixin make-navbar($color-0, $background-image, $color, $color-2, $color-3) {
+@mixin make-navbar(
+  Rs.color-0,
+  Rs.background-image,
+  Rs.color,
+  Rs.color-2,
+  Rs.color-3
+) {
   .navbar-nav {
     .nav-item {
       .nav-link {
         &.disbled {
-          color: $color-0;
+          color: Rs.color-0;
           &:hover {
-            color: $color-0;
+            color: Rs.color-0;
           }
         }
       }
     }
   }
   .navbar-toggler-icon {
-    background-image: $background-image;
+    background-image: Rs.background-image;
     cursor: pointer;
   }
   .breadcrumb,
   .navbar-nav {
     .nav-item {
       .nav-link {
-        color: $color;
-        transition: $navbar-nav-transition;
+        color: Rs.color;
+        transition: Rs.navbar-nav-transition;
         &:hover {
-          color: $color-2;
+          color: Rs.color-2;
         }
       }
-      &.active>.nav-link {
-        background-color: $color-3;
+      &.active > .nav-link {
+        background-color: Rs.color-3;
         &:hover {
-          color: $color;
+          color: Rs.color;
         }
       }
     }
   }
   .navbar-toggler {
-    color: $color;
+    color: Rs.color;
   }
   form {
     .md-form {
       input {
-        border-bottom: 1px solid $color;
+        border-bottom: 1px solid Rs.color;
         &:focus:not([readonly]) {
-          border-color: $input-md-focus-color;
+          border-color: Rs.input-md-focus-color;
         }
       }
       .form-control {
-        color: $color;
+        color: Rs.color;
         @include placeholder {
-          color: $color;
-          font-weight: $navbar-font-weight;
+          color: Rs.color;
+          font-weight: Rs.navbar-font-weight;
         }
       }
     }
@@ -475,67 +509,72 @@ $opacity: .9;
 }
 
 // Make floating button
-@mixin make-btn-floating($width, $height, $font-size, $line-height) {
-  width: $width;
-  height: $height;
+@mixin make-btn-floating(Rs.width, Rs.height, Rs.font-size, Rs.line-height) {
+  width: Rs.width;
+  height: Rs.height;
   i {
-    font-size: $font-size;
-    line-height: $line-height;
+    font-size: Rs.font-size;
+    line-height: Rs.line-height;
   }
 }
 
 // Keyframes
-@mixin keyframes($animation-name) {
-  @keyframes #{$animation-name} {
+@mixin keyframes(Rs.animation-name) {
+  @keyframes #{Rs.animation-name} {
     @content;
   }
 }
 
 // Scroll bar and scroll spy width and height
-@mixin scroll-width($scrollbar-width) {
-  width: $scrollbar-width;
+@mixin scroll-width(Rs.scrollbar-width) {
+  width: Rs.scrollbar-width;
 }
 
-@mixin scroll-height($scrollbar-height) {
-  height: $scrollbar-height;
+@mixin scroll-height(Rs.scrollbar-height) {
+  height: Rs.scrollbar-height;
 }
 
 // Scroll spy font-weight
-@mixin scrollspy-font-weight($scrollspy-font-weight) {
-  font-weight: $scrollspy-font-weight;
+@mixin scrollspy-font-weight(Rs.scrollspy-font-weight) {
+  font-weight: Rs.scrollspy-font-weight;
 }
 
 // Switch width and height
-@mixin switch-width-height($switchWidth, $switchHeight) {
-  width: $switchWidth;
-  height: $switchHeight;
+@mixin switch-width-height(Rs.switchWidth, Rs.switchHeight) {
+  width: Rs.switchWidth;
+  height: Rs.switchHeight;
 }
 
 // Make Box-shadows
-@mixin box-shadows($shadow...) {
-  box-shadow: $shadow;
+@mixin box-shadows(Rs.shadow...) {
+  box-shadow: Rs.shadow;
 }
 
 // Make Transition
-@mixin transition-main($transition...) {
-  transition: $transition;
+@mixin transition-main(Rs.transition...) {
+  transition: Rs.transition;
 }
 
 // Make border-radius scrollspy
-@mixin scrollspy-border-radius($scrollspy-radius) {
-  border-radius: $scrollspy-radius;
+@mixin scrollspy-border-radius(Rs.scrollspy-radius) {
+  border-radius: Rs.scrollspy-radius;
 }
 
 // Make border-radius scrollspy 4rows
-@mixin scrollspy-border-radius-4rows($top-left, $top-right, $bottom-right, $bottom-left) {
-  border-radius: $top-left $top-right $bottom-right $bottom-left;
+@mixin scrollspy-border-radius-4rows(
+  Rs.top-left,
+  Rs.top-right,
+  Rs.bottom-right,
+  Rs.bottom-left
+) {
+  border-radius: Rs.top-left Rs.top-right Rs.bottom-right Rs.bottom-left;
 }
 
 //Make animation for progresss
-@mixin progress-animation-default($animation...){
-  animation: $animation;
+@mixin progress-animation-default(Rs.animation...) {
+  animation: Rs.animation;
 }
 //Make transform
-@mixin transform($transform...){
-  transform: $transform;
+@mixin transform(Rs.transform...) {
+  transform: Rs.transform;
 }

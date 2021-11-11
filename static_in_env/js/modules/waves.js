@@ -33,7 +33,7 @@
     'use strict';
 
     var Waves            = Waves || {};
-    var $$               = document.querySelectorAll.bind(document);
+    var Rs.Rs.               = document.querySelectorAll.bind(document);
     var toString         = Object.prototype.toString;
     var isTouchAvailable = 'ontouchstart' in window;
 
@@ -60,8 +60,8 @@
         var stringRepr = toString.call(nodes);
 
         if (stringRepr === '[object String]') {
-            return $$(nodes);
-        } else if (isObject(nodes) && /^\[object (Array|HTMLCollection|NodeList|Object)\]$/.test(stringRepr) && nodes.hasOwnProperty('length')) {
+            return Rs.Rs.(nodes);
+        } else if (isObject(nodes) && /^\[object (Array|HTMLCollection|NodeList|Object)\]Rs./.test(stringRepr) && nodes.hasOwnProperty('length')) {
             return nodes;
         } else if (isDOMNode(nodes)) {
             return [nodes];
@@ -325,7 +325,7 @@
 
             var allow = true;
 
-            if (/^(mousedown|mousemove)$/.test(e.type) && TouchHandler.touches) {
+            if (/^(mousedown|mousemove)Rs./.test(e.type) && TouchHandler.touches) {
                 allow = false;
             }
 
@@ -338,7 +338,7 @@
 
                 TouchHandler.touches += 1; // push
 
-            } else if (/^(touchend|touchcancel)$/.test(eType)) {
+            } else if (/^(touchend|touchcancel)Rs./.test(eType)) {
 
                 setTimeout(function() {
                     if (TouchHandler.touches) {
