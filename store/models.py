@@ -31,19 +31,19 @@ class Item(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("core:product", kwargs={
-            'slug': self.slug
+        return reverse("store:product", kwargs={
+            'id': self.id
         })
 
     def get_add_to_cart_url(self):
-        return reverse("core:add-to-cart", kwargs={
-            'slug': self.slug
+        return reverse("store:add-to-cart", kwargs={
+            'id': self.id
         })
 
-    def get_remove_from_cart_url(self):
-        return reverse("core:remove-from-cart", kwargs={
-            'slug': self.slug
-        })
+    # def get_remove_from_cart_url(self):
+    #     return reverse("store:remove-from-cart", kwargs={
+    #         'slug': self.id
+    #     })
 
 
 class OrderItem(models.Model):
