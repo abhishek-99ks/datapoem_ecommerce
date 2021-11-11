@@ -40,10 +40,10 @@ class Item(models.Model):
             'id': self.id
         })
 
-    # def get_remove_from_cart_url(self):
-    #     return reverse("store:remove-from-cart", kwargs={
-    #         'slug': self.id
-    #     })
+    def get_remove_from_cart_url(self):
+        return reverse("store:remove-from-cart", kwargs={
+            'id': self.id
+        })
 
 
 class OrderItem(models.Model):
@@ -66,8 +66,6 @@ class OrderItem(models.Model):
         return self.get_total_item_price() - self.get_total_discount_item_price()
 
     def get_final_price(self):
-        if self.item.discount_price:
-            return self.get_total_discount_item_price()
         return self.get_total_item_price()
 
 
@@ -93,8 +91,6 @@ class Order(models.Model):
         total = 0
         for order_item in self.items.all():
             total += order_item.get_final_price()
-        if self.coupon:
-            total -= self.coupon.amount
         return total
 
 

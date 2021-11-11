@@ -141,6 +141,10 @@ AUTHENTICATION_BACKENDS = (
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 
+
+STRIPE_PUBLIC_KEY = "pk_test_51JooMfSDkVKLNtgeHsl04EH8KxrRw0sStzXNzzoypFyCwg3IEeX9vTN1ThGljFDdSPwu9j6us7T8IAKD28zAM3Sv00GVUSuZ42"
+STRIPE_SECRET_KEY = "sk_test_51JooMfSDkVKLNtgee20tdU93YEooRfeOGgQRLBHk2U4kLuOxJjEXQVkJN21CDkujTVOmlTeJS6eoHYaDdi7DJMki00E1JVPgnb"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
